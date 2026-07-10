@@ -1,26 +1,268 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Light surfaces — softly cool-tinted page (not pure white), crisp white cards */
+    --background: 214 32% 97%;
+    /* Foreground = dark navy (logo) — the inverse of dark mode's near-white text */
+    --foreground: 221 39% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 221 39% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 221 39% 17%;
+
+    /* Primary = the bright second-variant blue, mirroring dark mode (where primary === accent) */
+    --primary: 210 75% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 214 28% 93%;
+    --secondary-foreground: 210 12% 22%;
+
+    --muted: 214 28% 93%;
+    --muted-foreground: 210 8% 46%;
+
+    /* Second variant — a brighter blue that complements the dark-navy primary */
+    --accent: 210 75% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 210 75% 42%;
+
+    --radius: 0.5rem;
+
+    /* ILGbrand tokens — dark navy primary (logo) + a brighter blue accent */
+    --ilg-blue-deep: 221 50% 14%;
+    --ilg-blue: 221 45% 21%;
+    --ilg-blue-light: 210 75% 42%;
+    --ilg-blue-pale: 205 60% 95%;
+
+    /* ILGbrand tokens — aluminum/silver/steel */
+    --ilg-silver: 210 6% 65%;
+    --ilg-silver-light: 210 12% 88%;
+    --ilg-steel: 210 6% 40%;
+    --ilg-aluminum: 210 10% 80%;
+    --ilg-graphite: 210 10% 28%;
+
+    /* Warm neutral section tint (Dupray-style cream) */
+    --ilg-cream: 40 28% 96%;
+
+    /* Klinmak brand teal/green — the counterpart to the Tecnovap blue */
+    --klinmak: 172 45% 34%;
+    --klinmak-deep: 176 55% 22%;
+    --klinmak-foreground: 0 0% 100%;
+
+    --gradient-hero: linear-gradient(145deg, hsl(210 12% 22%) 0%, hsl(221 50% 14%) 40%, hsl(221 45% 21%) 70%, hsl(210 75% 42%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(210 75% 42%) 0%, hsl(221 45% 21%) 100%);
+    --gradient-silver: linear-gradient(135deg, hsl(210 12% 92%) 0%, hsl(210 8% 78%) 100%);
+
+    /* Soft, flat shadows for a clean look */
+    --shadow-card: 0 1px 2px hsl(210 12% 20% / 0.04), 0 2px 8px -2px hsl(210 12% 20% / 0.06);
+    --shadow-elevated: 0 6px 24px -8px hsl(210 12% 20% / 0.12);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 10% 25%;
+    --sidebar-primary: 210 75% 42%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 214 28% 93%;
+    --sidebar-accent-foreground: 210 10% 20%;
+    --sidebar-border: 214 20% 88%;
+    --sidebar-ring: 210 75% 42%;
+  }
+
+  .dark {
+    --background: 210 12% 8%;
+    --foreground: 210 8% 88%;
+
+    --card: 210 10% 11%;
+    --card-foreground: 210 8% 88%;
+
+    --popover: 210 10% 11%;
+    --popover-foreground: 210 8% 88%;
+
+    --primary: 205 70% 52%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 210 8% 18%;
+    --secondary-foreground: 210 8% 80%;
+
+    --muted: 210 8% 15%;
+    --muted-foreground: 210 6% 50%;
+
+    --accent: 205 70% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 8% 20%;
+    --input: 210 8% 20%;
+    --ring: 205 70% 52%;
+
+    /* Dark mode ILGtokens */
+    --ilg-blue-deep: 214 60% 18%;
+    --ilg-blue: 214 60% 38%;
+    --ilg-blue-light: 205 70% 52%;
+    --ilg-blue-pale: 205 30% 14%;
+
+    --ilg-silver: 210 4% 45%;
+    --ilg-silver-light: 210 6% 22%;
+    --ilg-steel: 210 4% 55%;
+    --ilg-aluminum: 210 6% 35%;
+    --ilg-graphite: 210 8% 18%;
+
+    /* Dark-mode equivalent of the warm cream alt-section */
+    --ilg-cream: 210 12% 12%;
+
+    /* Klinmak teal — brightened for dark surfaces */
+    --klinmak: 172 46% 42%;
+    --klinmak-deep: 176 45% 24%;
+    --klinmak-foreground: 0 0% 100%;
+
+    --gradient-hero: linear-gradient(145deg, hsl(210 10% 5%) 0%, hsl(210 8% 10%) 30%, hsl(214 60% 15%) 65%, hsl(205 70% 28%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(205 70% 42%) 0%, hsl(214 60% 25%) 100%);
+    --gradient-silver: linear-gradient(135deg, hsl(210 6% 18%) 0%, hsl(210 4% 30%) 100%);
+
+    --shadow-card: 0 2px 16px -4px hsl(0 0% 0% / 0.25), 0 1px 4px -1px hsl(0 0% 0% / 0.15);
+    --shadow-elevated: 0 8px 30px -8px hsl(0 0% 0% / 0.45);
+
+    --sidebar-background: 210 10% 9%;
+    --sidebar-foreground: 210 6% 85%;
+    --sidebar-primary: 205 70% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 8% 14%;
+    --sidebar-accent-foreground: 210 6% 85%;
+    --sidebar-border: 210 8% 16%;
+    --sidebar-ring: 205 70% 52%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Outfit — geometric sans for large display headlines */
+  .font-display {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  /* Pin light-mode color tokens so the hero looks identical in dark mode */
+  .hero-fixed-light {
+    --background: 0 0% 99%;
+    --foreground: 210 12% 16%;
+    --muted-foreground: 210 8% 46%;
+    --primary: 221 45% 21%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 221 45% 21%;
+    --accent-foreground: 0 0% 100%;
+    --secondary: 210 20% 96%;
+    --border: 210 16% 90%;
+  }
+}
+
+@layer components {
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .glass-card {
+    @apply bg-card rounded-lg;
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .glass-card:hover {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Alternating section background — light blue in light mode (matches the
+     highlights/contact sections), the dark cream tone in dark mode. */
+  .section-alt {
+    background-color: hsl(var(--primary) / 0.07);
+  }
+  .dark .section-alt {
+    background-color: hsl(var(--ilg-cream));
+  }
+
+  .section-subtle {
+    background-color: hsl(var(--background));
+  }
+
+  /* ============================================================
+     Hero split gradients — one continuous background layer (columns
+     stay transparent), so a single texture can flow over all of it.
+     Desktop: two halves side-by-side (both light at the very top for
+     the headline). Mobile: two halves stacked — Tecnovap on top still
+     needs a light top for the headline, but Klinmak sits mid-page
+     (under the dark feature band) so it is coloured throughout.
+     ============================================================ */
+  .hero-grad-tecnovap {
+    background: linear-gradient(180deg, hsl(214 32% 97%) 0%, hsl(208 50% 92%) 34%, hsl(210 74% 72%) 70%, hsl(213 80% 50%) 100%);
+  }
+  .dark .hero-grad-tecnovap {
+    background: linear-gradient(180deg, hsl(210 12% 8%) 0%, hsl(211 30% 11%) 50%, hsl(210 58% 24%) 100%);
+  }
+  /* Klinmak — mobile default: teal throughout (no headline above it). */
+  .hero-grad-klinmak {
+    background: linear-gradient(180deg, hsl(170 46% 88%) 0%, hsl(172 54% 72%) 45%, hsl(176 66% 46%) 100%);
+  }
+  .dark .hero-grad-klinmak {
+    background: linear-gradient(180deg, hsl(174 40% 16%) 0%, hsl(174 44% 20%) 50%, hsl(176 48% 24%) 100%);
+  }
+  /* Klinmak — desktop: light top for the headline/intro column. */
+  @media (min-width: 1024px) {
+    .hero-grad-klinmak {
+      background: linear-gradient(180deg, hsl(214 32% 97%) 0%, hsl(168 44% 92%) 34%, hsl(174 56% 72%) 70%, hsl(176 62% 46%) 100%);
+    }
+    .dark .hero-grad-klinmak {
+      background: linear-gradient(180deg, hsl(210 12% 8%) 0%, hsl(174 26% 11%) 50%, hsl(174 48% 22%) 100%);
+    }
+  }
+
+  /* Feature band — the saturated dark strip beneath the products. */
+  .hero-band-tecnovap {
+    background: linear-gradient(180deg, hsl(208 64% 44%) 0%, hsl(213 62% 37%) 100%);
+  }
+  .dark .hero-band-tecnovap {
+    background: linear-gradient(180deg, hsl(211 55% 24%) 0%, hsl(214 55% 18%) 100%);
+  }
+  .hero-band-klinmak {
+    background: linear-gradient(180deg, hsl(172 46% 37%) 0%, hsl(177 52% 28%) 100%);
+  }
+  .dark .hero-band-klinmak {
+    background: linear-gradient(180deg, hsl(174 46% 21%) 0%, hsl(178 50% 15%) 100%);
+  }
 }
