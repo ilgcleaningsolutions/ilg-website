@@ -57,6 +57,8 @@ export interface KlinmakDetail {
 
 export interface KlinmakProduct extends CarouselProduct {
   group: "joker" | "mini";
+  /** SKU in the Interlink CRM catalog — links this product into the CRM lead funnel */
+  sku: string;
   /** Full content for the product detail page (omit until built) */
   detail?: KlinmakDetail;
 }
@@ -65,6 +67,7 @@ export const klinmakProducts: KlinmakProduct[] = [
   // ====================  JOKER RANGE  ====================
   {
     slug: "joker-2040",
+    sku: "KLIN-JOKER2040",
     group: "joker",
     category: "Walk-behind floor scrubber",
     name: "Joker 2040",
@@ -187,6 +190,7 @@ export const klinmakProducts: KlinmakProduct[] = [
   },
   {
     slug: "joker-5070",
+    sku: "KLIN-JOKER5070",
     group: "joker",
     category: "Walk-behind floor scrubber",
     name: "Joker 5070",
@@ -312,6 +316,7 @@ export const klinmakProducts: KlinmakProduct[] = [
   // ====================  MINI RANGE  ====================
   {
     slug: "mini-1240",
+    sku: "KLIN-MINI1240",
     group: "mini",
     category: "Compact walk-behind floor scrubber",
     name: "Mini 1240",
@@ -428,6 +433,7 @@ export const klinmakProducts: KlinmakProduct[] = [
   },
   {
     slug: "mini-3050",
+    sku: "KLIN-MINI3050",
     group: "mini",
     category: "Compact walk-behind floor scrubber",
     name: "Mini 3050",
@@ -553,6 +559,7 @@ export const klinmakProducts: KlinmakProduct[] = [
   },
   {
     slug: "mini-3070",
+    sku: "KLIN-MINI3070",
     group: "mini",
     category: "Compact walk-behind floor scrubber",
     name: "Mini 3070",
