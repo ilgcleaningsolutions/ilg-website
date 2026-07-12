@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 /** Where enquiries are delivered, and the verified sender address.
     FROM must be on a domain verified in Resend (ilgcleaningsolutions.com is). */
 const TO = process.env.CONTACT_TO || "sales@ilgcleaningsolutions.com";
@@ -34,6 +32,11 @@ export async function POST(req: Request) {
       { status: 500 },
     );
   }
+
+  // Created lazily, only once we know the key exists — instantiating this at
+  // module scope throws during Next.js's build-time page-data collection
+  // whenever RESEND_API_KEY isn't set for that environment (e.g. Preview).
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   let data: Record<string, string>;
   try {
