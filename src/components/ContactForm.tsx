@@ -15,6 +15,7 @@ import {
   Layers,
 } from "lucide-react";
 import { toast } from "sonner";
+import { submitCrmLead } from "@/lib/crm";
 
 const INTEREST_OPTIONS = [
   "Floor Scrubber Dryers",
@@ -126,6 +127,21 @@ const ContactForm = () => {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || "Request failed");
       }
+
+      // Best-effort: also create the lead in Interlink. Never blocks or fails
+      // the form on top of the email above, which stays the source of truth.
+      submitCrmLead({
+        contact_name: `${form.firstName.trim()} ${form.lastName.trim()}`.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim() || undefined,
+        company: form.company.trim() || undefined,
+        product_interest: form.interest || undefined,
+        business_type: form.industry || undefined,
+        location: [form.postalCode.trim(), form.country.trim()].filter(Boolean).join(", ") || undefined,
+        comments: form.comments.trim() || undefined,
+      }).catch((error) => {
+        console.error("CRM lead sync failed:", error);
+      });
 
       toast.success("Thank you! We'll be in touch shortly.");
       setForm({

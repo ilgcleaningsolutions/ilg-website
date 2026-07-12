@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import ExploreOtherProducts from "@/components/ExploreOtherProducts";
 import ProductDiagram from "@/components/ProductDiagram";
+import LeadFunnelDialog from "@/components/LeadFunnelDialog";
 import {
   getTecnovapProduct,
   tecnovapProducts,
@@ -115,6 +116,18 @@ export default async function TecnovapProductPage({
                     ))}
                   </ul>
                 )}
+
+                {/* CTA — opens the in-page lead-capture funnel, submitted to the Interlink CRM */}
+                <LeadFunnelDialog productName={product.name}>
+                  <button
+                    type="button"
+                    className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-8 py-3.5 font-heading text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:gap-3 hover:bg-accent"
+                  >
+                    <MessageCircle size={16} />
+                    Talk to a Tecnovap expert
+                    <ArrowRight size={15} />
+                  </button>
+                </LeadFunnelDialog>
               </div>
             </div>
           </div>

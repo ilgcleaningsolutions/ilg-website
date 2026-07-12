@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, MessageCircle } from "lucide-react";
+import LeadFunnelDialog from "@/components/LeadFunnelDialog";
 
 /** Minimal shape the carousel needs — TecnovapProduct (and Klinmak data) both satisfy it. */
 export interface CarouselProduct {
@@ -73,7 +74,10 @@ const styles = {
   name: "font-display text-xl font-semibold text-foreground md:text-2xl",
   tagline:
     "mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base",
-  cta: "mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 font-heading text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:gap-3 hover:bg-accent",
+  ctaRow: "mt-6 flex flex-wrap items-center justify-center gap-3",
+  cta: "inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 font-heading text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:gap-3 hover:bg-accent",
+  ctaSecondary:
+    "inline-flex items-center gap-2 rounded-full border border-border px-7 py-3 font-heading text-sm font-semibold text-foreground/80 transition-all hover:gap-3 hover:border-primary/50",
 
   // Carousel outer wrapper — `lg:hidden` toggled inline when inlineDesktop
   carouselWrap: "lg:hidden",
@@ -200,12 +204,16 @@ const ProductCarousel = ({
                   {p.tagline}
                 </p>
                 {showCta && (p.hasDetail ?? true) && (
-                  <Link
-                    href={`/${brandSlug}/${p.slug}`}
-                    className={styles.cta}
-                  >
-                    See more <ArrowRight size={14} />
-                  </Link>
+                  <div className={styles.ctaRow}>
+                    <Link href={`/${brandSlug}/${p.slug}`} className={styles.cta}>
+                      See more <ArrowRight size={14} />
+                    </Link>
+                    <LeadFunnelDialog productName={p.name}>
+                      <button type="button" className={styles.ctaSecondary}>
+                        <MessageCircle size={14} /> Request info
+                      </button>
+                    </LeadFunnelDialog>
+                  </div>
                 )}
               </div>
             ))}
@@ -330,12 +338,16 @@ const ProductCarousel = ({
               {currentProduct.tagline}
             </p>
             {showCta && (currentProduct.hasDetail ?? true) && (
-              <Link
-                href={`/${brandSlug}/${currentProduct.slug}`}
-                className={styles.cta}
-              >
-                See more <ArrowRight size={14} />
-              </Link>
+              <div className={styles.ctaRow}>
+                <Link href={`/${brandSlug}/${currentProduct.slug}`} className={styles.cta}>
+                  See more <ArrowRight size={14} />
+                </Link>
+                <LeadFunnelDialog productName={currentProduct.name}>
+                  <button type="button" className={styles.ctaSecondary}>
+                    <MessageCircle size={14} /> Request info
+                  </button>
+                </LeadFunnelDialog>
+              </div>
             )}
           </motion.div>
         </AnimatePresence>

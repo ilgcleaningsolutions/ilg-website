@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle2, Leaf, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import ExploreOtherProducts from "@/components/ExploreOtherProducts";
+import LeadFunnelDialog from "@/components/LeadFunnelDialog";
 import { getKlinmakProduct, klinmakProducts } from "@/lib/klinmak-products";
 
 export function generateStaticParams() {
@@ -99,15 +100,17 @@ export default async function KlinmakProductPage({
                 ))}
               </ul>
 
-              {/* CTA */}
-              <Link
-                href="/#contact"
-                className="mt-8 inline-flex w-fit items-center gap-2 justify-self-start rounded-full bg-primary px-8 py-3.5 font-heading text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:gap-3 hover:bg-accent lg:col-start-2 lg:row-start-6"
-              >
-                <MessageCircle size={16} />
-                Talk to a KlinMak expert
-                <ArrowRight size={15} />
-              </Link>
+              {/* CTA — opens the in-page lead-capture funnel, submitted to the Interlink CRM */}
+              <LeadFunnelDialog productName={product.name}>
+                <button
+                  type="button"
+                  className="mt-8 inline-flex w-fit items-center gap-2 justify-self-start rounded-full bg-primary px-8 py-3.5 font-heading text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:gap-3 hover:bg-accent lg:col-start-2 lg:row-start-6"
+                >
+                  <MessageCircle size={16} />
+                  Talk to a KlinMak expert
+                  <ArrowRight size={15} />
+                </button>
+              </LeadFunnelDialog>
             </div>
           </div>
         </section>
