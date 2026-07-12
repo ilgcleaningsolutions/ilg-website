@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useTranslations } from "next-intl";
 import ContactForm from "./ContactForm";
 
 interface ContactSectionProps {
@@ -43,6 +44,7 @@ const ContactSection = ({
   subtitle = "Ready to elevate your cleaning operations?",
   brandContext,
 }: ContactSectionProps) => {
+  const t = useTranslations("ContactSection");
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.container}>
@@ -78,7 +80,7 @@ const ContactSection = ({
                 </div>
                 <div>
                   <p className={styles.contactLabel}>
-                    Email Us
+                    {t("emailUs")}
                   </p>
                   <p className={styles.contactValue}>
                     sales@ilgcleaningsolutions.com
@@ -95,7 +97,7 @@ const ContactSection = ({
                 </div>
                 <div>
                   <p className={styles.contactLabel}>
-                    Call Us
+                    {t("callUs")}
                   </p>
                   <p className={styles.contactValue}>
                     +1 (234) 567-890
@@ -109,10 +111,10 @@ const ContactSection = ({
                 </div>
                 <div>
                   <p className={styles.contactLabel}>
-                    Visit Us
+                    {t("visitUs")}
                   </p>
                   <p className={styles.contactValue}>
-                    Puerto Rico, USA
+                    {t("location")}
                   </p>
                 </div>
               </div>

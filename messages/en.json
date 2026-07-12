@@ -1,0 +1,340 @@
+{
+  "Metadata": {
+    "title": "ILG Cleaning Services — Industrial Cleaning Solutions",
+    "description": "Professional cleaning solutions powered by industry-leading brands. Authorized reseller for Klinmak and Tecnovap."
+  },
+  "Header": {
+    "nav": {
+      "home": "Home"
+    },
+    "desc": {
+      "klinmak": "Floor Scrubber Dryers",
+      "tecnovap": "Steam Cleaning Systems"
+    },
+    "switchLanguage": "Switch language",
+    "toggleTheme": "Toggle theme",
+    "contact": "Contact Us",
+    "toggleMenu": "Toggle menu",
+    "toggleProducts": "Toggle {brand} products"
+  },
+  "Home": {
+    "contactHeading": "Looking for Professional Cleaning Equipment?",
+    "contactSubtitle": "ILG helps customers find the best premium cleaning brands. Get in touch and we'll help you find the perfect solution.",
+    "contactBrandContext": "Whether you need floor scrubbing machines from Klinmak or industrial steam cleaners from Tecnovap, our team is ready to assist with consultation, quotes, and after-sales support."
+  },
+  "BrandPage": {
+    "videoTitle": "{brand} video",
+    "whyChoose": "Why Choose {brand}",
+    "whyChooseSubtitle": "Discover the advantages that set {brand} apart in the professional cleaning industry",
+    "productsHeading": "{brand} Products",
+    "productsSubtitle": "Explore our full range of professional cleaning equipment",
+    "productImage": "Product Image",
+    "learnMore": "Learn More"
+  },
+  "KlinmakPage": {
+    "heroTitle": "New standards in sustainable cleaning",
+    "heroSubtitle": "KlinMak® floor scrubber-dryers represent a new frontier in professional cleaning efficiency, combining maximum performance and reduced energy consumption.",
+    "jokerCategory": "Walk-behind floor scrubbers",
+    "jokerTitle": "Joker range",
+    "jokerLeft": [
+      "Klinmak's walk-behind industrial floor scrubbers combine ergonomic design with high performance, delivering professional cleaning results even in medium-sized spaces.",
+      "Easy to operate, they ensure spotless floors with minimal effort."
+    ],
+    "jokerRight": [
+      "All our machines are ready to use and come complete with lithium battery and charger, 2 or 4 brushes, and a standard Hepa H13 filter.",
+      "The range includes 3 models with 50-liter tanks and cleaning paths from 40 cm to 70 cm."
+    ],
+    "miniCategory": "Compact walk-behind floor scrubbers",
+    "miniTitle": "Mini range",
+    "miniLeft": [
+      "Klinmak's compact walk-behind floor scrubbers are the perfect choice for narrow or hard-to-reach spaces.",
+      "Thanks to advanced technology and a modular design, they deliver flawless results while ensuring energy savings and ease of use."
+    ],
+    "miniRight": [
+      "All machines are also available complete with lithium battery and charger, equipped with 2 or 4 brushes and a standard Hepa H13 filter.",
+      "The range includes 3 models, from 12 to 30 liters, with cleaning paths from 40 to 70 cm."
+    ],
+    "footerMeetLead": "Meet",
+    "footerPara1": "Klinmak is the ideal partner for companies looking for cutting-edge solutions in professional floor cleaning. Our machines combine Italian craftsmanship with innovative technology to deliver exceptional cleaning results.",
+    "footerPara2": "Founded in 2014, we have established ourselves as a leading Italian manufacturer based in Milan province. We specialize in professional and industrial floor scrubbers, offering 100% Made in Italy solutions distributed globally through selected partners across hospitality, healthcare, retail, and industrial sectors.",
+    "footerWhatSetsApart": "What Sets Us Apart",
+    "setsApart": [
+      "Modular machines with advanced technology",
+      "Reduced energy consumption",
+      "High reliability and performance",
+      "Immediate machine availability",
+      "Lithium batteries included",
+      "3-year warranty coverage"
+    ]
+  },
+  "TecnovapPage": {
+    "heroTitle": "Choose the Future of Cleaning",
+    "heroSubtitle": "World leading manufacturer of high‑quality steam cleaners",
+    "seeMore": "See more",
+    "values": [
+      "Quality in products and in the commercial relationships we establish — technical support that makes our steam cleaners truly valuable and durable",
+      "Continuous innovation in the steam cleaning sector, creating new technologies to meet every customer need",
+      "Protection of the environment, with a cleaning method that has a reduced environmental footprint compared to traditional techniques",
+      "Trust, reliability and respect in all internal and external relationships"
+    ],
+    "footerMeetLead": "Meet",
+    "footerPara1": "Founded in 1985 in Negrar di Valpolicella (Verona) as a small family-run artisan business with a clear objective: to produce boilers for steam generators with technologies that were already cutting-edge for that time.",
+    "footerPara2": "With 40 years of experience, the company continues to proceed towards constant improvement of its products and affirms its firm presence not only in the domestic sphere, but also in the professional and industrial sectors. Tecnovap is a leading company in the steam cleaning sector among the domestic and foreign companies it works with.",
+    "footerValuesTitle": "Our Values"
+  },
+  "ProductDetail": {
+    "backTo": "Back to {brand}",
+    "talkToExpert": "Talk to a {brand} expert",
+    "seeItInAction": "See it in action",
+    "mainFeatures": "Main Features",
+    "technicalSpecifications": "Technical Specifications",
+    "specHeadingLead": "Built for performance,",
+    "specHeadingAccent": "spec by spec.",
+    "exploreOther": "Explore other {brand} products",
+    "videoTitle": "{name} video",
+    "idealFor": "Ideal for",
+    "keyFeatures": "Key features",
+    "specificationColumn": "Specification",
+    "sustainableTitle": "A <accent>sustainable</accent> commitment"
+  },
+  "NotFound": {
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  },
+  "Footer": {
+    "brandBlurb": "Professional cleaning solutions powered by industry-leading brands.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "contactUs": "Contact Us",
+    "getInTouch": "Get in Touch",
+    "copyright": "© {year} ILG Cleaning Services. All rights reserved.",
+    "builtWith": "Built with",
+    "by": "by"
+  },
+  "Hero": {
+    "eyebrowLeft": "Exclusive Distributor",
+    "eyebrowRight": "Industrial / Certified",
+    "titleLead": "Professional",
+    "titleLine2": "Cleaning Equipment",
+    "titleEmphasis": "You Can Trust",
+    "subtitle": "ILG brings you a focused portfolio of industry-leading cleaning machinery — silent floor care from Klinmak, chemical-free steam from Tecnovap.",
+    "pill": "Shared Mission. Complementary Solutions. Exceptional Results.",
+    "stickerAlt": "ILG — Two Powerful Brands, One Trusted Partner",
+    "tecnovapProductAlt": "Tecnovap product range",
+    "klinmakProductAlt": "Klinmak product range",
+    "exploreTecnovap": "Explore Tecnovap",
+    "exploreKlinmak": "Explore Klinmak",
+    "taglineLead": "Different Technologies. One Goal:",
+    "taglineAccent": "Cleaner, Safer, Smarter Environments.",
+    "featureChemFree": "Chemical-Free Steam Power",
+    "featureSanitize": "Sanitizes Without Compromise",
+    "featureSustainable": "Sustainable By Design",
+    "featurePerformance247": "Built For 24/7 Performance",
+    "featureSilent": "Ultra-Silent Operation",
+    "featureFloorCare": "Superior Floor Care",
+    "featureWarranty": "3-Year Battery Warranty",
+    "featureReliable": "Reliable. Durable. Easy To Use."
+  },
+  "ContactSection": {
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
+    "visitUs": "Visit Us",
+    "location": "Puerto Rico, USA"
+  },
+  "ContactForm": {
+    "interestPlaceholder": "Interested system *",
+    "firstNamePlaceholder": "First Name *",
+    "lastNamePlaceholder": "Last Name *",
+    "companyPlaceholder": "Company Name *",
+    "emailPlaceholder": "Work Email *",
+    "postalCodePlaceholder": "Postal Code *",
+    "phonePlaceholder": "Phone *",
+    "countryPlaceholder": "Country *",
+    "industryPlaceholder": "Industry *",
+    "commentsPlaceholder": "Comments",
+    "requiredError": "Please fill in all required fields.",
+    "invalidEmail": "Please enter a valid email address.",
+    "successMessage": "Thank you! We'll be in touch shortly.",
+    "errorMessage": "Sorry, something went wrong. Please try again or email sales@ilgcleaningsolutions.com.",
+    "sending": "Sending...",
+    "sendMessage": "Send Message"
+  },
+  "Industries": {
+    "modalCard": {
+      "title": "Industries We Serve",
+      "desc": "Trusted across 9+ demanding sectors."
+    },
+    "modal": {
+      "title": "Industries We Serve",
+      "desc": "From healthcare to heavy industry — trusted across the sectors that demand reliable, professional-grade cleaning."
+    },
+    "industries": {
+      "offices": "Offices & public buildings",
+      "transport": "Transport",
+      "healthcare": "Healthcare",
+      "foodService": "Food service",
+      "warehouses": "Warehouses",
+      "manufacturing": "Manufacturing",
+      "cleaningCompanies": "Cleaning companies",
+      "hospitality": "Hospitality",
+      "retail": "Retail"
+    },
+    "cards": {
+      "premiumEquipment": {
+        "title": "Premium Equipment",
+        "desc": "Powered by industry-leading trusted brands."
+      },
+      "warranty": {
+        "title": "36-Month Warranty",
+        "desc": "On every Klinmak lithium battery."
+      },
+      "accessories": {
+        "title": "100+ Accessories",
+        "desc": "Designed for all cleaning tasks."
+      }
+    }
+  },
+  "SteamCleaners": {
+    "eyebrow": "About Steam Cleaners",
+    "headingLead": "Certified disinfection,",
+    "headingAccent": "endless applications.",
+    "cert": {
+      "label": "Certification",
+      "badge": "Standard NF T72-110",
+      "titleLead": "Certified efficiency for",
+      "titleAccent": "Steam Disinfection",
+      "titleTail": "Devices",
+      "body": "Our EVO models are classified as <strong>S.D.D. (Steam Disinfection Devices)</strong> in accordance with the AFNOR NF T72-110 standard — validated under rigorous laboratory protocols to sanitise with dry steam alone.",
+      "footerLabel": "Authorised Body",
+      "footerValue": "AFNOR Group France",
+      "sealAlt": "AFNOR NF T72-110 certification"
+    },
+    "app": {
+      "label": "Remote Control",
+      "no": "No. 01",
+      "body": "Full Bluetooth control — monitor boiler pressure and steam temperature in real time from any device.",
+      "chipTitle": "Connected cleaning",
+      "chipMeta": "Pairs in seconds"
+    },
+    "photoCards": {
+      "noLabel": "No.",
+      "healthcare": {
+        "title": "Healthcare",
+        "desc": "Sterile environments & clinical-grade sanitation."
+      },
+      "horeca": {
+        "title": "Ho.Re.Ca. & Household",
+        "desc": "Hotels, restaurants, cafés & household luxury."
+      },
+      "foodMechanical": {
+        "title": "Food & Mechanical",
+        "desc": "Conveyor-belt integration · Heavy transport de-greasing."
+      },
+      "ecological": {
+        "title": "Ecological & Outdoor",
+        "desc": "Car wash · Wineries · Weed killing · Pest control."
+      }
+    }
+  },
+  "KlinmakWhyChoose": {
+    "heading": "Why choose <accent>KlinMak</accent>?",
+    "continuousImprovementTitle": "Continuous improvement",
+    "continuousImprovementBody": "For us, innovating means <strong>creating new machines</strong>, different from all existing ones. It is a demanding job, but we do it with passion — and we have shown that we know how.",
+    "twoOrFourBrushesTitle": "Two or four brushes",
+    "twoOrFourBrushesBody": "All our machines <strong>(excluding vibrating ones)</strong> have <strong>two or four brushes</strong> thanks to the unique KlinMak mechanism (patented). Cleaning is significantly better than with a single brush.",
+    "lithiumBatteriesTitle": "Lithium batteries as standard",
+    "lithiumBatteriesBody": "Our floor scrubber-dryers use <strong>only lithium batteries</strong>, halving the weight, improving <strong>handling</strong> and speeding up <strong>recharging</strong>.",
+    "lowMaintenanceTitle": "Low maintenance costs",
+    "lowMaintenanceBody": "We use only <strong>high-quality components</strong>, reducing maintenance activities — resulting in both <strong>time and money</strong> savings.",
+    "immediateAvailabilityTitle": "Immediate availability",
+    "immediateAvailabilityBody": "Whether you need a machine or <strong>spare parts</strong>, we deliver <strong>quickly</strong> — keeping your operations running without downtime.",
+    "technicalSupportTitle": "Always-available technical support",
+    "technicalSupportBody": "Have a question or an issue? You can <strong>contact us anytime, every day</strong> — expert technical support is always within reach.",
+    "extendedWarrantyTitle": "Extended warranty",
+    "extendedWarrantyBody": "Our machines in the <strong>Joker range</strong> are covered by a <strong>36-month warranty</strong>.",
+    "minimumNoiseTitle": "Minimum noise",
+    "minimumNoiseBody": "Our machines are <strong>extremely quiet</strong>, perfect for environments where noise is a problem, such as <strong>hospitals, offices, supermarkets…</strong>",
+    "energySavingTitle": "Energy saving",
+    "energySavingBody": "Our machines use very little energy and, thanks to <strong>lithium batteries</strong>, you save <strong>time and money</strong>."
+  },
+  "KlinmakProductsBanner": {
+    "eyebrow": "Products",
+    "headline": "Each of our products is designed to meet the needs of hygiene and <accent>sustainability</accent> — a concrete, tangible commitment that goes beyond mere words."
+  },
+  "KlinmakRangeHeader": {},
+  "TecnovapBenefits": {
+    "eyebrow": "Dry Vapor Steam Technology",
+    "headlinePre": "Discover the benefits of using",
+    "headlineAccent": "Tecnovap steam generators",
+    "headlinePost": "for your application",
+    "explainerHeading1": "The most advanced deep-cleaning technology",
+    "explainerBody1a": "Dry steam cleaners use superheated steam with an incredibly low moisture content to blast dirt, grease, soils and debris from surfaces — leaving them virtually dry and free of residual moisture, without harsh chemicals. The same heat also removes bacteria, allergens and mold on contact. Ideal for chemical-free",
+    "explainerBody1Em": "dry cleaning",
+    "explainerBody1b": "in bakeries, snack production plants and manufacturing facilities where degreasing and surface sanitation are essential.",
+    "explainerHeading2": "How well do dry vapor steam cleaners work?",
+    "explainerBody2a": "Dry vapor steam cleaners deliver all the cleaning and sanitizing power of wet steam, but with only ~5% moisture content. They kill germs on contact and blast debris from any surface in their path — heating tap water in the boiler to",
+    "explainerBody2b": "and producing dry vapor steam at an adjustable pressure of up to",
+    "explainerBody2c": "and an output temperature of",
+    "statBoilerLabel": "Boiler temperature",
+    "statOutputLabel": "Output temperature",
+    "statPressureLabel": "Adjustable pressure",
+    "statMoistureLabel": "Moisture content"
+  },
+  "TecnovapProductsBanner": {
+    "eyebrow": "Products",
+    "headlinePre": "Compact, reliable steam cleaners for",
+    "headlineAccent": "professional use"
+  },
+  "TecnovapSystemsBanner": {
+    "eyebrow": "Systems",
+    "headlinePre": "Industrial-grade steam",
+    "headlineAccent": "systems",
+    "headlinePost": "for the most demanding environments."
+  },
+  "TecnovapBeltCleaningBanner": {
+    "eyebrow": "Belt Cleaning Systems",
+    "headlinePre": "Clean flat conveyor belts with",
+    "headlineAccent": "dry-steam precision.",
+    "lead": "Save labor and time with ILG Cleaning Solutions conveyor-belt cleaning systems — designed for bakery, snacks, confectionery, pharmaceutical, and any other industrial conveying line that demands the highest level of cleaning and hygiene.",
+    "column1Heading": "How it works",
+    "column1Body1a": "The system uses the power of",
+    "column1Body1Em": "dry",
+    "column1Body1b": "steam to quickly remove allergens, mold, glaze, oil overspray, bacteria, fats, grime, and soils. A connected vacuum system extracts the emulsified soils, leaving the belt clean and dry.",
+    "column1Body2": "Dry-steam belt cleaning saves labor, decreases sanitation time, and increases productivity with faster changeovers.",
+    "column2HeadingPre": "Built around",
+    "column2HeadingAccent": "your line",
+    "column2Body1": "Each conveyor-belt cleaning system can be customized to meet your exact requirements — ideal for large or small manufacturers running multiple product lines.",
+    "column2Body2": "State-of-the-art solutions, deployed worldwide to keep flat conveyor belts hygienic, compliant, and ready for the next run.",
+    "benefitsLabel": "Key Benefits",
+    "benefit1": "Designed for cleaning flat conveyor-belt systems",
+    "benefit2": "Dry steam with vacuum extraction for quick cleaning and sanitation",
+    "benefit3": "Low-moisture \"dry\" solution",
+    "benefit4": "Leaves belts dry and ready for sanitation",
+    "benefit5": "Removes allergens, mold, glaze, oil overspray, bacteria, fats, grime, and soils",
+    "benefit6": "Removes adhesives, oils, and paper residues",
+    "benefit7": "Reduces belt-cleaning labor costs",
+    "benefit8": "Improves production-line flexibility and changeover times",
+    "benefit9": "Helps meet stringent quality and FSMA requirements"
+  },
+  "ProductShowcase": {
+    "mainFeatures": "Main Features",
+    "viewSpecifications": "View Specifications",
+    "specifications": "Specifications"
+  },
+  "ProductCarousel": {
+    "seeMore": "See more",
+    "previousNamed": "Previous: {name}",
+    "nextNamed": "Next: {name}",
+    "previousProduct": "Previous product",
+    "nextProduct": "Next product",
+    "goTo": "Go to {name}"
+  },
+  "ProductDiagram": {
+    "debugHint": "debug: click anywhere → coords logged & copied",
+    "debugLast": "last:"
+  },
+  "ExploreOtherProducts": {
+    "previousProducts": "Previous products",
+    "nextProducts": "Next products"
+  }
+}

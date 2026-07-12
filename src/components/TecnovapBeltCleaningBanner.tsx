@@ -2,17 +2,18 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-const benefits = [
-  "Designed for cleaning flat conveyor-belt systems",
-  "Dry steam with vacuum extraction for quick cleaning and sanitation",
-  'Low-moisture "dry" solution',
-  "Leaves belts dry and ready for sanitation",
-  "Removes allergens, mold, glaze, oil overspray, bacteria, fats, grime, and soils",
-  "Removes adhesives, oils, and paper residues",
-  "Reduces belt-cleaning labor costs",
-  "Improves production-line flexibility and changeover times",
-  "Helps meet stringent quality and FSMA requirements",
+const benefitKeys = [
+  "benefit1",
+  "benefit2",
+  "benefit3",
+  "benefit4",
+  "benefit5",
+  "benefit6",
+  "benefit7",
+  "benefit8",
+  "benefit9",
 ];
 
 /* Tailwind class names, grouped by the element they style. */
@@ -61,6 +62,7 @@ const styles = {
 } as const;
 
 const TecnovapBeltCleaningBanner = () => {
+  const t = useTranslations("TecnovapBeltCleaningBanner");
   return (
     <section className={styles.section}>
       {/* Ambient blobs */}
@@ -83,7 +85,7 @@ const TecnovapBeltCleaningBanner = () => {
           className={styles.eyebrow}
         >
           <span className={styles.eyebrowRule} />
-          Belt Cleaning Systems
+          {t("eyebrow")}
           <span className={styles.eyebrowRule} />
         </motion.p>
 
@@ -95,8 +97,8 @@ const TecnovapBeltCleaningBanner = () => {
           transition={{ duration: 0.7, delay: 0.05 }}
           className={styles.headline}
         >
-          Clean flat conveyor belts with{" "}
-          <span className={styles.headlineAccent}>dry-steam precision.</span>
+          {t("headlinePre")}{" "}
+          <span className={styles.headlineAccent}>{t("headlineAccent")}</span>
         </motion.h2>
 
         {/* Lead paragraph */}
@@ -107,10 +109,7 @@ const TecnovapBeltCleaningBanner = () => {
           transition={{ duration: 0.6, delay: 0.15 }}
           className={styles.lead}
         >
-          Save labor and time with ILG&nbsp;Cleaning&nbsp;Solutions conveyor-belt
-          cleaning systems — designed for bakery, snacks, confectionery,
-          pharmaceutical, and any other industrial conveying line that demands
-          the highest level of cleaning and hygiene.
+          {t("lead")}
         </motion.p>
 
         {/* Divider */}
@@ -125,17 +124,14 @@ const TecnovapBeltCleaningBanner = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h3 className={styles.columnHeading}>
-              How it works
+              {t("column1Heading")}
             </h3>
             <p className={styles.columnBody}>
-              The system uses the power of <em>dry</em> steam to quickly remove
-              allergens, mold, glaze, oil overspray, bacteria, fats, grime, and
-              soils. A connected vacuum system extracts the emulsified soils,
-              leaving the belt clean and dry.
+              {t("column1Body1a")} <em>{t("column1Body1Em")}</em>{" "}
+              {t("column1Body1b")}
             </p>
             <p className={styles.columnBody}>
-              Dry-steam belt cleaning saves labor, decreases sanitation time,
-              and increases productivity with faster changeovers.
+              {t("column1Body2")}
             </p>
           </motion.div>
 
@@ -146,17 +142,14 @@ const TecnovapBeltCleaningBanner = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className={styles.columnHeading}>
-              Built around{" "}
-              <span className={styles.columnHeadingAccent}>your line</span>
+              {t("column2HeadingPre")}{" "}
+              <span className={styles.columnHeadingAccent}>{t("column2HeadingAccent")}</span>
             </h3>
             <p className={styles.columnBody}>
-              Each conveyor-belt cleaning system can be customized to meet your
-              exact requirements — ideal for large or small manufacturers
-              running multiple product lines.
+              {t("column2Body1")}
             </p>
             <p className={styles.columnBody}>
-              State-of-the-art solutions, deployed worldwide to keep flat
-              conveyor belts hygienic, compliant, and ready for the next run.
+              {t("column2Body2")}
             </p>
           </motion.div>
         </div>
@@ -170,19 +163,19 @@ const TecnovapBeltCleaningBanner = () => {
           className={styles.benefitsWrap}
         >
           <p className={styles.benefitsLabel}>
-            Key Benefits
+            {t("benefitsLabel")}
           </p>
           <ul className={styles.benefitsList}>
-            {benefits.map((b) => (
+            {benefitKeys.map((key) => (
               <li
-                key={b}
+                key={key}
                 className={styles.benefitItem}
               >
                 <CheckCircle
                   size={18}
                   className={styles.benefitIcon}
                 />
-                <span>{b}</span>
+                <span>{t(key)}</span>
               </li>
             ))}
           </ul>

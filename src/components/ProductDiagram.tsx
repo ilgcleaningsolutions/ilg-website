@@ -3,7 +3,14 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import type { ProductPart } from "@/lib/tecnovap-products";
+import { useTranslations } from "next-intl";
+/** Resolved hotspot shape (locale already applied) — mirrors the data's ProductPart with plain strings. */
+interface ProductPart {
+  x: number;
+  y: number;
+  label: string;
+  description?: string;
+}
 
 /* ============================================================
    Tailwind class names, grouped by the element they style.
@@ -71,6 +78,7 @@ const ProductDiagram = ({
   imageHeight,
   className,
 }: ProductDiagramProps) => {
+  const t = useTranslations("ProductDiagram");
   const [active, setActive] = useState<number | null>(null);
   // Debug mode is opt-in via `?debug=hotspots` on the URL. When on, clicking
   // anywhere on the image logs and clipboards the percentage coordinates so the
@@ -157,10 +165,10 @@ const ProductDiagram = ({
         {debug && (
           <>
             <div className={styles.debugReadout}>
-              debug: click anywhere → coords logged & copied
+              {t("debugHint")}
               {lastClick && (
                 <span className={styles.debugLast}>
-                  last: {lastClick.x}, {lastClick.y}
+                  {t("debugLast")} {lastClick.x}, {lastClick.y}
                 </span>
               )}
             </div>

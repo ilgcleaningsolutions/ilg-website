@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import {
   Building2,
   Bus,
@@ -24,35 +25,23 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const industries = [
-  { icon: Building2, label: "Offices & public buildings" },
-  { icon: Bus, label: "Transport" },
-  { icon: HeartPulse, label: "Healthcare" },
-  { icon: UtensilsCrossed, label: "Food service" },
-  { icon: Warehouse, label: "Warehouses" },
-  { icon: Factory, label: "Manufacturing" },
-  { icon: SprayCan, label: "Cleaning companies" },
-  { icon: Hotel, label: "Hospitality" },
-  { icon: Store, label: "Retail" },
+const industries: { icon: LucideIcon; id: string }[] = [
+  { icon: Building2, id: "offices" },
+  { icon: Bus, id: "transport" },
+  { icon: HeartPulse, id: "healthcare" },
+  { icon: UtensilsCrossed, id: "foodService" },
+  { icon: Warehouse, id: "warehouses" },
+  { icon: Factory, id: "manufacturing" },
+  { icon: SprayCan, id: "cleaningCompanies" },
+  { icon: Hotel, id: "hospitality" },
+  { icon: Store, id: "retail" },
 ];
 
 /* The three non-modal cards */
-const cards: { icon: LucideIcon; title: string; desc: string }[] = [
-  {
-    icon: Sparkles,
-    title: "Premium Equipment",
-    desc: "Powered by industry-leading trusted brands.",
-  },
-  {
-    icon: BatteryCharging,
-    title: "36-Month Warranty",
-    desc: "On every Klinmak lithium battery.",
-  },
-  {
-    icon: Package,
-    title: "100+ Accessories",
-    desc: "Designed for all cleaning tasks.",
-  },
+const cards: { icon: LucideIcon; id: string }[] = [
+  { icon: Sparkles, id: "premiumEquipment" },
+  { icon: BatteryCharging, id: "warranty" },
+  { icon: Package, id: "accessories" },
 ];
 
 /* ============================================================
@@ -88,6 +77,7 @@ const styles = {
 } as const;
 
 const IndustriesHighlights = () => {
+  const t = useTranslations("Industries");
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -106,10 +96,10 @@ const IndustriesHighlights = () => {
                   <Building2 size={26} strokeWidth={1.75} />
                 </div>
                 <h3 className={styles.cardTitle}>
-                  Industries We Serve
+                  {t("modalCard.title")}
                 </h3>
                 <p className={styles.cardDesc}>
-                  Trusted across 9+ demanding sectors.
+                  {t("modalCard.desc")}
                 </p>
               </button>
             </DialogTrigger>
@@ -120,23 +110,22 @@ const IndustriesHighlights = () => {
                   <Building2 size={26} />
                 </div>
                 <DialogTitle className={styles.dialogTitle}>
-                  Industries We Serve
+                  {t("modal.title")}
                 </DialogTitle>
                 <DialogDescription className={styles.dialogDescription}>
-                  From healthcare to heavy industry — trusted across the sectors that
-                  demand reliable, professional-grade cleaning.
+                  {t("modal.desc")}
                 </DialogDescription>
               </div>
 
               <div className={styles.industryGrid}>
-                {industries.map(({ icon: Icon, label }) => (
+                {industries.map(({ icon: Icon, id }) => (
                   <div
-                    key={label}
+                    key={id}
                     className={styles.industryTile}
                   >
                     <Icon size={20} className={styles.industryIcon} />
                     <span className={styles.industryLabel}>
-                      {label}
+                      {t(`industries.${id}`)}
                     </span>
                   </div>
                 ))}
@@ -145,16 +134,16 @@ const IndustriesHighlights = () => {
           </Dialog>
 
           {/* Cards 2–4 */}
-          {cards.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className={styles.card}>
+          {cards.map(({ icon: Icon, id }) => (
+            <div key={id} className={styles.card}>
               <div className={styles.iconBadge}>
                 <Icon size={26} strokeWidth={1.75} />
               </div>
               <h3 className={styles.cardTitle}>
-                {title}
+                {t(`cards.${id}.title`)}
               </h3>
               <p className={styles.cardDesc}>
-                {desc}
+                {t(`cards.${id}.desc`)}
               </p>
             </div>
           ))}

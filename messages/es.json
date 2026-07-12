@@ -1,0 +1,340 @@
+{
+  "Metadata": {
+    "title": "ILG Cleaning Services — Soluciones de Limpieza Industrial",
+    "description": "Soluciones de limpieza profesionales impulsadas por marcas líderes del sector. Distribuidor autorizado de Klinmak y Tecnovap."
+  },
+  "Header": {
+    "nav": {
+      "home": "Inicio"
+    },
+    "desc": {
+      "klinmak": "Fregadoras-secadoras de suelos",
+      "tecnovap": "Sistemas de limpieza a vapor"
+    },
+    "switchLanguage": "Cambiar idioma",
+    "toggleTheme": "Cambiar tema",
+    "contact": "Contáctenos",
+    "toggleMenu": "Alternar menú",
+    "toggleProducts": "Mostrar productos de {brand}"
+  },
+  "Home": {
+    "contactHeading": "¿Busca equipos de limpieza profesionales?",
+    "contactSubtitle": "ILG ayuda a sus clientes a encontrar las mejores marcas premium de limpieza. Póngase en contacto y le ayudaremos a encontrar la solución perfecta.",
+    "contactBrandContext": "Ya sea que necesite fregadoras de suelos de Klinmak o limpiadores de vapor industriales de Tecnovap, nuestro equipo está listo para ayudarle con asesoramiento, presupuestos y soporte posventa."
+  },
+  "BrandPage": {
+    "videoTitle": "Vídeo de {brand}",
+    "whyChoose": "Por qué elegir {brand}",
+    "whyChooseSubtitle": "Descubra las ventajas que distinguen a {brand} en el sector de la limpieza profesional",
+    "productsHeading": "Productos {brand}",
+    "productsSubtitle": "Explore nuestra gama completa de equipos de limpieza profesionales",
+    "productImage": "Imagen del producto",
+    "learnMore": "Más información"
+  },
+  "KlinmakPage": {
+    "heroTitle": "Nuevos estándares en limpieza sostenible",
+    "heroSubtitle": "Las fregadoras-secadoras de suelos KlinMak® representan una nueva frontera en la eficiencia de la limpieza profesional, combinando el máximo rendimiento con un consumo energético reducido.",
+    "jokerCategory": "Fregadoras de suelos de conductor a pie",
+    "jokerTitle": "Gama Joker",
+    "jokerLeft": [
+      "Las fregadoras de suelos industriales de conductor a pie de Klinmak combinan un diseño ergonómico con un alto rendimiento, ofreciendo resultados de limpieza profesionales incluso en espacios de tamaño medio.",
+      "Fáciles de manejar, garantizan suelos impecables con el mínimo esfuerzo."
+    ],
+    "jokerRight": [
+      "Todas nuestras máquinas están listas para usar e incluyen batería de litio y cargador, 2 o 4 cepillos y un filtro Hepa H13 estándar.",
+      "La gama incluye 3 modelos con depósitos de 50 litros y anchos de trabajo de 40 cm a 70 cm."
+    ],
+    "miniCategory": "Fregadoras de suelos compactas de conductor a pie",
+    "miniTitle": "Gama Mini",
+    "miniLeft": [
+      "Las fregadoras de suelos compactas de conductor a pie de Klinmak son la elección perfecta para espacios estrechos o de difícil acceso.",
+      "Gracias a una tecnología avanzada y un diseño modular, ofrecen resultados impecables garantizando el ahorro de energía y la facilidad de uso."
+    ],
+    "miniRight": [
+      "Todas las máquinas también están disponibles con batería de litio y cargador, equipadas con 2 o 4 cepillos y un filtro Hepa H13 estándar.",
+      "La gama incluye 3 modelos, de 12 a 30 litros, con anchos de trabajo de 40 a 70 cm."
+    ],
+    "footerMeetLead": "Conoce",
+    "footerPara1": "Klinmak es el socio ideal para las empresas que buscan soluciones de vanguardia en la limpieza profesional de suelos. Nuestras máquinas combinan la artesanía italiana con una tecnología innovadora para ofrecer resultados de limpieza excepcionales.",
+    "footerPara2": "Fundada en 2014, nos hemos consolidado como un fabricante italiano líder con sede en la provincia de Milán. Nos especializamos en fregadoras de suelos profesionales e industriales, ofreciendo soluciones 100 % fabricadas en Italia y distribuidas a nivel mundial a través de socios seleccionados en los sectores de la hostelería, la sanidad, el comercio minorista y la industria.",
+    "footerWhatSetsApart": "Qué nos distingue",
+    "setsApart": [
+      "Máquinas modulares con tecnología avanzada",
+      "Consumo energético reducido",
+      "Alta fiabilidad y rendimiento",
+      "Disponibilidad inmediata de las máquinas",
+      "Baterías de litio incluidas",
+      "Cobertura de garantía de 3 años"
+    ]
+  },
+  "TecnovapPage": {
+    "heroTitle": "Elija el futuro de la limpieza",
+    "heroSubtitle": "Fabricante líder mundial de limpiadores de vapor de alta calidad",
+    "seeMore": "Ver más",
+    "values": [
+      "Calidad en los productos y en las relaciones comerciales que establecemos: un soporte técnico que hace que nuestros limpiadores de vapor sean realmente valiosos y duraderos",
+      "Innovación continua en el sector de la limpieza a vapor, creando nuevas tecnologías para satisfacer todas las necesidades de los clientes",
+      "Protección del medio ambiente, con un método de limpieza que tiene una huella ambiental reducida en comparación con las técnicas tradicionales",
+      "Confianza, fiabilidad y respeto en todas las relaciones internas y externas"
+    ],
+    "footerMeetLead": "Conoce",
+    "footerPara1": "Fundada en 1985 en Negrar di Valpolicella (Verona) como un pequeño negocio artesanal familiar con un objetivo claro: producir calderas para generadores de vapor con tecnologías que ya eran de vanguardia para la época.",
+    "footerPara2": "Con 40 años de experiencia, la empresa continúa avanzando hacia la mejora constante de sus productos y afirma su firme presencia no solo en el ámbito doméstico, sino también en los sectores profesional e industrial. Tecnovap es una empresa líder en el sector de la limpieza a vapor entre las empresas nacionales y extranjeras con las que trabaja.",
+    "footerValuesTitle": "Nuestros valores"
+  },
+  "ProductDetail": {
+    "backTo": "Volver a {brand}",
+    "talkToExpert": "Hable con un experto de {brand}",
+    "seeItInAction": "Míralo en acción",
+    "mainFeatures": "Características principales",
+    "technicalSpecifications": "Especificaciones técnicas",
+    "specHeadingLead": "Diseñado para el rendimiento,",
+    "specHeadingAccent": "especificación a especificación.",
+    "exploreOther": "Descubra otros productos de {brand}",
+    "videoTitle": "Vídeo de {name}",
+    "idealFor": "Ideal para",
+    "keyFeatures": "Características clave",
+    "specificationColumn": "Especificación",
+    "sustainableTitle": "Un compromiso <accent>sostenible</accent>"
+  },
+  "NotFound": {
+    "message": "¡Ups! Página no encontrada",
+    "returnHome": "Volver al inicio"
+  },
+  "Footer": {
+    "brandBlurb": "Soluciones de limpieza profesionales impulsadas por marcas líderes del sector.",
+    "quickLinks": "Enlaces rápidos",
+    "home": "Inicio",
+    "contactUs": "Contáctenos",
+    "getInTouch": "Póngase en contacto",
+    "copyright": "© {year} ILG Cleaning Services. Todos los derechos reservados.",
+    "builtWith": "Hecho con",
+    "by": "por"
+  },
+  "Hero": {
+    "eyebrowLeft": "Distribuidor exclusivo",
+    "eyebrowRight": "Industrial / Certificado",
+    "titleLead": "Equipos de limpieza",
+    "titleLine2": "profesionales en los que",
+    "titleEmphasis": "puede confiar",
+    "subtitle": "ILG le ofrece un portafolio enfocado de maquinaria de limpieza líder del sector: cuidado silencioso de suelos de Klinmak y vapor sin químicos de Tecnovap.",
+    "pill": "Misión compartida. Soluciones complementarias. Resultados excepcionales.",
+    "stickerAlt": "ILG — Dos marcas potentes, un socio de confianza",
+    "tecnovapProductAlt": "Gama de productos Tecnovap",
+    "klinmakProductAlt": "Gama de productos Klinmak",
+    "exploreTecnovap": "Explorar Tecnovap",
+    "exploreKlinmak": "Explorar Klinmak",
+    "taglineLead": "Diferentes tecnologías. Un objetivo:",
+    "taglineAccent": "Entornos más limpios, seguros e inteligentes.",
+    "featureChemFree": "Potencia de vapor sin químicos",
+    "featureSanitize": "Desinfecta sin concesiones",
+    "featureSustainable": "Sostenible por diseño",
+    "featurePerformance247": "Diseñado para un rendimiento 24/7",
+    "featureSilent": "Funcionamiento ultrasilencioso",
+    "featureFloorCare": "Cuidado superior de suelos",
+    "featureWarranty": "3 años de garantía en la batería",
+    "featureReliable": "Fiable. Duradero. Fácil de usar."
+  },
+  "ContactSection": {
+    "emailUs": "Escríbanos",
+    "callUs": "Llámenos",
+    "visitUs": "Visítenos",
+    "location": "Puerto Rico, EE. UU."
+  },
+  "ContactForm": {
+    "interestPlaceholder": "Sistema de interés *",
+    "firstNamePlaceholder": "Nombre *",
+    "lastNamePlaceholder": "Apellido *",
+    "companyPlaceholder": "Nombre de la empresa *",
+    "emailPlaceholder": "Correo electrónico de trabajo *",
+    "postalCodePlaceholder": "Código postal *",
+    "phonePlaceholder": "Teléfono *",
+    "countryPlaceholder": "País *",
+    "industryPlaceholder": "Sector *",
+    "commentsPlaceholder": "Comentarios",
+    "requiredError": "Complete todos los campos obligatorios.",
+    "invalidEmail": "Introduzca un correo electrónico válido.",
+    "successMessage": "¡Gracias! Nos pondremos en contacto en breve.",
+    "errorMessage": "Lo sentimos, se produjo un error. Inténtelo de nuevo o escríbanos a sales@ilgcleaningsolutions.com.",
+    "sending": "Enviando…",
+    "sendMessage": "Enviar mensaje"
+  },
+  "Industries": {
+    "modalCard": {
+      "title": "Sectores a los que atendemos",
+      "desc": "Con la confianza de más de 9 sectores exigentes."
+    },
+    "modal": {
+      "title": "Sectores a los que atendemos",
+      "desc": "Desde la sanidad hasta la industria pesada: con la confianza de los sectores que exigen una limpieza fiable y de nivel profesional."
+    },
+    "industries": {
+      "offices": "Oficinas y edificios públicos",
+      "transport": "Transporte",
+      "healthcare": "Sanidad",
+      "foodService": "Servicio de alimentación",
+      "warehouses": "Almacenes",
+      "manufacturing": "Fabricación",
+      "cleaningCompanies": "Empresas de limpieza",
+      "hospitality": "Hostelería",
+      "retail": "Comercio minorista"
+    },
+    "cards": {
+      "premiumEquipment": {
+        "title": "Equipos de primera calidad",
+        "desc": "Impulsados por marcas líderes y de confianza del sector."
+      },
+      "warranty": {
+        "title": "Garantía de 36 meses",
+        "desc": "En cada batería de litio Klinmak."
+      },
+      "accessories": {
+        "title": "Más de 100 accesorios",
+        "desc": "Diseñados para todas las tareas de limpieza."
+      }
+    }
+  },
+  "SteamCleaners": {
+    "eyebrow": "Acerca de los limpiadores de vapor",
+    "headingLead": "Desinfección certificada,",
+    "headingAccent": "aplicaciones infinitas.",
+    "cert": {
+      "label": "Certificación",
+      "badge": "Norma NF T72-110",
+      "titleLead": "Eficacia certificada para dispositivos de",
+      "titleAccent": "desinfección por vapor",
+      "titleTail": "",
+      "body": "Nuestros modelos EVO están clasificados como <strong>S.D.D. (dispositivos de desinfección por vapor)</strong> conforme a la norma AFNOR NF T72-110: validados bajo rigurosos protocolos de laboratorio para desinfectar únicamente con vapor seco.",
+      "footerLabel": "Organismo autorizado",
+      "footerValue": "AFNOR Group France",
+      "sealAlt": "Certificación AFNOR NF T72-110"
+    },
+    "app": {
+      "label": "Control remoto",
+      "no": "N.º 01",
+      "body": "Control total por Bluetooth: supervise la presión de la caldera y la temperatura del vapor en tiempo real desde cualquier dispositivo.",
+      "chipTitle": "Limpieza conectada",
+      "chipMeta": "Se empareja en segundos"
+    },
+    "photoCards": {
+      "noLabel": "N.º",
+      "healthcare": {
+        "title": "Sanidad",
+        "desc": "Entornos estériles y desinfección de grado clínico."
+      },
+      "horeca": {
+        "title": "Ho.Re.Ca. y hogar",
+        "desc": "Hoteles, restaurantes, cafeterías y lujo doméstico."
+      },
+      "foodMechanical": {
+        "title": "Alimentación y mecánica",
+        "desc": "Integración en cintas transportadoras · Desengrase de transporte pesado."
+      },
+      "ecological": {
+        "title": "Ecológico y exteriores",
+        "desc": "Lavado de vehículos · Bodegas · Eliminación de malezas · Control de plagas."
+      }
+    }
+  },
+  "KlinmakWhyChoose": {
+    "heading": "¿Por qué elegir <accent>KlinMak</accent>?",
+    "continuousImprovementTitle": "Mejora continua",
+    "continuousImprovementBody": "Para nosotros, innovar significa <strong>crear máquinas nuevas</strong>, diferentes de todas las existentes. Es un trabajo exigente, pero lo hacemos con pasión — y hemos demostrado que sabemos cómo.",
+    "twoOrFourBrushesTitle": "Dos o cuatro cepillos",
+    "twoOrFourBrushesBody": "Todas nuestras máquinas <strong>(excepto las vibratorias)</strong> cuentan con <strong>dos o cuatro cepillos</strong> gracias al exclusivo mecanismo KlinMak (patentado). La limpieza es significativamente mejor que con un solo cepillo.",
+    "lithiumBatteriesTitle": "Baterías de litio de serie",
+    "lithiumBatteriesBody": "Nuestras fregadoras-secadoras de suelos utilizan <strong>únicamente baterías de litio</strong>, reduciendo el peso a la mitad, mejorando la <strong>maniobrabilidad</strong> y acelerando la <strong>recarga</strong>.",
+    "lowMaintenanceTitle": "Bajos costes de mantenimiento",
+    "lowMaintenanceBody": "Utilizamos únicamente <strong>componentes de alta calidad</strong>, reduciendo las tareas de mantenimiento — lo que se traduce en un ahorro de <strong>tiempo y dinero</strong>.",
+    "immediateAvailabilityTitle": "Disponibilidad inmediata",
+    "immediateAvailabilityBody": "Ya sea que necesite una máquina o <strong>piezas de repuesto</strong>, realizamos entregas <strong>con rapidez</strong> — manteniendo sus operaciones en marcha sin tiempos de inactividad.",
+    "technicalSupportTitle": "Soporte técnico siempre disponible",
+    "technicalSupportBody": "¿Tiene alguna pregunta o algún problema? Puede <strong>contactarnos en cualquier momento, todos los días</strong> — el soporte técnico experto siempre está a su alcance.",
+    "extendedWarrantyTitle": "Garantía extendida",
+    "extendedWarrantyBody": "Nuestras máquinas de la <strong>gama Joker</strong> están cubiertas por una <strong>garantía de 36 meses</strong>.",
+    "minimumNoiseTitle": "Ruido mínimo",
+    "minimumNoiseBody": "Nuestras máquinas son <strong>extremadamente silenciosas</strong>, perfectas para entornos donde el ruido es un problema, como <strong>hospitales, oficinas, supermercados…</strong>",
+    "energySavingTitle": "Ahorro de energía",
+    "energySavingBody": "Nuestras máquinas consumen muy poca energía y, gracias a las <strong>baterías de litio</strong>, ahorra <strong>tiempo y dinero</strong>."
+  },
+  "KlinmakProductsBanner": {
+    "eyebrow": "Productos",
+    "headline": "Cada uno de nuestros productos está diseñado para satisfacer las necesidades de higiene y <accent>sostenibilidad</accent> — un compromiso concreto y tangible que va más allá de las meras palabras."
+  },
+  "KlinmakRangeHeader": {},
+  "TecnovapBenefits": {
+    "eyebrow": "Tecnología de vapor seco",
+    "headlinePre": "Descubra los beneficios de utilizar",
+    "headlineAccent": "generadores de vapor Tecnovap",
+    "headlinePost": "para su aplicación",
+    "explainerHeading1": "La tecnología de limpieza profunda más avanzada",
+    "explainerBody1a": "Los limpiadores de vapor seco utilizan vapor sobrecalentado con un contenido de humedad increíblemente bajo para eliminar suciedad, grasa, residuos y desechos de las superficies, dejándolas prácticamente secas y libres de humedad residual, sin productos químicos agresivos. El mismo calor también elimina bacterias, alérgenos y moho al contacto. Ideal para la",
+    "explainerBody1Em": "limpieza en seco",
+    "explainerBody1b": "sin productos químicos en panaderías, plantas de producción de snacks e instalaciones de fabricación donde el desengrase y la sanitización de superficies son esenciales.",
+    "explainerHeading2": "¿Qué tan bien funcionan los limpiadores de vapor seco?",
+    "explainerBody2a": "Los limpiadores de vapor seco ofrecen todo el poder de limpieza y desinfección del vapor húmedo, pero con solo ~5 % de contenido de humedad. Eliminan gérmenes al contacto y desprenden residuos de cualquier superficie a su paso, calentando el agua del grifo en la caldera hasta",
+    "explainerBody2b": "y produciendo vapor seco a una presión ajustable de hasta",
+    "explainerBody2c": "y una temperatura de salida de",
+    "statBoilerLabel": "Temperatura de la caldera",
+    "statOutputLabel": "Temperatura de salida",
+    "statPressureLabel": "Presión ajustable",
+    "statMoistureLabel": "Contenido de humedad"
+  },
+  "TecnovapProductsBanner": {
+    "eyebrow": "Productos",
+    "headlinePre": "Limpiadores de vapor compactos y fiables para",
+    "headlineAccent": "uso profesional"
+  },
+  "TecnovapSystemsBanner": {
+    "eyebrow": "Sistemas",
+    "headlinePre": "Sistemas de vapor de nivel",
+    "headlineAccent": "industrial",
+    "headlinePost": "para los entornos más exigentes."
+  },
+  "TecnovapBeltCleaningBanner": {
+    "eyebrow": "Sistemas de limpieza de cintas",
+    "headlinePre": "Limpie cintas transportadoras planas con",
+    "headlineAccent": "precisión de vapor seco.",
+    "lead": "Ahorre mano de obra y tiempo con los sistemas de limpieza de cintas transportadoras de ILG Cleaning Solutions, diseñados para panadería, snacks, confitería, farmacéutica y cualquier otra línea de transporte industrial que exija el más alto nivel de limpieza e higiene.",
+    "column1Heading": "Cómo funciona",
+    "column1Body1a": "El sistema utiliza el poder del vapor",
+    "column1Body1Em": "seco",
+    "column1Body1b": "para eliminar rápidamente alérgenos, moho, glaseado, exceso de rociado de aceite, bacterias, grasas, mugre y suciedad. Un sistema de aspiración conectado extrae la suciedad emulsionada, dejando la cinta limpia y seca.",
+    "column1Body2": "La limpieza de cintas con vapor seco ahorra mano de obra, reduce el tiempo de sanitización y aumenta la productividad con cambios de línea más rápidos.",
+    "column2HeadingPre": "Diseñado en torno a",
+    "column2HeadingAccent": "su línea",
+    "column2Body1": "Cada sistema de limpieza de cintas transportadoras puede personalizarse para cumplir con sus requisitos exactos, ideal para fabricantes grandes o pequeños que operan múltiples líneas de producto.",
+    "column2Body2": "Soluciones de última generación, implementadas en todo el mundo para mantener las cintas transportadoras planas higiénicas, en cumplimiento y listas para la siguiente producción.",
+    "benefitsLabel": "Beneficios clave",
+    "benefit1": "Diseñado para la limpieza de sistemas de cintas transportadoras planas",
+    "benefit2": "Vapor seco con extracción por aspiración para una limpieza y sanitización rápidas",
+    "benefit3": "Solución \"seca\" de baja humedad",
+    "benefit4": "Deja las cintas secas y listas para la sanitización",
+    "benefit5": "Elimina alérgenos, moho, glaseado, exceso de rociado de aceite, bacterias, grasas, mugre y suciedad",
+    "benefit6": "Elimina adhesivos, aceites y residuos de papel",
+    "benefit7": "Reduce los costos de mano de obra de la limpieza de cintas",
+    "benefit8": "Mejora la flexibilidad de la línea de producción y los tiempos de cambio",
+    "benefit9": "Ayuda a cumplir con los rigurosos requisitos de calidad y de la FSMA"
+  },
+  "ProductShowcase": {
+    "mainFeatures": "Características principales",
+    "viewSpecifications": "Ver especificaciones",
+    "specifications": "Especificaciones"
+  },
+  "ProductCarousel": {
+    "seeMore": "Ver más",
+    "previousNamed": "Anterior: {name}",
+    "nextNamed": "Siguiente: {name}",
+    "previousProduct": "Producto anterior",
+    "nextProduct": "Producto siguiente",
+    "goTo": "Ir a {name}"
+  },
+  "ProductDiagram": {
+    "debugHint": "depuración: haga clic en cualquier lugar → coordenadas registradas y copiadas",
+    "debugLast": "último:"
+  },
+  "ExploreOtherProducts": {
+    "previousProducts": "Productos anteriores",
+    "nextProducts": "Productos siguientes"
+  }
+}

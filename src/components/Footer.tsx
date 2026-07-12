@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Mail, Phone, Linkedin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 /* ============================================================
    Tailwind class names, grouped by the element they style.
@@ -43,6 +44,7 @@ const styles = {
 } as const;
 
 const Footer = () => {
+  const t = useTranslations("Footer");
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -65,19 +67,16 @@ const Footer = () => {
               height={200}
               className={styles.logoDark}
             />
-            <p className={styles.brandBlurb}>
-              Professional cleaning
-              solutions powered by industry-leading brands.
-            </p>
+            <p className={styles.brandBlurb}>{t("brandBlurb")}</p>
           </div>
 
           {/* Quick Links */}
           <div className={styles.quickLinksCol}>
-            <h4 className={styles.colHeading}>Quick Links</h4>
+            <h4 className={styles.colHeading}>{t("quickLinks")}</h4>
             <ul className={styles.linkList}>
               <li>
                 <Link href="/" className={styles.navLink}>
-                  Home
+                  {t("home")}
                 </Link>
               </li>
               <li>
@@ -92,7 +91,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/#contact" className={styles.navLink}>
-                  Contact Us
+                  {t("contactUs")}
                 </Link>
               </li>
             </ul>
@@ -100,7 +99,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className={styles.contactCol}>
-            <h4 className={styles.colHeading}>Get in Touch</h4>
+            <h4 className={styles.colHeading}>{t("getInTouch")}</h4>
             <div className={styles.contactList}>
               <a
                 href="https://www.linkedin.com/"
@@ -132,10 +131,10 @@ const Footer = () => {
         {/* Copyright */}
         <div className={styles.copyright}>
           <p className={styles.copyrightText}>
-            &copy; {new Date().getFullYear()} ILG Cleaning Services. All rights reserved.
+            {t("copyright", { year: new Date().getFullYear() })}
           </p>
           <p className={styles.builtBy}>
-            Built with <span className={styles.heart}>&hearts;</span> by{" "}
+            {t("builtWith")} <span className={styles.heart}>&hearts;</span> {t("by")}{" "}
             <a
               href="https://www.altitudewebworks.com"
               target="_blank"

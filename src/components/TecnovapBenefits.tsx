@@ -1,4 +1,5 @@
 import { Droplets, Flame, Gauge, Thermometer } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 /**
  * Intro / educational block that explains *why* dry-vapor steam cleaning matters,
@@ -14,22 +15,22 @@ const stats = [
   {
     icon: Flame,
     value: "360°F",
-    label: "Boiler temperature",
+    labelKey: "statBoilerLabel",
   },
   {
     icon: Thermometer,
     value: "290°F",
-    label: "Output temperature",
+    labelKey: "statOutputLabel",
   },
   {
     icon: Gauge,
     value: "145 PSI",
-    label: "Adjustable pressure",
+    labelKey: "statPressureLabel",
   },
   {
     icon: Droplets,
     value: "~5%",
-    label: "Moisture content",
+    labelKey: "statMoistureLabel",
   },
 ];
 
@@ -68,18 +69,20 @@ const styles = {
     "mt-1 font-heading text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground",
 } as const;
 
-const TecnovapBenefits = () => (
+const TecnovapBenefits = () => {
+  const t = useTranslations("TecnovapBenefits");
+  return (
   <section className={styles.section}>
     <div className={styles.container}>
       {/* Headline */}
       <div className={styles.headlineWrap}>
         <p className={styles.eyebrow}>
-          Dry Vapor Steam Technology
+          {t("eyebrow")}
         </p>
         <h2 className={styles.headline}>
-          Discover the benefits of using{" "}
-          <span className={styles.headlineAccent}>Tecnovap steam generators</span>{" "}
-          for your application
+          {t("headlinePre")}{" "}
+          <span className={styles.headlineAccent}>{t("headlineAccent")}</span>{" "}
+          {t("headlinePost")}
         </h2>
         <div className={styles.headlineRule} />
       </div>
@@ -88,35 +91,27 @@ const TecnovapBenefits = () => (
       <div className={styles.explainerGrid}>
         <div>
           <h3 className={styles.explainerHeading}>
-            The most advanced deep-cleaning technology
+            {t("explainerHeading1")}
           </h3>
           <p className={styles.explainerBody}>
-            Dry steam cleaners use superheated steam with an incredibly low
-            moisture content to blast dirt, grease, soils and debris from
-            surfaces — leaving them virtually dry and free of residual moisture,
-            without harsh chemicals. The same heat also removes bacteria,
-            allergens and mold on contact. Ideal for chemical-free{" "}
+            {t("explainerBody1a")}{" "}
             <em className={styles.explainerEm}>
-              dry cleaning
+              {t("explainerBody1Em")}
             </em>{" "}
-            in bakeries, snack production plants and manufacturing facilities
-            where degreasing and surface sanitation are essential.
+            {t("explainerBody1b")}
           </p>
         </div>
 
         <div>
           <h3 className={styles.explainerHeading}>
-            How well do dry vapor steam cleaners work?
+            {t("explainerHeading2")}
           </h3>
           <p className={styles.explainerBody}>
-            Dry vapor steam cleaners deliver all the cleaning and sanitizing
-            power of wet steam, but with only ~5% moisture content. They kill
-            germs on contact and blast debris from any surface in their path —
-            heating tap water in the boiler to{" "}
-            <span className={styles.explainerStat}>360°F</span> and
-            producing dry vapor steam at an adjustable pressure of up to{" "}
-            <span className={styles.explainerStat}>145 PSI</span> and
-            an output temperature of{" "}
+            {t("explainerBody2a")}{" "}
+            <span className={styles.explainerStat}>360°F</span>{" "}
+            {t("explainerBody2b")}{" "}
+            <span className={styles.explainerStat}>145 PSI</span>{" "}
+            {t("explainerBody2c")}{" "}
             <span className={styles.explainerStat}>290°F</span>.
           </p>
         </div>
@@ -124,9 +119,9 @@ const TecnovapBenefits = () => (
 
       {/* Headline stats row — bare, no card; just icons + numbers breathing on the section bg */}
       <div className={styles.statsGrid}>
-        {stats.map(({ icon: Icon, value, label }) => (
+        {stats.map(({ icon: Icon, value, labelKey }) => (
           <div
-            key={label}
+            key={labelKey}
             className={styles.statItem}
           >
             <span className={styles.statIcon}>
@@ -137,7 +132,7 @@ const TecnovapBenefits = () => (
                 {value}
               </p>
               <p className={styles.statLabel}>
-                {label}
+                {t(labelKey)}
               </p>
             </div>
           </div>
@@ -145,6 +140,7 @@ const TecnovapBenefits = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default TecnovapBenefits;

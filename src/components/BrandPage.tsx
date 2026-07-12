@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Layout from "@/components/Layout";
@@ -122,6 +123,7 @@ const BrandPage = ({
   children,
   brandFooter,
 }: BrandPageProps) => {
+  const t = useTranslations("BrandPage");
   const hasHeroOverlay = Boolean(heroLogo || heroTitle || heroSubtitle);
 
   return (
@@ -140,7 +142,7 @@ const BrandPage = ({
         ) : videoUrl ? (
           <iframe
             src={videoUrl}
-            title={`${brandName} video`}
+            title={t("videoTitle", { brand: brandName })}
             className={styles.heroIframe}
             style={{ border: "none" }}
             allow="autoplay; fullscreen; picture-in-picture"
@@ -249,15 +251,14 @@ const BrandPage = ({
             {...fadeInUp}
             className={styles.sectionHeading}
           >
-            Why Choose {brandName}
+            {t("whyChoose", { brand: brandName })}
           </motion.h2>
           <motion.p
             {...fadeInUp}
             transition={{ ...fadeInUp.transition, delay: 0.1 }}
             className={styles.sectionSubtext}
           >
-            Discover the advantages that set {brandName} apart in the
-            professional cleaning industry
+            {t("whyChooseSubtitle", { brand: brandName })}
           </motion.p>
 
           <div className={styles.featuresGrid}>
@@ -299,14 +300,14 @@ const BrandPage = ({
             {...fadeInUp}
             className={styles.sectionHeading}
           >
-            {brandName} Products
+            {t("productsHeading", { brand: brandName })}
           </motion.h2>
           <motion.p
             {...fadeInUp}
             transition={{ ...fadeInUp.transition, delay: 0.1 }}
             className={styles.sectionSubtext}
           >
-            Explore our full range of professional cleaning equipment
+            {t("productsSubtitle")}
           </motion.p>
 
           <div className={styles.productsGrid}>
@@ -322,7 +323,7 @@ const BrandPage = ({
                 {/* Placeholder image */}
                 <div className={styles.productImageBox}>
                   <span className={styles.productImageLabel}>
-                    Product Image
+                    {t("productImage")}
                   </span>
                 </div>
                 <div className={styles.productBody}>
@@ -333,7 +334,7 @@ const BrandPage = ({
                     {cat.description}
                   </p>
                   <span className={styles.productLink}>
-                    Learn More <ArrowRight size={14} />
+                    {t("learnMore")} <ArrowRight size={14} />
                   </span>
                 </div>
               </motion.div>

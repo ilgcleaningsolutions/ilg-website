@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 
 /** Minimal serializable shape — the full TecnovapProduct can't be passed across
  *  the server→client boundary because mainFeatures[].icon is a React component. */
@@ -75,6 +76,7 @@ const ExploreOtherProducts = ({
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
   const userInteracted = useRef(false);
+  const t = useTranslations("ExploreOtherProducts");
 
   // Track overflow + scroll position; ResizeObserver covers responsive changes.
   useEffect(() => {
@@ -131,7 +133,7 @@ const ExploreOtherProducts = ({
           <button
             type="button"
             onClick={() => scrollOne(-1)}
-            aria-label="Previous products"
+            aria-label={t("previousProducts")}
             className={`${styles.arrowBase} ${styles.arrowLeft} ${
               canScrollLeft ? styles.arrowEnabled : styles.arrowDisabled
             }`}
@@ -141,7 +143,7 @@ const ExploreOtherProducts = ({
           <button
             type="button"
             onClick={() => scrollOne(1)}
-            aria-label="Next products"
+            aria-label={t("nextProducts")}
             className={`${styles.arrowBase} ${styles.arrowRight} ${
               canScrollRight ? styles.arrowEnabled : styles.arrowDisabled
             }`}

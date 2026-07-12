@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, type LucideIcon } from "lucide-react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 
 /* Klinmak: light/colored logo for the bright white overlay in light mode,
    white logo for the dark overlay in dark mode. */
@@ -48,19 +49,19 @@ const IC_RELIABLE =
   "https://res.cloudinary.com/dxbwqifwn/image/upload/v1783181706/Recurso_30_nisytr.svg";
 
 /* Bottom feature band content, per brand */
-type Feature = { label: string; icon?: LucideIcon; img?: string };
+type Feature = { labelKey: string; icon?: LucideIcon; img?: string };
 
 const TECNOVAP_FEATURES: Feature[] = [
-  { img: IC_CHEMFREE, label: "Chemical-Free Steam Power" },
-  { img: IC_SANITIZE, label: "Sanitizes Without Compromise" },
-  { img: IC_SUSTAINABLE, label: "Sustainable By Design" },
-  { img: IC_247, label: "Built For 24/7 Performance" },
+  { img: IC_CHEMFREE, labelKey: "featureChemFree" },
+  { img: IC_SANITIZE, labelKey: "featureSanitize" },
+  { img: IC_SUSTAINABLE, labelKey: "featureSustainable" },
+  { img: IC_247, labelKey: "featurePerformance247" },
 ];
 const KLINMAK_FEATURES: Feature[] = [
-  { img: IC_SILENT, label: "Ultra-Silent Operation" },
-  { img: IC_FLOORCARE, label: "Superior Floor Care" },
-  { img: IC_WARRANTY, label: "3-Year Battery Warranty" },
-  { img: IC_RELIABLE, label: "Reliable. Durable. Easy To Use." },
+  { img: IC_SILENT, labelKey: "featureSilent" },
+  { img: IC_FLOORCARE, labelKey: "featureFloorCare" },
+  { img: IC_WARRANTY, labelKey: "featureWarranty" },
+  { img: IC_RELIABLE, labelKey: "featureReliable" },
 ];
 
 /* ============================================================
@@ -202,24 +203,28 @@ const HeroTexture = ({ className = "" }: { className?: string }) => (
 );
 
 /* Renders a single feature (custom SVG icon or lucide fallback) + label. */
-const FeatureItem = ({ icon: Icon, img, label }: Feature) => (
-  <div className={styles.featureItem}>
-    {img ? (
-      <Image
-        src={img}
-        alt=""
-        width={28}
-        height={28}
-        className={styles.featureIconShadow}
-      />
-    ) : Icon ? (
-      <Icon size={18} strokeWidth={1.5} className={styles.featureIconLucide} />
-    ) : null}
-    <span className={styles.featureLabel}>{label}</span>
-  </div>
-);
+const FeatureItem = ({ icon: Icon, img, labelKey }: Feature) => {
+  const t = useTranslations("Hero");
+  return (
+    <div className={styles.featureItem}>
+      {img ? (
+        <Image
+          src={img}
+          alt=""
+          width={28}
+          height={28}
+          className={styles.featureIconShadow}
+        />
+      ) : Icon ? (
+        <Icon size={18} strokeWidth={1.5} className={styles.featureIconLucide} />
+      ) : null}
+      <span className={styles.featureLabel}>{t(labelKey)}</span>
+    </div>
+  );
+};
 
 const HeroSection = () => {
+  const t = useTranslations("Hero");
   return (
     <section className={styles.section}>
       {/* ============================================================
@@ -240,27 +245,21 @@ const HeroSection = () => {
           <div className={styles.eyebrowStrip}>
             <span className={styles.eyebrowLeft}>
               <span className={styles.eyebrowRule} />
-              Exclusive Distributor
+              {t("eyebrowLeft")}
             </span>
-            <span className={styles.eyebrowRight}>
-              Industrial&nbsp;/&nbsp;Certified
-            </span>
+            <span className={styles.eyebrowRight}>{t("eyebrowRight")}</span>
           </div>
 
           {/* Headline + subtitle */}
           <div className={styles.headlineGrid}>
             <h1 className={styles.headline}>
-              Professional
+              {t("titleLead")}
               <br />
-              Cleaning Equipment
+              {t("titleLine2")}
               <br />
-              <span className={styles.headlineAccent}>You Can Trust</span>
+              <span className={styles.headlineAccent}>{t("titleEmphasis")}</span>
             </h1>
-            <p className={styles.headlineSubtitle}>
-              ILG brings you a focused portfolio of industry-leading cleaning
-              machinery — silent floor care from Klinmak, chemical-free steam
-              from Tecnovap.
-            </p>
+            <p className={styles.headlineSubtitle}>{t("subtitle")}</p>
           </div>
         </motion.div>
 
@@ -302,22 +301,20 @@ const HeroSection = () => {
                   className={styles.logoDark}
                 />
               </div>
-              <span className={styles.pill}>
-                Shared Mission. Complementary Solutions. Exceptional Results.
-              </span>
+              <span className={styles.pill}>{t("pill")}</span>
             </div>
 
             {/* Right: trusted-brands seal — ready-made stickers (light / dark) */}
             <Image
               src={STICKER_LIGHT}
-              alt="ILG — Two Powerful Brands, One Trusted Partner"
+              alt={t("stickerAlt")}
               width={80}
               height={80}
               className={styles.smallStickerLight}
             />
             <Image
               src={STICKER_DARK}
-              alt="ILG — Two Powerful Brands, One Trusted Partner"
+              alt={t("stickerAlt")}
               width={80}
               height={80}
               className={styles.smallStickerDark}
@@ -336,14 +333,14 @@ const HeroSection = () => {
             {/* ready-made stickers — light / dark (CircularSeal kept in file for now) */}
             <Image
               src={STICKER_LIGHT}
-              alt="ILG — Two Powerful Brands, One Trusted Partner"
+              alt={t("stickerAlt")}
               width={150}
               height={150}
               className={styles.centerStickerLight}
             />
             <Image
               src={STICKER_DARK}
-              alt="ILG — Two Powerful Brands, One Trusted Partner"
+              alt={t("stickerAlt")}
               width={150}
               height={150}
               className={styles.centerStickerDark}
@@ -361,7 +358,7 @@ const HeroSection = () => {
                 >
                   <Image
                     src={TECNOVAP_IMAGE}
-                    alt="Tecnovap product range"
+                    alt={t("tecnovapProductAlt")}
                     fill
                     priority
                     className={styles.productImage}
@@ -370,7 +367,7 @@ const HeroSection = () => {
                 </div>
                 {/* CTA — below the products on mobile, floating over them on desktop */}
                 <Link href="/tecnovap" className={styles.ctaTecnovap}>
-                  Explore Tecnovap <ArrowRight size={13} />
+                  {t("exploreTecnovap")} <ArrowRight size={13} />
                 </Link>
               </div>
               {/* Tecnovap footer */}
@@ -380,7 +377,7 @@ const HeroSection = () => {
               >
                 <div className={styles.footerGrid}>
                   {TECNOVAP_FEATURES.map((feature) => (
-                    <FeatureItem key={feature.label} {...feature} />
+                    <FeatureItem key={feature.labelKey} {...feature} />
                   ))}
                 </div>
               </div>
@@ -395,7 +392,7 @@ const HeroSection = () => {
                 >
                   <Image
                     src={KLINMAK_IMAGE}
-                    alt="Klinmak product range"
+                    alt={t("klinmakProductAlt")}
                     fill
                     priority
                     className={styles.productImageKlinmak}
@@ -404,7 +401,7 @@ const HeroSection = () => {
                 </div>
                 {/* CTA — below the products on mobile, floating over them on desktop */}
                 <Link href="/klinmak" className={styles.ctaKlinmak}>
-                  Explore Klinmak <ArrowRight size={13} />
+                  {t("exploreKlinmak")} <ArrowRight size={13} />
                 </Link>
               </div>
               {/* Klinmak footer */}
@@ -414,7 +411,7 @@ const HeroSection = () => {
               >
                 <div className={styles.footerGrid}>
                   {KLINMAK_FEATURES.map((feature) => (
-                    <FeatureItem key={feature.label} {...feature} />
+                    <FeatureItem key={feature.labelKey} {...feature} />
                   ))}
                 </div>
               </div>
@@ -425,10 +422,8 @@ const HeroSection = () => {
         {/* ---------- Tagline strip ---------- */}
         <div style={{ animationDelay: "0.65s" }} className={styles.tagline}>
           <p className={styles.taglineText}>
-            Different Technologies. One Goal:{" "}
-            <span className={styles.taglineAccent}>
-              Cleaner, Safer, Smarter Environments.
-            </span>
+            {t("taglineLead")}{" "}
+            <span className={styles.taglineAccent}>{t("taglineAccent")}</span>
           </p>
         </div>
       </div>
