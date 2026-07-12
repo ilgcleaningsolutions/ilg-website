@@ -323,6 +323,7 @@
   },
   "ProductCarousel": {
     "seeMore": "Ver más",
+    "requestInfo": "Solicitar información",
     "previousNamed": "Anterior: {name}",
     "nextNamed": "Siguiente: {name}",
     "previousProduct": "Producto anterior",
@@ -335,6 +336,50 @@
   },
   "ExploreOtherProducts": {
     "previousProducts": "Productos anteriores",
-    "nextProducts": "Productos siguientes"
+    "nextProducts": "Productos siguientes",
+    "requestInfo": "Solicitar información"
+  },
+  "LeadFunnel": {
+    "dialogTitle": "Solicitar precio y disponibilidad",
+    "thankYou": "¡Gracias!",
+    "successBody": "Hemos recibido su solicitud sobre {productName}. Nuestro equipo se pondrá en contacto por su método preferido en breve.",
+    "stepAria": "Paso {step} de 3",
+    "interestsPrompt": "¿Qué le gustaría saber?",
+    "urgencyPrompt": "¿Cuándo lo necesita?",
+    "contactMethodPrompt": "Método de contacto preferido: elija los que desee",
+    "contactHint": "Indique al menos uno: correo electrónico o teléfono.",
+    "next": "Siguiente",
+    "back": "Atrás",
+    "sendRequest": "Enviar solicitud",
+    "sending": "Enviando…",
+    "businessTypePlaceholder": "Tipo de negocio u operación",
+    "unitQuantityPlaceholder": "Número de unidades",
+    "locationPlaceholder": "Ciudad / País",
+    "namePlaceholder": "Su nombre *",
+    "emailPlaceholder": "Correo electrónico",
+    "phonePlaceholder": "Teléfono",
+    "commentsPlaceholder": "¿Algo más que debamos saber? (opcional)",
+    "toastPickContact": "Elija al menos una forma de contacto.",
+    "toastEnterName": "Introduzca su nombre.",
+    "toastProvideContact": "Proporcione un correo electrónico o un número de teléfono.",
+    "toastError": "Lo sentimos, se produjo un error. Inténtelo de nuevo.",
+    "interests": {
+      "pricing": "Precio",
+      "availability": "Disponibilidad",
+      "demoVideo": "Demostración / Vídeo",
+      "technicalDatasheet": "Ficha técnica",
+      "financingOptions": "Opciones de financiación"
+    },
+    "urgency": {
+      "immediate": "Inmediata",
+      "oneToThreeMonths": "1–3 meses",
+      "justExploring": "Solo explorando"
+    },
+    "contactMethods": {
+      "phone": "Llamada telefónica",
+      "whatsapp": "WhatsApp",
+      "sms": "SMS",
+      "email": "Correo electrónico"
+    }
   }
 }

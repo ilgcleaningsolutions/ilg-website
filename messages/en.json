@@ -323,6 +323,7 @@
   },
   "ProductCarousel": {
     "seeMore": "See more",
+    "requestInfo": "Request info",
     "previousNamed": "Previous: {name}",
     "nextNamed": "Next: {name}",
     "previousProduct": "Previous product",
@@ -335,6 +336,50 @@
   },
   "ExploreOtherProducts": {
     "previousProducts": "Previous products",
-    "nextProducts": "Next products"
+    "nextProducts": "Next products",
+    "requestInfo": "Request info"
+  },
+  "LeadFunnel": {
+    "dialogTitle": "Request pricing & availability",
+    "thankYou": "Thank you!",
+    "successBody": "We received your request about the {productName}. Our team will reach out via your preferred contact method shortly.",
+    "stepAria": "Step {step} of 3",
+    "interestsPrompt": "What would you like to know?",
+    "urgencyPrompt": "When do you need it?",
+    "contactMethodPrompt": "Preferred contact method — pick as many as you like",
+    "contactHint": "Provide at least one — email or phone.",
+    "next": "Next",
+    "back": "Back",
+    "sendRequest": "Send request",
+    "sending": "Sending...",
+    "businessTypePlaceholder": "Type of business or operation",
+    "unitQuantityPlaceholder": "Number of units",
+    "locationPlaceholder": "City / Country",
+    "namePlaceholder": "Your name *",
+    "emailPlaceholder": "Email",
+    "phonePlaceholder": "Phone",
+    "commentsPlaceholder": "Anything else we should know? (optional)",
+    "toastPickContact": "Pick at least one way for us to reach you.",
+    "toastEnterName": "Please enter your name.",
+    "toastProvideContact": "Please provide an email or a phone number.",
+    "toastError": "Sorry, something went wrong. Please try again.",
+    "interests": {
+      "pricing": "Pricing",
+      "availability": "Availability",
+      "demoVideo": "Demo / Video",
+      "technicalDatasheet": "Technical datasheet",
+      "financingOptions": "Financing options"
+    },
+    "urgency": {
+      "immediate": "Immediate",
+      "oneToThreeMonths": "1–3 months",
+      "justExploring": "Just exploring"
+    },
+    "contactMethods": {
+      "phone": "Phone call",
+      "whatsapp": "WhatsApp",
+      "sms": "SMS",
+      "email": "Email"
+    }
   }
 }

@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import LeadFunnelDialog from "@/components/LeadFunnelDialog";
 
 /** Minimal serializable shape — the full TecnovapProduct can't be passed across
  *  the server→client boundary because mainFeatures[].icon is a React component. */
@@ -49,11 +50,14 @@ const styles = {
   strip: "mx-auto flex w-max items-start justify-center gap-x-4 py-2 md:gap-x-6",
 
   // Tile
-  tile: "group flex w-52 shrink-0 flex-col items-center gap-4 rounded-xl border border-transparent p-4 text-center transition-colors duration-200 hover:border-border hover:bg-card",
+  tile: "group flex w-52 shrink-0 flex-col items-center gap-2 rounded-xl border border-transparent p-4 text-center transition-colors duration-200 hover:border-border hover:bg-card",
+  tileLink: "flex flex-col items-center gap-4",
   tileImageWrap: "relative flex h-44 w-44 shrink-0 items-center justify-center",
   tileImage: "object-contain",
   tileName:
     "font-heading text-sm font-semibold uppercase leading-tight tracking-[0.1em] text-muted-foreground transition-colors duration-200 group-hover:text-primary",
+  tileAction:
+    "mt-1 inline-flex items-center gap-1 font-heading text-[11px] font-semibold uppercase tracking-[0.08em] text-primary opacity-0 transition-opacity duration-200 group-hover:opacity-100 focus-visible:opacity-100",
 } as const;
 
 /**
@@ -182,24 +186,33 @@ const ProductTile = ({
 }: {
   product: ExploreCard;
   brandSlug: string;
-}) => (
-  <Link
-    href={`/${brandSlug}/${product.slug}`}
-    className={styles.tile}
-  >
-    <span className={styles.tileImageWrap}>
-      <Image
-        src={product.image}
-        alt={product.imageAlt ?? ""}
-        fill
-        className={styles.tileImage}
-        sizes="176px"
-      />
-    </span>
-    <span className={styles.tileName}>
-      {product.name}
-    </span>
-  </Link>
-);
+}) => {
+  const t = useTranslations("ExploreOtherProducts");
+
+  return (
+    <div className={styles.tile}>
+      <Link href={`/${brandSlug}/${product.slug}`} className={styles.tileLink}>
+        <span className={styles.tileImageWrap}>
+          <Image
+            src={product.image}
+            alt={product.imageAlt ?? ""}
+            fill
+            className={styles.tileImage}
+            sizes="176px"
+          />
+        </span>
+        <span className={styles.tileName}>
+          {product.name}
+        </span>
+      </Link>
+      <LeadFunnelDialog productName={product.name}>
+        <button type="button" className={styles.tileAction}>
+          <MessageCircle size={11} />
+          {t("requestInfo")}
+        </button>
+      </LeadFunnelDialog>
+    </div>
+  );
+};
 
 export default ExploreOtherProducts;

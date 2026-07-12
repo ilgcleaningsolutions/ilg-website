@@ -43,6 +43,8 @@ export type TecnovapGroup = "products" | "systems" | "belts";
 
 export interface TecnovapProduct {
   slug: string;
+  /** SKU in the Interlink CRM catalog — links this product into the CRM lead funnel */
+  sku: string;
   /** Section grouping on the brand page */
   group: TecnovapGroup;
   /** Eyebrow above the title (e.g. "Commercial Steam Cleaner") */
@@ -76,6 +78,7 @@ export interface TecnovapProduct {
 export const tecnovapProducts: TecnovapProduct[] = [
   {
     slug: "evo-304",
+    sku: "TEC-EVO304",
     group: "products",
     category: { en: "Commercial Steam Cleaner", es: "Limpiador de vapor comercial" },
     name: "EVO 304 24/7",
@@ -178,6 +181,7 @@ export const tecnovapProducts: TecnovapProduct[] = [
   },
   {
     slug: "steam-turbo",
+    sku: "TEC-STEAMTURBO",
     group: "systems",
     category: { en: "Industrial Steam System", es: "Sistema de vapor industrial" },
     name: "STEAM TURBO",
@@ -294,6 +298,7 @@ export const tecnovapProducts: TecnovapProduct[] = [
   },
   {
     slug: "steam-box-industrial",
+    sku: "TEC-STEAMBOX-IND",
     group: "systems",
     category: { en: "Industrial Steam System", es: "Sistema de vapor industrial" },
     name: "STEAM BOX INDUSTRIAL",
@@ -392,6 +397,7 @@ export const tecnovapProducts: TecnovapProduct[] = [
   },
   {
     slug: "steam-box-mini",
+    sku: "TEC-STEAMBOX-MINI",
     group: "systems",
     category: { en: "Professional Steam System", es: "Sistema de vapor profesional" },
     name: "STEAM BOX MINI",
@@ -485,6 +491,7 @@ export const tecnovapProducts: TecnovapProduct[] = [
   },
   {
     slug: "hydrobox",
+    sku: "TEC-HYDROBOX",
     group: "systems",
     category: { en: "High-Pressure Washer", es: "Hidrolimpiadora de alta presión" },
     name: "HYDROBOX",
@@ -590,6 +597,7 @@ export const tecnovapProducts: TecnovapProduct[] = [
 
 tecnovapProducts.push({
   slug: "rtu-pro",
+  sku: "TEC-RTUPRO",
   group: "belts",
   category: { en: "Standard Belt Cleaning Head", es: "Cabezal de limpieza de cintas estándar" },
   name: "RTU Pro",
@@ -649,6 +657,7 @@ tecnovapProducts.push({
 
 tecnovapProducts.push({
   slug: "hb-max",
+  sku: "TEC-HBMAX",
   group: "belts",
   category: { en: "Semi-Automatic Belt Cleaning Head", es: "Cabezal de limpieza de cintas semiautomático" },
   name: "HB Max",
@@ -707,6 +716,7 @@ tecnovapProducts.push({
 
 tecnovapProducts.push({
   slug: "lvc-ultra",
+  sku: "TEC-LVCULTRA",
   group: "belts",
   category: { en: "Fully-Automated Cleaning Head", es: "Cabezal de limpieza totalmente automatizado" },
   name: "LVC Ultra",
