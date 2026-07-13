@@ -1,11 +1,16 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { ArrowLeft, ArrowRight, CheckCircle2, Leaf, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import ExploreOtherProducts from "@/components/ExploreOtherProducts";
 import LeadFunnelDialog from "@/components/LeadFunnelDialog";
-import { getKlinmakProduct, klinmakProducts } from "@/lib/klinmak-products";
+import {
+  getKlinmakProduct,
+  getKlinmakProducts,
+  klinmakProducts,
+} from "@/lib/klinmak-products";
 
 export function generateStaticParams() {
   return klinmakProducts
@@ -16,10 +21,12 @@ export function generateStaticParams() {
 export default async function KlinmakProductPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
-  const product = getKlinmakProduct(slug);
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("ProductDetail");
+  const product = getKlinmakProduct(slug, locale);
   if (!product || !product.detail) notFound();
   const d = product.detail;
 
@@ -38,7 +45,7 @@ export default async function KlinmakProductPage({
               className="inline-flex items-center gap-1.5 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-primary"
             >
               <ArrowLeft size={14} />
-              Back to Klinmak
+              {t("backTo", { brand: "Klinmak" })}
             </Link>
 
             {/* Flat grid so mobile flows title → image → description, while desktop
@@ -107,7 +114,7 @@ export default async function KlinmakProductPage({
                   className="mt-8 inline-flex w-fit items-center gap-2 justify-self-start rounded-full bg-primary px-8 py-3.5 font-heading text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:gap-3 hover:bg-accent lg:col-start-2 lg:row-start-6"
                 >
                   <MessageCircle size={16} />
-                  Talk to a KlinMak expert
+                  {t("talkToExpert", { brand: "KlinMak" })}
                   <ArrowRight size={15} />
                 </button>
               </LeadFunnelDialog>
@@ -119,7 +126,7 @@ export default async function KlinmakProductPage({
         <section className="border-t border-border section-alt py-8 md:py-10">
           <div className="container mx-auto px-6 text-center">
             <p className="mb-5 font-heading text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-              Ideal for
+              {t("idealFor")}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-3">
               {d.idealFor.map((item) => (
@@ -177,7 +184,7 @@ export default async function KlinmakProductPage({
         <section className="border-t border-border bg-background py-12 md:py-16">
           <div className="container mx-auto max-w-5xl px-6">
             <p className="mb-10 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-              Key features
+              {t("keyFeatures")}
             </p>
             <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
               {d.keyFeatures.map(({ icon: Icon, title, description }) => (
@@ -204,11 +211,13 @@ export default async function KlinmakProductPage({
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-3xl text-center">
               <p className="mb-3 font-heading text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-                Technical specifications
+                {t("technicalSpecifications")}
               </p>
               <h2 className="font-display text-3xl text-foreground md:text-4xl">
-                Built for performance,{" "}
-                <span className="italic text-ilg-blue-light">spec by spec.</span>
+                {t("specHeadingLead")}{" "}
+                <span className="italic text-ilg-blue-light">
+                  {t("specHeadingAccent")}
+                </span>
               </h2>
             </div>
 
@@ -217,7 +226,7 @@ export default async function KlinmakProductPage({
                 <thead>
                   <tr className="border-b border-border bg-primary text-primary-foreground">
                     <th className="px-4 py-3 text-left font-heading text-xs font-semibold uppercase tracking-wider">
-                      Specification
+                      {t("specificationColumn")}
                     </th>
                     {d.specVariants.map((v) => (
                       <th
@@ -262,8 +271,11 @@ export default async function KlinmakProductPage({
                 <Leaf size={24} strokeWidth={1.6} />
               </span>
               <h2 className="font-display text-2xl text-foreground md:text-3xl">
-                A <span className="italic text-ilg-blue-light">sustainable</span>{" "}
-                commitment
+                {t.rich("sustainableTitle", {
+                  accent: (chunks) => (
+                    <span className="italic text-ilg-blue-light">{chunks}</span>
+                  ),
+                })}
               </h2>
               <div className="mt-6 flex flex-col gap-3">
                 {d.sustainability.map((item) => (
@@ -283,10 +295,10 @@ export default async function KlinmakProductPage({
         <section className="border-t border-border section-alt py-12">
           <div className="container mx-auto px-6">
             <p className="mb-6 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-              Explore other Klinmak products
+              {t("exploreOther", { brand: "Klinmak" })}
             </p>
             <ExploreOtherProducts
-              products={klinmakProducts
+              products={getKlinmakProducts(locale)
                 .filter((p) => p.slug !== product.slug)
                 .map((p) => ({
                   slug: p.slug,

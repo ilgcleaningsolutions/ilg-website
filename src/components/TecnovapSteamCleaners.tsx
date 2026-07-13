@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ArrowUpRight, Bluetooth, Smartphone } from "lucide-react";
 
@@ -21,8 +22,7 @@ const PHOTO = {
 
 interface PhotoCard {
   no: string;
-  title: string;
-  desc: string;
+  id: string;
   image: string;
   wide?: boolean;
 }
@@ -32,27 +32,23 @@ interface PhotoCard {
 const photoCards: PhotoCard[] = [
   {
     no: "02",
-    title: "Healthcare",
-    desc: "Sterile environments & clinical-grade sanitation.",
+    id: "healthcare",
     image: PHOTO.healthcare,
   },
   {
     no: "03",
-    title: "Ho.Re.Ca. & Household",
-    desc: "Hotels, restaurants, cafés & household luxury.",
+    id: "horeca",
     image: PHOTO.horeca,
   },
   {
     no: "04",
-    title: "Food & Mechanical",
-    desc: "Conveyor-belt integration · Heavy transport de-greasing.",
+    id: "foodMechanical",
     image: PHOTO.industry,
     wide: true,
   },
   {
     no: "05",
-    title: "Ecological & Outdoor",
-    desc: "Car wash · Wineries · Weed killing · Pest control.",
+    id: "ecological",
     image: PHOTO.agriculture,
     wide: true,
   },
@@ -144,7 +140,9 @@ const styles = {
     "mt-1 max-w-xs text-xs leading-relaxed text-white/90 [text-shadow:_0_1px_6px_rgb(0_0_0_/_55%)]",
 } as const;
 
-const TecnovapSteamCleaners = () => (
+const TecnovapSteamCleaners = () => {
+  const t = useTranslations("SteamCleaners");
+  return (
   <section className={styles.section}>
     <div className={styles.container}>
       {/* Heading */}
@@ -155,12 +153,12 @@ const TecnovapSteamCleaners = () => (
       >
         <p className={styles.eyebrow}>
           <span className={styles.eyebrowRule} />
-          About Steam Cleaners
+          {t("eyebrow")}
           <span className={styles.eyebrowRule} />
         </p>
         <h2 className={styles.headingTitle}>
-          Certified disinfection,{" "}
-          <span className={styles.headingAccent}>endless applications.</span>
+          {t("headingLead")}{" "}
+          <span className={styles.headingAccent}>{t("headingAccent")}</span>
         </h2>
       </motion.div>
 
@@ -174,40 +172,39 @@ const TecnovapSteamCleaners = () => (
         >
           <div className={styles.certHeader}>
             <span className={styles.certLabel}>
-              Certification
+              {t("cert.label")}
             </span>
             <span className={styles.certBadge}>
-              Standard NF T72-110
+              {t("cert.badge")}
             </span>
           </div>
 
           <h3 className={styles.certTitle}>
-            Certified efficiency for{" "}
-            <span className={styles.certTitleAccent}>Steam Disinfection</span> Devices
+            {t("cert.titleLead")}{" "}
+            <span className={styles.certTitleAccent}>{t("cert.titleAccent")}</span> {t("cert.titleTail")}
           </h3>
           <p className={styles.certBody}>
-            Our EVO models are classified as{" "}
-            <strong className={styles.certBodyStrong}>
-              S.D.D. (Steam Disinfection Devices)
-            </strong>{" "}
-            in accordance with the AFNOR NF T72-110 standard — validated under
-            rigorous laboratory protocols to sanitise with dry steam alone.
+            {t.rich("cert.body", {
+              strong: (chunks) => (
+                <strong className={styles.certBodyStrong}>{chunks}</strong>
+              ),
+            })}
           </p>
 
           <div className={styles.certFooter}>
             <div>
               <p className={styles.certFooterLabel}>
-                Authorised Body
+                {t("cert.footerLabel")}
               </p>
               <p className={styles.certFooterValue}>
-                AFNOR Group France
+                {t("cert.footerValue")}
               </p>
             </div>
             {/* AFNOR seal — white chip keeps it legible in light & dark */}
             <div className={styles.certSealChip}>
               <Image
                 src={AFNOR_LOGO}
-                alt="AFNOR NF T72-110 certification"
+                alt={t("cert.sealAlt")}
                 width={96}
                 height={98}
                 className={styles.certSealImage}
@@ -224,10 +221,10 @@ const TecnovapSteamCleaners = () => (
         >
           <div className={styles.appHeader}>
             <span className={styles.appLabel}>
-              Remote Control
+              {t("app.label")}
             </span>
             <span className={styles.appNo}>
-              No. 01
+              {t("app.no")}
             </span>
           </div>
 
@@ -235,8 +232,7 @@ const TecnovapSteamCleaners = () => (
             MyTecnovap App
           </h3>
           <p className={styles.appBody}>
-            Full Bluetooth control — monitor boiler pressure and steam temperature
-            in real time from any device.
+            {t("app.body")}
           </p>
 
           <div className={styles.appFooter}>
@@ -246,10 +242,10 @@ const TecnovapSteamCleaners = () => (
               </span>
               <div>
                 <p className={styles.appChipTitle}>
-                  Connected cleaning
+                  {t("app.chipTitle")}
                 </p>
                 <p className={styles.appChipMeta}>
-                  <Bluetooth size={12} className={styles.appChipMetaIcon} /> Pairs in seconds
+                  <Bluetooth size={12} className={styles.appChipMetaIcon} /> {t("app.chipMeta")}
                 </p>
               </div>
             </div>
@@ -257,16 +253,16 @@ const TecnovapSteamCleaners = () => (
         </motion.div>
 
         {/* ---- Application photo cards (light overlay) ---- */}
-        {photoCards.map(({ no, title, desc, image, wide }, i) => (
+        {photoCards.map(({ no, id, image, wide }, i) => (
           <motion.div
-            key={title}
+            key={id}
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.1 + i * 0.06 }}
             className={`${styles.photoCard} ${wide ? styles.photoCardWide : ""}`}
           >
             <Image
               src={image}
-              alt={title}
+              alt={t(`photoCards.${id}.title`)}
               fill
               className={styles.photoImage}
               sizes="(max-width: 640px) 100vw, 50vw"
@@ -276,7 +272,7 @@ const TecnovapSteamCleaners = () => (
 
             <div className={styles.photoTopRow}>
               <span className={styles.photoNo}>
-                No. {no}
+                {t("photoCards.noLabel")} {no}
               </span>
               <ArrowUpRight
                 size={18}
@@ -286,10 +282,10 @@ const TecnovapSteamCleaners = () => (
 
             <div className={styles.photoTextWrap}>
               <h4 className={styles.photoTitle}>
-                {title}
+                {t(`photoCards.${id}.title`)}
               </h4>
               <p className={styles.photoDesc}>
-                {desc}
+                {t(`photoCards.${id}.desc`)}
               </p>
             </div>
           </motion.div>
@@ -297,6 +293,7 @@ const TecnovapSteamCleaners = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default TecnovapSteamCleaners;

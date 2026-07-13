@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { ArrowLeft, ArrowRight, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import ExploreOtherProducts from "@/components/ExploreOtherProducts";
@@ -8,20 +9,23 @@ import ProductDiagram from "@/components/ProductDiagram";
 import LeadFunnelDialog from "@/components/LeadFunnelDialog";
 import {
   getTecnovapProduct,
-  tecnovapProducts,
+  getTecnovapProducts,
+  getTecnovapSlugs,
 } from "@/lib/tecnovap-products";
 
 export function generateStaticParams() {
-  return tecnovapProducts.map((p) => ({ slug: p.slug }));
+  return getTecnovapSlugs().map((slug) => ({ slug }));
 }
 
 export default async function TecnovapProductPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
-  const product = getTecnovapProduct(slug);
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("ProductDetail");
+  const product = getTecnovapProduct(slug, locale);
   if (!product) notFound();
 
   // Split name for the system-style title (first word bold + rest lighter)
@@ -39,7 +43,7 @@ export default async function TecnovapProductPage({
               className="inline-flex items-center gap-1.5 font-heading text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-primary"
             >
               <ArrowLeft size={14} />
-              Back to Tecnovap
+              {t("backTo", { brand: "Tecnovap" })}
             </Link>
 
             <div className="mt-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -124,7 +128,7 @@ export default async function TecnovapProductPage({
                     className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-8 py-3.5 font-heading text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:gap-3 hover:bg-accent"
                   >
                     <MessageCircle size={16} />
-                    Talk to a Tecnovap expert
+                    {t("talkToExpert", { brand: "Tecnovap" })}
                     <ArrowRight size={15} />
                   </button>
                 </LeadFunnelDialog>
@@ -138,12 +142,12 @@ export default async function TecnovapProductPage({
           <section className="border-t border-border bg-background py-14 md:py-20">
             <div className="container mx-auto px-6">
               <p className="mb-6 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-                See it in action
+                {t("seeItInAction")}
               </p>
               <div className="mx-auto aspect-video w-full max-w-4xl overflow-hidden rounded-2xl border border-border shadow-2xl shadow-black/15">
                 <iframe
                   src={product.video}
-                  title={`${product.name} video`}
+                  title={t("videoTitle", { name: product.name })}
                   className="h-full w-full"
                   style={{ border: "none" }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -160,7 +164,7 @@ export default async function TecnovapProductPage({
           <section className="border-t border-border bg-background py-14 md:py-16">
             <div className="container mx-auto px-6">
               <p className="mb-6 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-                Main Features
+                {t("mainFeatures")}
               </p>
               <ul className="mx-auto flex max-w-5xl flex-wrap items-start justify-center gap-x-8 gap-y-5">
                 {product.mainFeatures.map(({ icon: Icon, label, value }) => (
@@ -189,11 +193,13 @@ export default async function TecnovapProductPage({
             <div className="container mx-auto px-6">
               <div className="mx-auto max-w-3xl text-center">
                 <p className="mb-3 font-heading text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-                  Technical Specifications
+                  {t("technicalSpecifications")}
                 </p>
                 <h2 className="font-display text-3xl text-foreground md:text-4xl">
-                  Built for performance,{" "}
-                  <span className="italic text-primary">spec by spec.</span>
+                  {t("specHeadingLead")}{" "}
+                  <span className="italic text-primary">
+                    {t("specHeadingAccent")}
+                  </span>
                 </h2>
               </div>
 
@@ -243,10 +249,10 @@ export default async function TecnovapProductPage({
         <section className="border-t border-border bg-background py-16">
           <div className="container mx-auto px-6">
             <p className="mb-6 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-              Explore other Tecnovap products
+              {t("exploreOther", { brand: "Tecnovap" })}
             </p>
             <ExploreOtherProducts
-              products={tecnovapProducts
+              products={getTecnovapProducts(locale)
                 .filter((p) => p.slug !== product.slug)
                 .map((p) => ({
                   slug: p.slug,

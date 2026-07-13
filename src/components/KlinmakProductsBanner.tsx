@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 /* ============================================================
    Tailwind class names, grouped by the element they style.
@@ -21,6 +22,8 @@ const styles = {
 } as const;
 
 const KlinmakProductsBanner = () => {
+  const t = useTranslations("KlinmakProductsBanner");
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -32,7 +35,7 @@ const KlinmakProductsBanner = () => {
           className={styles.eyebrow}
         >
           <span className={styles.eyebrowRule} />
-          Products
+          {t("eyebrow")}
           <span className={styles.eyebrowRule} />
         </motion.p>
         <motion.h2
@@ -42,9 +45,11 @@ const KlinmakProductsBanner = () => {
           transition={{ duration: 0.7, delay: 0.05 }}
           className={styles.headline}
         >
-          Each of our products is designed to meet the needs of hygiene and{" "}
-          <span className={styles.headlineAccent}>sustainability</span> — a
-          concrete, tangible commitment that goes beyond mere words.
+          {t.rich("headline", {
+            accent: (chunks) => (
+              <span className={styles.headlineAccent}>{chunks}</span>
+            ),
+          })}
         </motion.h2>
       </div>
     </section>

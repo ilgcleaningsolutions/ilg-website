@@ -15,6 +15,7 @@ import {
   Layers,
 } from "lucide-react";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 import { submitCrmLead } from "@/lib/crm";
 
 const INTEREST_OPTIONS = [
@@ -68,6 +69,7 @@ const styles = {
 } as const;
 
 const ContactForm = () => {
+  const t = useTranslations("ContactForm");
   const [form, setForm] = useState({
     interest: "",
     firstName: "",
@@ -106,12 +108,12 @@ const ContactForm = () => {
     ];
 
     if (required.some(([value]) => !value)) {
-      toast.error("Please fill in all required fields.");
+      toast.error(t("requiredError"));
       return;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
-      toast.error("Please enter a valid email address.");
+      toast.error(t("invalidEmail"));
       return;
     }
 
@@ -143,7 +145,7 @@ const ContactForm = () => {
         console.error("CRM lead sync failed:", error);
       });
 
-      toast.success("Thank you! We'll be in touch shortly.");
+      toast.success(t("successMessage"));
       setForm({
         interest: "",
         firstName: "",
@@ -157,9 +159,7 @@ const ContactForm = () => {
         comments: "",
       });
     } catch {
-      toast.error(
-        "Sorry, something went wrong. Please try again or email sales@ilgcleaningsolutions.com.",
-      );
+      toast.error(t("errorMessage"));
     } finally {
       setIsSubmitting(false);
     }
@@ -186,7 +186,7 @@ const ContactForm = () => {
           }`}
         >
           <option value="" disabled>
-            Interested system *
+            {t("interestPlaceholder")}
           </option>
           {INTEREST_OPTIONS.map((opt) => (
             <option key={opt} value={opt}>
@@ -203,7 +203,7 @@ const ContactForm = () => {
           <input
             type="text"
             name="firstName"
-            placeholder="First Name *"
+            placeholder={t("firstNamePlaceholder")}
             value={form.firstName}
             onChange={handleChange}
             maxLength={100}
@@ -217,7 +217,7 @@ const ContactForm = () => {
           <input
             type="text"
             name="lastName"
-            placeholder="Last Name *"
+            placeholder={t("lastNamePlaceholder")}
             value={form.lastName}
             onChange={handleChange}
             maxLength={100}
@@ -231,7 +231,7 @@ const ContactForm = () => {
           <input
             type="text"
             name="company"
-            placeholder="Company Name *"
+            placeholder={t("companyPlaceholder")}
             value={form.company}
             onChange={handleChange}
             maxLength={100}
@@ -245,7 +245,7 @@ const ContactForm = () => {
           <input
             type="email"
             name="email"
-            placeholder="Work Email *"
+            placeholder={t("emailPlaceholder")}
             value={form.email}
             onChange={handleChange}
             maxLength={255}
@@ -259,7 +259,7 @@ const ContactForm = () => {
           <input
             type="text"
             name="postalCode"
-            placeholder="Postal Code *"
+            placeholder={t("postalCodePlaceholder")}
             value={form.postalCode}
             onChange={handleChange}
             maxLength={20}
@@ -273,7 +273,7 @@ const ContactForm = () => {
           <input
             type="tel"
             name="phone"
-            placeholder="Phone *"
+            placeholder={t("phonePlaceholder")}
             value={form.phone}
             onChange={handleChange}
             maxLength={20}
@@ -287,7 +287,7 @@ const ContactForm = () => {
           <input
             type="text"
             name="country"
-            placeholder="Country *"
+            placeholder={t("countryPlaceholder")}
             value={form.country}
             onChange={handleChange}
             maxLength={100}
@@ -307,7 +307,7 @@ const ContactForm = () => {
             }`}
           >
             <option value="" disabled>
-              Industry *
+              {t("industryPlaceholder")}
             </option>
             {INDUSTRY_OPTIONS.map((opt) => (
               <option key={opt} value={opt}>
@@ -323,7 +323,7 @@ const ContactForm = () => {
         <MessageSquare size={16} className={styles.iconComments} />
         <textarea
           name="comments"
-          placeholder="Comments"
+          placeholder={t("commentsPlaceholder")}
           value={form.comments}
           onChange={handleChange}
           rows={4}
@@ -333,7 +333,7 @@ const ContactForm = () => {
       </div>
 
       <button type="submit" disabled={isSubmitting} className={styles.submit}>
-        {isSubmitting ? "Sending..." : "Send Message"} <Send size={16} />
+        {isSubmitting ? t("sending") : t("sendMessage")} <Send size={16} />
       </button>
     </motion.form>
   );

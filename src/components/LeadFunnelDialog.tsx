@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -27,21 +28,28 @@ import {
 } from "@/components/ui/dialog";
 import { submitCrmLead } from "@/lib/crm";
 
-const INTEREST_OPTIONS = [
-  "Pricing",
-  "Availability",
-  "Demo / Video",
-  "Technical datasheet",
-  "Financing options",
+// Each option is `[submittedValue, translationKey]`. The `submittedValue` is the
+// English/identifier string sent to the CRM and must NOT change; only the label
+// rendered from `translationKey` is localized.
+const INTEREST_OPTIONS: [string, string][] = [
+  ["Pricing", "pricing"],
+  ["Availability", "availability"],
+  ["Demo / Video", "demoVideo"],
+  ["Technical datasheet", "technicalDatasheet"],
+  ["Financing options", "financingOptions"],
 ];
 
-const URGENCY_OPTIONS = ["Immediate", "1–3 months", "Just exploring"];
+const URGENCY_OPTIONS: [string, string][] = [
+  ["Immediate", "immediate"],
+  ["1–3 months", "oneToThreeMonths"],
+  ["Just exploring", "justExploring"],
+];
 
 const CONTACT_METHOD_OPTIONS: [string, string][] = [
-  ["phone", "Phone call"],
-  ["whatsapp", "WhatsApp"],
-  ["sms", "SMS"],
-  ["email", "Email"],
+  ["phone", "phone"],
+  ["whatsapp", "whatsapp"],
+  ["sms", "sms"],
+  ["email", "email"],
 ];
 
 const initialForm = {
@@ -96,6 +104,7 @@ interface LeadFunnelDialogProps {
 }
 
 const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
+  const t = useTranslations("LeadFunnel");
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1);
@@ -140,7 +149,7 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
 
   function handleStep2Next() {
     if (form.preferredContactMethods.length === 0) {
-      toast.error("Pick at least one way for us to reach you.");
+      toast.error(t("toastPickContact"));
       return;
     }
     goToStep(3);
@@ -149,11 +158,11 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     if (!form.contactName.trim()) {
-      toast.error("Please enter your name.");
+      toast.error(t("toastEnterName"));
       return;
     }
     if (!form.email.trim() && !form.phone.trim()) {
-      toast.error("Please provide an email or a phone number.");
+      toast.error(t("toastProvideContact"));
       return;
     }
 
@@ -175,9 +184,7 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
       setSubmitted(true);
     } catch (error) {
       toast.error(
-        error instanceof Error
-          ? error.message
-          : "Sorry, something went wrong. Please try again.",
+        error instanceof Error ? error.message : t("toastError"),
       );
     } finally {
       setSubmitting(false);
@@ -196,20 +203,19 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
             className="flex flex-col items-center gap-3 py-6 text-center"
           >
             <CheckCircle2 size={40} className="text-primary" />
-            <DialogTitle>Thank you!</DialogTitle>
+            <DialogTitle>{t("thankYou")}</DialogTitle>
             <DialogDescription>
-              We received your request about the {productName}. Our team will reach out via
-              your preferred contact method shortly.
+              {t("successBody", { productName })}
             </DialogDescription>
           </motion.div>
         ) : (
           <>
             <DialogHeader>
-              <DialogTitle>Request pricing &amp; availability</DialogTitle>
+              <DialogTitle>{t("dialogTitle")}</DialogTitle>
               <DialogDescription>{productName}</DialogDescription>
             </DialogHeader>
 
-            <div className="flex gap-1.5" aria-label={`Step ${step} of 3`}>
+            <div className="flex gap-1.5" aria-label={t("stepAria", { step })}>
               {[1, 2, 3].map((n) => (
                 <span key={n} className={styles.progressDot(step >= n)} />
               ))}
@@ -230,41 +236,41 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
                   >
                     <div>
                       <p className="mb-2 text-sm font-medium text-foreground">
-                        What would you like to know?
+                        {t("interestsPrompt")}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {INTEREST_OPTIONS.map((opt) => (
+                        {INTEREST_OPTIONS.map(([value, key]) => (
                           <button
-                            key={opt}
+                            key={value}
                             type="button"
-                            className={styles.chip(form.interests.includes(opt))}
-                            onClick={() => toggleInterest(opt)}
+                            className={styles.chip(form.interests.includes(value))}
+                            onClick={() => toggleInterest(value)}
                           >
-                            {opt}
+                            {t(`interests.${key}`)}
                           </button>
                         ))}
                       </div>
                     </div>
                     <div>
                       <p className="mb-2 text-sm font-medium text-foreground">
-                        When do you need it?
+                        {t("urgencyPrompt")}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {URGENCY_OPTIONS.map((opt) => (
+                        {URGENCY_OPTIONS.map(([value, key]) => (
                           <button
-                            key={opt}
+                            key={value}
                             type="button"
-                            className={styles.chip(form.urgency === opt)}
-                            onClick={() => setForm((c) => ({ ...c, urgency: opt }))}
+                            className={styles.chip(form.urgency === value)}
+                            onClick={() => setForm((c) => ({ ...c, urgency: value }))}
                           >
-                            {opt}
+                            {t(`urgency.${key}`)}
                           </button>
                         ))}
                       </div>
                     </div>
                     <div className={styles.nav} style={{ justifyContent: "flex-end" }}>
                       <button type="button" className={styles.primaryBtn} onClick={() => goToStep(2)}>
-                        Next <ArrowRight size={15} />
+                        {t("next")} <ArrowRight size={15} />
                       </button>
                     </div>
                   </motion.div>
@@ -285,7 +291,7 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
                       <Briefcase size={16} className={styles.icon} />
                       <input
                         type="text"
-                        placeholder="Type of business or operation"
+                        placeholder={t("businessTypePlaceholder")}
                         value={form.businessType}
                         onChange={(e) => setForm((c) => ({ ...c, businessType: e.target.value }))}
                         className={styles.input}
@@ -296,7 +302,7 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
                       <input
                         type="number"
                         min="1"
-                        placeholder="Number of units"
+                        placeholder={t("unitQuantityPlaceholder")}
                         value={form.unitQuantity}
                         onChange={(e) => setForm((c) => ({ ...c, unitQuantity: e.target.value }))}
                         className={styles.input}
@@ -306,7 +312,7 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
                       <MapPin size={16} className={styles.icon} />
                       <input
                         type="text"
-                        placeholder="City / Country"
+                        placeholder={t("locationPlaceholder")}
                         value={form.location}
                         onChange={(e) => setForm((c) => ({ ...c, location: e.target.value }))}
                         className={styles.input}
@@ -314,10 +320,10 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
                     </div>
                     <div>
                       <p className="mb-2 text-sm font-medium text-foreground">
-                        Preferred contact method — pick as many as you like
+                        {t("contactMethodPrompt")}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {CONTACT_METHOD_OPTIONS.map(([value, label]) => {
+                        {CONTACT_METHOD_OPTIONS.map(([value, key]) => {
                           const active = form.preferredContactMethods.includes(value);
                           return (
                             <button
@@ -330,7 +336,7 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
                               <span className={styles.chipCheck(active)}>
                                 {active && <Check size={9} strokeWidth={3} />}
                               </span>
-                              {label}
+                              {t(`contactMethods.${key}`)}
                             </button>
                           );
                         })}
@@ -338,10 +344,10 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
                     </div>
                     <div className={styles.nav}>
                       <button type="button" className={styles.navBtn} onClick={() => goToStep(1)}>
-                        <ArrowLeft size={15} /> Back
+                        <ArrowLeft size={15} /> {t("back")}
                       </button>
                       <button type="button" className={styles.primaryBtn} onClick={handleStep2Next}>
-                        Next <ArrowRight size={15} />
+                        {t("next")} <ArrowRight size={15} />
                       </button>
                     </div>
                   </motion.div>
@@ -362,7 +368,7 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
                       <User size={16} className={styles.icon} />
                       <input
                         type="text"
-                        placeholder="Your name *"
+                        placeholder={t("namePlaceholder")}
                         value={form.contactName}
                         onChange={(e) => setForm((c) => ({ ...c, contactName: e.target.value }))}
                         className={styles.input}
@@ -373,7 +379,7 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
                       <Mail size={16} className={styles.icon} />
                       <input
                         type="email"
-                        placeholder="Email"
+                        placeholder={t("emailPlaceholder")}
                         value={form.email}
                         onChange={(e) => setForm((c) => ({ ...c, email: e.target.value }))}
                         className={styles.input}
@@ -383,17 +389,17 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
                       <Phone size={16} className={styles.icon} />
                       <input
                         type="tel"
-                        placeholder="Phone"
+                        placeholder={t("phonePlaceholder")}
                         value={form.phone}
                         onChange={(e) => setForm((c) => ({ ...c, phone: e.target.value }))}
                         className={styles.input}
                       />
                     </div>
-                    <p className={styles.hint}>Provide at least one — email or phone.</p>
+                    <p className={styles.hint}>{t("contactHint")}</p>
                     <div className={styles.field}>
                       <MessageSquare size={16} className="absolute left-3 top-3.5 text-muted-foreground" />
                       <textarea
-                        placeholder="Anything else we should know? (optional)"
+                        placeholder={t("commentsPlaceholder")}
                         value={form.comments}
                         onChange={(e) => setForm((c) => ({ ...c, comments: e.target.value }))}
                         rows={3}
@@ -402,15 +408,15 @@ const LeadFunnelDialog = ({ productName, children }: LeadFunnelDialogProps) => {
                     </div>
                     <div className={styles.nav}>
                       <button type="button" className={styles.navBtn} onClick={() => goToStep(2)}>
-                        <ArrowLeft size={15} /> Back
+                        <ArrowLeft size={15} /> {t("back")}
                       </button>
                       <button type="submit" className={styles.primaryBtn} disabled={submitting}>
                         {submitting ? (
                           <>
-                            <Loader2 size={15} className="animate-spin" /> Sending...
+                            <Loader2 size={15} className="animate-spin" /> {t("sending")}
                           </>
                         ) : (
-                          "Send request"
+                          t("sendRequest")
                         )}
                       </button>
                     </div>

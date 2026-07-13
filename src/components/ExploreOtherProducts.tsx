@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight, MessageCircle } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import LeadFunnelDialog from "@/components/LeadFunnelDialog";
 
 /** Minimal serializable shape — the full TecnovapProduct can't be passed across
@@ -79,6 +80,7 @@ const ExploreOtherProducts = ({
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
   const userInteracted = useRef(false);
+  const t = useTranslations("ExploreOtherProducts");
 
   // Track overflow + scroll position; ResizeObserver covers responsive changes.
   useEffect(() => {
@@ -135,7 +137,7 @@ const ExploreOtherProducts = ({
           <button
             type="button"
             onClick={() => scrollOne(-1)}
-            aria-label="Previous products"
+            aria-label={t("previousProducts")}
             className={`${styles.arrowBase} ${styles.arrowLeft} ${
               canScrollLeft ? styles.arrowEnabled : styles.arrowDisabled
             }`}
@@ -145,7 +147,7 @@ const ExploreOtherProducts = ({
           <button
             type="button"
             onClick={() => scrollOne(1)}
-            aria-label="Next products"
+            aria-label={t("nextProducts")}
             className={`${styles.arrowBase} ${styles.arrowRight} ${
               canScrollRight ? styles.arrowEnabled : styles.arrowDisabled
             }`}
@@ -184,29 +186,33 @@ const ProductTile = ({
 }: {
   product: ExploreCard;
   brandSlug: string;
-}) => (
-  <div className={styles.tile}>
-    <Link href={`/${brandSlug}/${product.slug}`} className={styles.tileLink}>
-      <span className={styles.tileImageWrap}>
-        <Image
-          src={product.image}
-          alt={product.imageAlt ?? ""}
-          fill
-          className={styles.tileImage}
-          sizes="176px"
-        />
-      </span>
-      <span className={styles.tileName}>
-        {product.name}
-      </span>
-    </Link>
-    <LeadFunnelDialog productName={product.name}>
-      <button type="button" className={styles.tileAction}>
-        <MessageCircle size={11} />
-        Request info
-      </button>
-    </LeadFunnelDialog>
-  </div>
-);
+}) => {
+  const t = useTranslations("ExploreOtherProducts");
+
+  return (
+    <div className={styles.tile}>
+      <Link href={`/${brandSlug}/${product.slug}`} className={styles.tileLink}>
+        <span className={styles.tileImageWrap}>
+          <Image
+            src={product.image}
+            alt={product.imageAlt ?? ""}
+            fill
+            className={styles.tileImage}
+            sizes="176px"
+          />
+        </span>
+        <span className={styles.tileName}>
+          {product.name}
+        </span>
+      </Link>
+      <LeadFunnelDialog productName={product.name}>
+        <button type="button" className={styles.tileAction}>
+          <MessageCircle size={11} />
+          {t("requestInfo")}
+        </button>
+      </LeadFunnelDialog>
+    </div>
+  );
+};
 
 export default ExploreOtherProducts;

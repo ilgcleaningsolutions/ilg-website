@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight, MessageCircle } from "lucide-react";
 import LeadFunnelDialog from "@/components/LeadFunnelDialog";
@@ -132,6 +133,7 @@ const ProductCarousel = ({
   landscape = false,
   inlineOnDesktop,
 }: ProductCarouselProps) => {
+  const t = useTranslations("ProductCarousel");
   const total = products.length;
   const hasMultiple = total > 1;
   // Few products read better as a static desktop row than a lopsided carousel.
@@ -206,11 +208,11 @@ const ProductCarousel = ({
                 {showCta && (p.hasDetail ?? true) && (
                   <div className={styles.ctaRow}>
                     <Link href={`/${brandSlug}/${p.slug}`} className={styles.cta}>
-                      See more <ArrowRight size={14} />
+                      {t("seeMore")} <ArrowRight size={14} />
                     </Link>
                     <LeadFunnelDialog productName={p.name}>
                       <button type="button" className={styles.ctaSecondary}>
-                        <MessageCircle size={14} /> Request info
+                        <MessageCircle size={14} /> {t("requestInfo")}
                       </button>
                     </LeadFunnelDialog>
                   </div>
@@ -232,7 +234,7 @@ const ProductCarousel = ({
           <button
             type="button"
             onClick={goPrev}
-            aria-label={`Previous: ${prevProduct.name}`}
+            aria-label={t("previousNamed", { name: prevProduct.name })}
             className={styles.peekLeft}
           >
             <div className={styles.peekInner}>
@@ -252,7 +254,7 @@ const ProductCarousel = ({
           <button
             type="button"
             onClick={goNext}
-            aria-label={`Next: ${nextProduct!.name}`}
+            aria-label={t("nextNamed", { name: nextProduct!.name })}
             className={styles.peekRight}
           >
             <div className={styles.peekInner}>
@@ -300,7 +302,7 @@ const ProductCarousel = ({
             <button
               type="button"
               onClick={goPrev}
-              aria-label="Previous product"
+              aria-label={t("previousProduct")}
               className={styles.arrowLeft}
             >
               <ChevronLeft className={styles.arrowIcon} />
@@ -308,7 +310,7 @@ const ProductCarousel = ({
             <button
               type="button"
               onClick={goNext}
-              aria-label="Next product"
+              aria-label={t("nextProduct")}
               className={styles.arrowRight}
             >
               <ChevronRight className={styles.arrowIcon} />
@@ -340,11 +342,11 @@ const ProductCarousel = ({
             {showCta && (currentProduct.hasDetail ?? true) && (
               <div className={styles.ctaRow}>
                 <Link href={`/${brandSlug}/${currentProduct.slug}`} className={styles.cta}>
-                  See more <ArrowRight size={14} />
+                  {t("seeMore")} <ArrowRight size={14} />
                 </Link>
                 <LeadFunnelDialog productName={currentProduct.name}>
                   <button type="button" className={styles.ctaSecondary}>
-                    <MessageCircle size={14} /> Request info
+                    <MessageCircle size={14} /> {t("requestInfo")}
                   </button>
                 </LeadFunnelDialog>
               </div>
@@ -358,7 +360,7 @@ const ProductCarousel = ({
               <button
                 key={p.slug}
                 onClick={() => goTo(i, i > current ? 1 : -1)}
-                aria-label={`Go to ${p.name}`}
+                aria-label={t("goTo", { name: p.name })}
                 className={styles.dot(current === i)}
               />
             ))}

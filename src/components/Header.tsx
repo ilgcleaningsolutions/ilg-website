@@ -1,29 +1,40 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Moon, Sun, Menu, X, ChevronDown, Mail } from "lucide-react";
+import { useState, useEffect, useTransition } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { Moon, Sun, Menu, X, ChevronDown, Mail, Languages } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { klinmakProducts } from "@/lib/klinmak-products";
 import { tecnovapProducts } from "@/lib/tecnovap-products";
 
-const navLinks = [
-  { label: "Home", href: "/" },
+/* Nav structure. Top-level labels/descriptions are translated at render time via
+   the "Header" namespace (keyed by `key`); product model names in the dropdowns
+   stay identical across locales, so they come straight from the data. */
+type NavConfig = {
+  key: string;
+  href: string;
+  /** Fixed label (brand name); when omitted the label comes from translations. */
+  label?: string;
+  children?: { label: string; href: string }[];
+};
+
+const navConfig: NavConfig[] = [
+  { key: "home", href: "/" },
   {
+    key: "klinmak",
     label: "Klinmak",
     href: "/klinmak",
-    desc: "Floor Scrubber Dryers",
     children: klinmakProducts.map((p) => ({
       label: p.name,
       href: `/klinmak/${p.slug}`,
     })),
   },
   {
+    key: "tecnovap",
     label: "Tecnovap",
     href: "/tecnovap",
-    desc: "Steam Cleaning Systems",
     children: tecnovapProducts.map((p) => ({
       label: p.name,
       href: `/tecnovap/${p.slug}`,
@@ -83,6 +94,8 @@ const styles = {
 
   // Right-side cluster
   rightCluster: "flex items-center gap-3 justify-self-end",
+  langToggle:
+    "inline-flex items-center gap-1.5 rounded-full bg-secondary px-2.5 py-2 font-heading text-xs font-semibold text-secondary-foreground transition-colors duration-200 hover:bg-primary hover:text-primary-foreground disabled:opacity-60",
   themeToggle:
     "p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors duration-200",
   contactDesktop:
@@ -121,11 +134,30 @@ const styles = {
 } as const;
 
 const Header = () => {
+  const t = useTranslations("Header");
+  const locale = useLocale();
+  const router = useRouter();
   const [isDark, setIsDark] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openBrand, setOpenBrand] = useState<string | null>(null);
+  const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
+
+  // Labels resolved from translations; brand names fall back to the config value.
+  const navLinks = navConfig.map((link) => ({
+    ...link,
+    label: link.label ?? t(`nav.${link.key}`),
+    desc: link.key === "home" ? undefined : t(`desc.${link.key}`),
+  }));
+
+  const nextLocale = locale === "es" ? "en" : "es";
+  const switchLocale = () => {
+    // Re-navigate to the same page under the other locale (adds/removes "/es").
+    startTransition(() => {
+      router.replace(pathname, { locale: nextLocale });
+    });
+  };
 
   useEffect(() => {
     // Light mode is the default; only honor an explicit user opt-in to dark.
@@ -238,10 +270,21 @@ const Header = () => {
         </nav>
 
         <div className={styles.rightCluster}>
+          {/* Language switcher — swaps the whole site to the other locale */}
+          <button
+            onClick={switchLocale}
+            disabled={isPending}
+            className={styles.langToggle}
+            aria-label={t("switchLanguage")}
+          >
+            <Languages size={16} />
+            <span>{nextLocale.toUpperCase()}</span>
+          </button>
+
           <button
             onClick={toggleTheme}
             className={styles.themeToggle}
-            aria-label="Toggle theme"
+            aria-label={t("toggleTheme")}
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
@@ -250,16 +293,16 @@ const Header = () => {
           <Link
             href="/#contact"
             className={styles.contactDesktop}
-            aria-label="Contact us"
+            aria-label={t("contact")}
           >
             <Mail size={16} />
-            <span className={styles.contactDesktopLabel}>Contact Us</span>
+            <span className={styles.contactDesktopLabel}>{t("contact")}</span>
           </Link>
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={styles.mobileMenuToggle}
-            aria-label="Toggle menu"
+            aria-label={t("toggleMenu")}
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -304,7 +347,7 @@ const Header = () => {
                             cur === link.label ? null : link.label
                           )
                         }
-                        aria-label={`Toggle ${link.label} products`}
+                        aria-label={t("toggleProducts", { brand: link.label })}
                         className={styles.mobileBrandToggle}
                       >
                         <ChevronDown
@@ -359,10 +402,10 @@ const Header = () => {
                 href="/#contact"
                 onClick={() => setMobileOpen(false)}
                 className={styles.contactMobile}
-                aria-label="Contact us"
+                aria-label={t("contact")}
               >
                 <Mail size={16} />
-                Contact Us
+                {t("contact")}
               </Link>
             </div>
           </motion.nav>

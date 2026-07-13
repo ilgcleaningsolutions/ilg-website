@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ArrowRight, type LucideIcon } from "lucide-react";
 import {
   Dialog,
@@ -161,6 +162,7 @@ const ProductShowcase = ({
   systemTitle = false,
   tightTop = false,
 }: ProductShowcaseProps) => {
+  const t = useTranslations("ProductShowcase");
   // For systemTitle, split the name into first word (emphasized) + the rest (lighter).
   const [systemFirst, ...systemRest] = name.split(" ");
   const systemTail = systemRest.join(" ");
@@ -202,7 +204,7 @@ const ProductShowcase = ({
                 <div className={styles.mainFeaturesHeader}>
                   <div className={styles.mainFeaturesHeaderRow}>
                     <p className={styles.mainFeaturesTitle}>
-                      Main Features
+                      {t("mainFeatures")}
                     </p>
                     {specifications && specifications.length > 0 && (
                       <Dialog>
@@ -211,14 +213,14 @@ const ProductShowcase = ({
                             type="button"
                             className={styles.viewSpecsButton}
                           >
-                            View Specifications
+                            {t("viewSpecifications")}
                             <ArrowRight size={12} />
                           </button>
                         </DialogTrigger>
                         <DialogContent className={styles.dialogContent}>
                           <div className={styles.dialogHead}>
                             <p className={styles.dialogEyebrow}>
-                              {eyebrow ?? "Specifications"}
+                              {eyebrow ?? t("specifications")}
                             </p>
                             <DialogTitle className={styles.dialogTitle}>
                               {name}
