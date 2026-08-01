@@ -8,6 +8,11 @@ import { ArrowUpRight, Bluetooth, Smartphone } from "lucide-react";
 const AFNOR_LOGO =
   "https://res.cloudinary.com/dxbwqifwn/image/upload/v1783015784/Logo_AFNOR_Tecnovap-294x300_bgbcek.png";
 
+/* MyTecnovap banner — flat #0094DA background, so the card behind it uses the
+   same color and the letterboxing is invisible. */
+const MYTECNOVAP_IMAGE =
+  "https://res.cloudinary.com/dxbwqifwn/image/upload/f_auto,q_auto/v1785596265/my-tecnovap_v97baf.jpg";
+
 /* Free Pexels photography (images.pexels.com) */
 const PHOTO = {
   healthcare:
@@ -24,11 +29,9 @@ interface PhotoCard {
   no: string;
   id: string;
   image: string;
-  wide?: boolean;
 }
 
-/* Rendered after the cert + app cards so the bento fills correctly:
-   the two small cards sit top-right, the two wide ones span the bottom row. */
+/* Rendered below the cert / app / banner row — two wide cards per row on lg. */
 const photoCards: PhotoCard[] = [
   {
     no: "02",
@@ -44,13 +47,11 @@ const photoCards: PhotoCard[] = [
     no: "04",
     id: "foodMechanical",
     image: PHOTO.industry,
-    wide: true,
   },
   {
     no: "05",
     id: "ecological",
     image: PHOTO.agriculture,
-    wide: true,
   },
 ];
 
@@ -96,19 +97,14 @@ const styles = {
   certBody:
     "mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground md:text-base",
   certBodyStrong: "font-semibold text-foreground",
-  certFooter: "mt-auto flex items-center justify-between gap-4 pt-8",
-  certFooterLabel:
-    "font-heading text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground",
-  certFooterValue: "mt-1 font-heading text-lg font-bold text-foreground",
-  certSealChip: "rounded-2xl bg-white p-3 shadow-md ring-1 ring-black/5",
-  certSealImage: "h-16 w-auto md:h-20",
+  certFooter: "mt-auto flex items-center justify-center pt-8",
+  certSealChip: "rounded-2xl bg-white p-4 shadow-md ring-1 ring-black/5",
+  certSealImage: "h-28 w-auto md:h-36",
 
-  // MyTecnovap app card (tall, light blue)
+  // MyTecnovap app card (top of the right column, light blue)
   appCard:
-    "flex flex-col rounded-3xl border border-primary/15 bg-primary/[0.07] p-7 sm:col-span-2 lg:col-span-1 lg:row-span-2",
-  appHeader: "mb-5 flex items-center justify-between",
-  appLabel:
-    "font-heading text-[10px] font-semibold uppercase tracking-[0.22em] text-primary",
+    "flex flex-col rounded-3xl border border-primary/15 bg-primary/[0.07] p-7 sm:col-span-2 lg:col-span-2 lg:row-span-1",
+  appHeader: "mb-5 flex items-center justify-end",
   appNo: "font-heading text-[10px] font-semibold uppercase tracking-wider text-primary/60",
   appTitle: "font-heading text-xl font-bold text-foreground",
   appBody: "mt-2 text-sm leading-relaxed text-muted-foreground",
@@ -121,10 +117,14 @@ const styles = {
   appChipMeta: "flex items-center gap-1 text-xs text-muted-foreground",
   appChipMetaIcon: "text-primary",
 
-  // Application photo cards (light overlay)
+  // MyTecnovap banner card (below the app card, brand-blue to blend with the image)
+  bannerCard:
+    "relative min-h-[190px] overflow-hidden rounded-3xl bg-[#0094DA] shadow-[var(--shadow-card)] sm:col-span-2 lg:col-span-2 lg:row-span-1",
+  bannerImage: "object-contain p-4",
+
+  // Application photo cards (light overlay) — all wide, two per row on lg
   photoCard:
-    "group relative flex min-h-[190px] flex-col justify-between overflow-hidden rounded-3xl p-6 text-white shadow-[var(--shadow-card)] transition-transform duration-300 hover:-translate-y-0.5",
-  photoCardWide: "sm:col-span-2 lg:col-span-2",
+    "group relative flex min-h-[190px] flex-col justify-between overflow-hidden rounded-3xl p-6 text-white shadow-[var(--shadow-card)] transition-transform duration-300 hover:-translate-y-0.5 sm:col-span-2 lg:col-span-2",
   photoImage: "object-cover transition-transform duration-500 group-hover:scale-105",
   photoOverlay:
     "absolute inset-0 bg-gradient-to-t from-[hsl(var(--ilg-blue-deep))]/85 from-0% via-[hsl(var(--ilg-blue-deep))]/15 via-50% to-transparent",
@@ -192,14 +192,6 @@ const TecnovapSteamCleaners = () => {
           </p>
 
           <div className={styles.certFooter}>
-            <div>
-              <p className={styles.certFooterLabel}>
-                {t("cert.footerLabel")}
-              </p>
-              <p className={styles.certFooterValue}>
-                {t("cert.footerValue")}
-              </p>
-            </div>
             {/* AFNOR seal — white chip keeps it legible in light & dark */}
             <div className={styles.certSealChip}>
               <Image
@@ -220,9 +212,6 @@ const TecnovapSteamCleaners = () => {
           className={styles.appCard}
         >
           <div className={styles.appHeader}>
-            <span className={styles.appLabel}>
-              {t("app.label")}
-            </span>
             <span className={styles.appNo}>
               {t("app.no")}
             </span>
@@ -252,13 +241,28 @@ const TecnovapSteamCleaners = () => {
           </div>
         </motion.div>
 
+        {/* ---- MyTecnovap banner (right column) ---- */}
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className={styles.bannerCard}
+        >
+          <Image
+            src={MYTECNOVAP_IMAGE}
+            alt="MyTecnovap App"
+            fill
+            className={styles.bannerImage}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </motion.div>
+
         {/* ---- Application photo cards (light overlay) ---- */}
-        {photoCards.map(({ no, id, image, wide }, i) => (
+        {photoCards.map(({ no, id, image }, i) => (
           <motion.div
             key={id}
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.1 + i * 0.06 }}
-            className={`${styles.photoCard} ${wide ? styles.photoCardWide : ""}`}
+            className={styles.photoCard}
           >
             <Image
               src={image}

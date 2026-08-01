@@ -86,15 +86,15 @@ export const tecnovapProducts: TecnovapProduct[] = [
       en: "Reliable, compact, and always ready for demanding spaces.",
       es: "Confiable, compacto y siempre listo para espacios exigentes.",
     },
-    spec: { en: "2.45 kW", es: "2.45 kW" },
+    spec: { en: "1.6 kW", es: "1.6 kW" },
     description: {
       en: "Reliable steam cleaning performance for demanding spaces, combining extended runtime, durable construction, and exceptional versatility to handle deep cleaning tasks with confidence, consistency, and long-lasting results. Steam cleaner designed for professional use with stainless-steel body and boiler.",
       es: "Rendimiento confiable de limpieza de vapor para espacios exigentes, que combina un tiempo de funcionamiento prolongado, una construcción duradera y una versatilidad excepcional para realizar tareas de limpieza profunda con confianza, constancia y resultados duraderos. Limpiador de vapor diseñado para uso profesional con cuerpo y caldera de acero inoxidable.",
     },
     features: [
       {
-        en: "Able to deliver dry saturated steam at 174°C.",
-        es: "Capaz de suministrar vapor seco saturado a 174°C.",
+        en: "Able to deliver dry saturated steam at 345°F (174°C).",
+        es: "Capaz de suministrar vapor seco saturado a 345 °F (174 °C).",
       },
       {
         en: "Ergonomic structure, fully electric operation and compact size for use in any environment.",
@@ -124,12 +124,12 @@ export const tecnovapProducts: TecnovapProduct[] = [
       {
         icon: Zap,
         label: { en: "Power Supply", es: "Alimentación" },
-        value: "1~ 230V 50/60Hz",
+        value: "1~ 120V",
       },
       {
         icon: Gauge,
         label: { en: "Operating Pressure", es: "Presión de trabajo" },
-        value: "8 bar",
+        value: { en: "up to 121 psi / 8 bar", es: "hasta 121 psi / 8 bar" },
       },
       {
         icon: Cloud,
@@ -139,7 +139,7 @@ export const tecnovapProducts: TecnovapProduct[] = [
       {
         icon: Thermometer,
         label: { en: "Steam Temperature", es: "Temperatura del vapor" },
-        value: "174°C",
+        value: { en: "up to 345°F / 174°C", es: "hasta 345 °F / 174 °C" },
       },
     ],
     specifications: [
@@ -155,16 +155,16 @@ export const tecnovapProducts: TecnovapProduct[] = [
             label: { en: "Body", es: "Cuerpo" },
             value: { en: "Stainless-steel AISI 304 BA", es: "Acero inoxidable AISI 304 BA" },
           },
-          { label: { en: "Power supply", es: "Alimentación" }, unit: "V - Hz", value: "1~ 230 · 50/60" },
-          { label: { en: "Boiler output", es: "Potencia de la caldera" }, unit: "kW/h", value: "2.4" },
-          { label: { en: "Maximum output", es: "Potencia máxima" }, unit: "kW/h", value: "2.45" },
+          { label: { en: "Power supply", es: "Alimentación" }, unit: "V", value: "1~ 120" },
+          { label: { en: "Boiler output", es: "Potencia de la caldera" }, unit: "W", value: "1600" },
+          { label: { en: "Maximum output", es: "Potencia máxima" }, unit: "W", value: "1600" },
           { label: { en: "Boiler volume", es: "Volumen de la caldera" }, unit: "L", value: "1.5" },
-          { label: { en: "Operating pressure", es: "Presión de trabajo" }, unit: "bar", value: "8" },
+          { label: { en: "Operating pressure", es: "Presión de trabajo" }, unit: "psi", value: "121" },
           { label: { en: "Water tank", es: "Depósito de agua" }, unit: "L", value: "3" },
           { label: { en: "Detergent tank", es: "Depósito de detergente" }, unit: "L", value: "1" },
           { label: { en: "Steam production", es: "Producción de vapor" }, unit: "g/min", value: "64" },
           { label: { en: "Steam production", es: "Producción de vapor" }, unit: "kg/h", value: "3.8" },
-          { label: { en: "Steam temperature", es: "Temperatura del vapor" }, unit: "°C", value: "174" },
+          { label: { en: "Steam temperature", es: "Temperatura del vapor" }, unit: "°F", value: "345" },
         ],
       },
       {
@@ -189,10 +189,10 @@ export const tecnovapProducts: TecnovapProduct[] = [
       en: "Industrial power with integrated wet/dry vacuum. Built to last.",
       es: "Potencia industrial con aspiradora de sólidos y líquidos integrada. Construido para durar.",
     },
-    spec: { en: "10.8 kW · 17.4 kW · 21 kW · 21.6 kW · 31.8 kW · 39 kW", es: "10.8 kW · 17.4 kW · 21 kW · 21.6 kW · 31.8 kW · 39 kW" },
+    spec: { en: "21.6 kW · 31.8 kW · 39 kW", es: "21.6 kW · 31.8 kW · 39 kW" },
     description: {
-      en: "Steam cleaner with stainless-steel body and boiler, designed for industrial use and able to deliver dry saturated steam at 183°C.",
-      es: "Limpiador de vapor con cuerpo y caldera de acero inoxidable, diseñado para uso industrial y capaz de suministrar vapor seco saturado a 183°C.",
+      en: "Steam cleaner with stainless-steel body and boiler, designed for industrial use and able to deliver dry saturated steam at 361°F (183°C).",
+      es: "Limpiador de vapor con cuerpo y caldera de acero inoxidable, diseñado para uso industrial y capaz de suministrar vapor seco saturado a 361 °F (183 °C).",
     },
     features: [
       {
@@ -227,7 +227,7 @@ export const tecnovapProducts: TecnovapProduct[] = [
       {
         icon: Zap,
         label: { en: "Power Supply", es: "Alimentación" },
-        value: "3~ 400V 50/60Hz",
+        value: "3~ 480V 60Hz",
       },
       {
         icon: Gauge,
@@ -237,12 +237,12 @@ export const tecnovapProducts: TecnovapProduct[] = [
       {
         icon: Cloud,
         label: { en: "Steam Production", es: "Producción de vapor" },
-        value: "291–970 g/min · 17.5–58 kg/h",
+        value: "485–970 g/min · 29.1–58 kg/h",
       },
       {
         icon: Thermometer,
         label: { en: "Steam Temperature", es: "Temperatura del vapor" },
-        value: "183°C",
+        value: "361°F",
       },
     ],
     specifications: [
@@ -261,25 +261,24 @@ export const tecnovapProducts: TecnovapProduct[] = [
           {
             label: { en: "Power supply", es: "Alimentación" },
             unit: "V - Hz",
-            value: "3~ 400 · 50",
-            note: { en: "60 Hz on request", es: "60 Hz bajo pedido" },
+            value: "3~ 480 · 60",
           },
-          { label: { en: "Boiler output", es: "Potencia de la caldera" }, unit: "kW/h", value: "10.8 · 14.4 · 18 · 21.6 · 28.8 · 36" },
-          { label: { en: "Maximum output", es: "Potencia máxima" }, unit: "kW/h", value: "10.8 · 17.4 · 21 · 21.6 · 31.8 · 39" },
+          { label: { en: "Boiler output", es: "Potencia de la caldera" }, unit: "kW/h", value: "21.6 · 28.8 · 36" },
+          { label: { en: "Maximum output", es: "Potencia máxima" }, unit: "kW/h", value: "21.6 · 31.8 · 39" },
           { label: { en: "Boiler volume", es: "Volumen de la caldera" }, unit: "L", value: "13" },
           { label: { en: "Operating pressure", es: "Presión de trabajo" }, unit: "bar", value: { en: "from 1 to 10", es: "de 1 a 10" } },
           { label: { en: "Water tank", es: "Depósito de agua" }, unit: "L", value: "14" },
           { label: { en: "Detergent tank", es: "Depósito de detergente" }, unit: "L", value: "14" },
-          { label: { en: "Steam production", es: "Producción de vapor" }, unit: "g/min", value: "291 · 388 · 485 · 582 · 776 · 970" },
-          { label: { en: "Steam production", es: "Producción de vapor" }, unit: "kg/h", value: "17.5 · 23 · 29.1 · 35 · 46.5 · 58" },
-          { label: { en: "Steam temperature", es: "Temperatura del vapor" }, unit: "°C", value: "165 – 183" },
+          { label: { en: "Steam production", es: "Producción de vapor" }, unit: "g/min", value: "485 · 582 · 776 · 970" },
+          { label: { en: "Steam production", es: "Producción de vapor" }, unit: "kg/h", value: "29.1 · 35 · 46.5 · 58" },
+          { label: { en: "Steam temperature", es: "Temperatura del vapor" }, unit: "°F", value: "361" },
         ],
       },
       {
         title: { en: "Vacuum cleaner", es: "Aspiradora de sólidos y líquidos" },
         rows: [
           { label: { en: "Power output", es: "Potencia" }, unit: "kW/h", value: "3" },
-          { label: { en: "Drum capacity", es: "Capacidad del tambor" }, unit: "L", value: "14 | 43" },
+          { label: { en: "Drum capacity", es: "Capacidad del tambor" }, unit: "gallon", value: "11.35" },
           { label: { en: "Air flow", es: "Caudal de aire" }, unit: "m³/h", value: "320" },
           { label: { en: "Depression", es: "Depresión" }, unit: "mm", value: "3200" },
         ],
@@ -306,10 +305,10 @@ export const tecnovapProducts: TecnovapProduct[] = [
       en: "Heavy-duty steam for demanding industrial environments.",
       es: "Vapor de alto rendimiento para entornos industriales exigentes.",
     },
-    spec: { en: "11 kW · 14.6 kW · 21.8 kW · 29 kW · 36.2 kW", es: "11 kW · 14.6 kW · 21.8 kW · 29 kW · 36.2 kW" },
+    spec: { en: "11 kW · 21.8 kW · 29 kW · 36.2 kW", es: "11 kW · 21.8 kW · 29 kW · 36.2 kW" },
     description: {
-      en: "Steam cleaner with stainless-steel body and boiler, designed for industrial use and able to deliver dry saturated steam at 183°C.",
-      es: "Limpiador de vapor con cuerpo y caldera de acero inoxidable, diseñado para uso industrial y capaz de suministrar vapor seco saturado a 183°C.",
+      en: "Steam cleaner with stainless-steel body and boiler, designed for industrial use and able to deliver dry saturated steam at 361°F (183°C).",
+      es: "Limpiador de vapor con cuerpo y caldera de acero inoxidable, diseñado para uso industrial y capaz de suministrar vapor seco saturado a 361 °F (183 °C).",
     },
     features: [
       {
@@ -340,7 +339,7 @@ export const tecnovapProducts: TecnovapProduct[] = [
       {
         icon: Zap,
         label: { en: "Power Supply", es: "Alimentación" },
-        value: "3~ 400V 50/60Hz",
+        value: "3~ 208–480V",
       },
       {
         icon: Cloud,
@@ -350,7 +349,7 @@ export const tecnovapProducts: TecnovapProduct[] = [
       {
         icon: Thermometer,
         label: { en: "Steam Temperature", es: "Temperatura del vapor" },
-        value: "183°C",
+        value: "361°F",
       },
       {
         icon: Gauge,
@@ -371,16 +370,16 @@ export const tecnovapProducts: TecnovapProduct[] = [
             label: { en: "Body", es: "Cuerpo" },
             value: { en: "Stainless-steel AISI 304 BA", es: "Acero inoxidable AISI 304 BA" },
           },
-          { label: { en: "Power supply", es: "Alimentación" }, unit: "V - Hz", value: "3~ 400 · 50/60" },
-          { label: { en: "Boiler output", es: "Potencia de la caldera" }, unit: "kW/h", value: "10.8 · 14.4 · 21.6 · 28.8 · 36" },
-          { label: { en: "Maximum output", es: "Potencia máxima" }, unit: "kW/h", value: "11 · 14.6 · 21.8 · 29 · 36.2" },
+          { label: { en: "Power supply", es: "Alimentación" }, unit: "V", value: "3~ 208 – 480" },
+          { label: { en: "Boiler output", es: "Potencia de la caldera" }, unit: "kW/h", value: "10.8 · 21.6 · 36" },
+          { label: { en: "Maximum output", es: "Potencia máxima" }, unit: "kW/h", value: "11 · 21.8 · 36.2" },
           { label: { en: "Boiler volume", es: "Volumen de la caldera" }, unit: "L", value: "11 · 12 · 13" },
           { label: { en: "Operating pressure", es: "Presión de trabajo" }, unit: "bar", value: "10" },
           { label: { en: "Water tank", es: "Depósito de agua" }, unit: "L", value: "20" },
           { label: { en: "Detergent tank", es: "Depósito de detergente" }, unit: "L", value: "20" },
-          { label: { en: "Steam production", es: "Producción de vapor" }, unit: "g/min", value: "291 · 388 · 582 · 776 · 970" },
-          { label: { en: "Steam production", es: "Producción de vapor" }, unit: "kg/h", value: "17.5 · 23 · 35 · 46.5 · 58" },
-          { label: { en: "Steam temperature", es: "Temperatura del vapor" }, unit: "°C", value: "183" },
+          { label: { en: "Steam production", es: "Producción de vapor" }, unit: "g/min", value: "291 · 582 · 776 · 970" },
+          { label: { en: "Steam production", es: "Producción de vapor" }, unit: "kg/h", value: "17.5 · 35 · 46.5 · 58" },
+          { label: { en: "Steam temperature", es: "Temperatura del vapor" }, unit: "°F", value: "361" },
         ],
       },
       {
@@ -405,10 +404,10 @@ export const tecnovapProducts: TecnovapProduct[] = [
       en: "Compact, versatile, and ready for any professional environment.",
       es: "Compacto, versátil y listo para cualquier entorno profesional.",
     },
-    spec: { en: "3.75 kW", es: "3.75 kW" },
+    spec: { en: "5.1 kW", es: "5.1 kW" },
     description: {
-      en: "Steam cleaner with stainless-steel body and boiler, designed for professional use and able to deliver dry saturated steam at 183°C, 174°C or 165°C based on the model.",
-      es: "Limpiador de vapor con cuerpo y caldera de acero inoxidable, diseñado para uso profesional y capaz de suministrar vapor seco saturado a 183°C, 174°C o 165°C según el modelo.",
+      en: "Steam cleaner with stainless-steel body and boiler, designed for professional use and able to deliver dry saturated steam at 361°F.",
+      es: "Limpiador de vapor con cuerpo y caldera de acero inoxidable, diseñado para uso profesional y capaz de suministrar vapor seco saturado a 361 °F.",
     },
     features: [
       {
@@ -439,17 +438,17 @@ export const tecnovapProducts: TecnovapProduct[] = [
       {
         icon: Zap,
         label: { en: "Power Supply", es: "Alimentación" },
-        value: "1~ 230V · 3~ 400V · 50/60Hz",
+        value: "3~ 220V 50/60Hz",
       },
       {
         icon: Gauge,
         label: { en: "Operating Pressure", es: "Presión de trabajo" },
-        value: "6 · 8 · 10 bar",
+        value: "8 bar",
       },
       {
         icon: Thermometer,
         label: { en: "Steam Temperature", es: "Temperatura del vapor" },
-        value: "165 · 174 · 183 °C",
+        value: "361°F",
       },
     ],
     specifications: [
@@ -465,16 +464,15 @@ export const tecnovapProducts: TecnovapProduct[] = [
             label: { en: "Body", es: "Cuerpo" },
             value: { en: "Stainless-steel AISI 304 BA", es: "Acero inoxidable AISI 304 BA" },
           },
-          { label: { en: "Power supply", es: "Alimentación" }, unit: "V - Hz", value: "1~ 230 · 50/60  |  3~ 400 · 50/60" },
-          { label: { en: "Boiler output", es: "Potencia de la caldera" }, unit: "kW/h", value: "3.6" },
-          { label: { en: "Maximum output", es: "Potencia máxima" }, unit: "kW/h", value: "3.75" },
+          { label: { en: "Power supply", es: "Alimentación" }, unit: "V - Hz", value: "3~ 220 · 50/60" },
+          { label: { en: "Maximum output", es: "Potencia máxima" }, unit: "kW/h", value: "5.1" },
           { label: { en: "Boiler volume", es: "Volumen de la caldera" }, unit: "L", value: "5" },
-          { label: { en: "Operating pressure", es: "Presión de trabajo" }, unit: "bar", value: "10 · 8 · 6" },
+          { label: { en: "Operating pressure", es: "Presión de trabajo" }, unit: "bar", value: "8" },
           { label: { en: "Water tank", es: "Depósito de agua" }, unit: "L", value: "7.5" },
           { label: { en: "Detergent tank", es: "Depósito de detergente" }, unit: "L", value: "7.5" },
           { label: { en: "Steam production", es: "Producción de vapor" }, unit: "g/min", value: "97" },
           { label: { en: "Steam production", es: "Producción de vapor" }, unit: "kg/h", value: "5.9" },
-          { label: { en: "Steam temperature", es: "Temperatura del vapor" }, unit: "°C", value: "183 · 174 · 165" },
+          { label: { en: "Steam temperature", es: "Temperatura del vapor" }, unit: "°F", value: "361" },
         ],
       },
       {
@@ -496,22 +494,22 @@ export const tecnovapProducts: TecnovapProduct[] = [
     category: { en: "High-Pressure Washer", es: "Hidrolimpiadora de alta presión" },
     name: "HYDROBOX",
     tagline: {
-      en: "Hot & cold high-pressure precision, up to 150 bar.",
-      es: "Precisión de alta presión en frío y caliente, hasta 150 bar.",
+      en: "Hot & cold high-pressure precision, up to 2,175 psi.",
+      es: "Precisión de alta presión en frío y caliente, hasta 2,175 psi.",
     },
-    spec: { en: "10.5 kW · 15.9 kW", es: "10.5 kW · 15.9 kW" },
+    spec: { en: "15.9 kW", es: "15.9 kW" },
     description: {
       en: "Hot & cold high-pressure washer with stainless-steel body and boiler. Built for industrial-grade washing with configurable pressure and water temperature.",
       es: "Hidrolimpiadora de alta presión en frío y caliente con cuerpo y caldera de acero inoxidable. Diseñada para lavado de nivel industrial con presión y temperatura del agua configurables.",
     },
     features: [
       {
-        en: "The water temperature can be set from 20°C to 90°C.",
-        es: "La temperatura del agua se puede ajustar de 20°C a 90°C.",
+        en: "The water temperature can be set from 68°F up to 194°F.",
+        es: "La temperatura del agua se puede ajustar de 68 °F a 194 °F.",
       },
       {
-        en: "The water pressure can be set from 1 to 150 bar.",
-        es: "La presión del agua se puede ajustar de 1 a 150 bar.",
+        en: "The water pressure can be set from 14.50 up to 2,175 psi.",
+        es: "La presión del agua se puede ajustar de 14.50 a 2,175 psi.",
       },
       {
         en: "Ergonomic structure, fully electric operation, and compact size for use in any environment.",
@@ -541,22 +539,22 @@ export const tecnovapProducts: TecnovapProduct[] = [
       {
         icon: Zap,
         label: { en: "Power Supply", es: "Alimentación" },
-        value: "3~N 400V 50/60Hz",
+        value: "3~ 440V 50/60Hz",
       },
       {
         icon: Gauge,
         label: { en: "Operating Pressure", es: "Presión de trabajo" },
-        value: { en: "from 1 to 150 bar", es: "de 1 a 150 bar" },
+        value: { en: "14.50 up to 2,175 psi", es: "de 14.50 a 2,175 psi" },
       },
       {
         icon: Droplets,
         label: { en: "Water Flow", es: "Caudal de agua" },
-        value: "2 L · 4 L",
+        value: "4 L",
       },
       {
         icon: Thermometer,
         label: { en: "Water Temperature", es: "Temperatura del agua" },
-        value: { en: "from 20° to 90°C", es: "de 20° a 90°C" },
+        value: { en: "from 68°F up to 194°F", es: "de 68 °F a 194 °F" },
       },
     ],
     specifications: [
@@ -572,13 +570,13 @@ export const tecnovapProducts: TecnovapProduct[] = [
             label: { en: "Body", es: "Cuerpo" },
             value: { en: "Stainless-steel AISI 304 BA", es: "Acero inoxidable AISI 304 BA" },
           },
-          { label: { en: "Power supply", es: "Alimentación" }, unit: "V - Hz", value: "3~ 400 · 50/60" },
-          { label: { en: "Boiler output", es: "Potencia de la caldera" }, unit: "kW/h", value: "9.0 · 14.4" },
-          { label: { en: "Maximum output", es: "Potencia máxima" }, unit: "kW/h", value: "10.5 · 15.9" },
+          { label: { en: "Power supply", es: "Alimentación" }, unit: "V - Hz", value: "3~ 440 · 50/60" },
+          { label: { en: "Boiler output", es: "Potencia de la caldera" }, unit: "kW/h", value: "14.4" },
+          { label: { en: "Maximum output", es: "Potencia máxima" }, unit: "kW/h", value: "15.9" },
           { label: { en: "Boiler volume", es: "Volumen de la caldera" }, unit: "L", value: "5" },
-          { label: { en: "Operating pressure", es: "Presión de trabajo" }, unit: "bar", value: { en: "from 1 to 150", es: "de 1 a 150" } },
-          { label: { en: "Water flow", es: "Caudal de agua" }, unit: "L/min", value: "2 · 4" },
-          { label: { en: "Water temperature", es: "Temperatura del agua" }, unit: "°C", value: { en: "from 20 to 90", es: "de 20 a 90" } },
+          { label: { en: "Operating pressure", es: "Presión de trabajo" }, unit: "psi", value: { en: "from 14.50 up to 2,175", es: "de 14.50 a 2,175" } },
+          { label: { en: "Water flow", es: "Caudal de agua" }, unit: "L/min", value: "4" },
+          { label: { en: "Water temperature", es: "Temperatura del agua" }, unit: "°F", value: { en: "from 68 up to 194", es: "de 68 a 194" } },
         ],
       },
       {

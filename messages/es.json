@@ -118,7 +118,6 @@
     "titleLine2": "profesionales en los que",
     "titleEmphasis": "puede confiar",
     "subtitle": "ILG le ofrece un portafolio enfocado de maquinaria de limpieza líder del sector: cuidado silencioso de suelos de Klinmak y vapor sin químicos de Tecnovap.",
-    "pill": "Misión compartida. Soluciones complementarias. Resultados excepcionales.",
     "stickerAlt": "ILG — Dos marcas potentes, un socio de confianza",
     "tecnovapProductAlt": "Gama de productos Tecnovap",
     "klinmakProductAlt": "Gama de productos Klinmak",
@@ -138,8 +137,9 @@
   "ContactSection": {
     "emailUs": "Escríbanos",
     "callUs": "Llámenos",
+    "tollFree": "Línea gratuita",
     "visitUs": "Visítenos",
-    "location": "Puerto Rico, EE. UU."
+    "location": "Yabucoa, Puerto Rico, EE. UU."
   },
   "ContactForm": {
     "interestPlaceholder": "Sistema de interés *",
@@ -160,6 +160,7 @@
     "sendMessage": "Enviar mensaje"
   },
   "Industries": {
+    "title": "Misión compartida. Soluciones complementarias. Resultados excepcionales.",
     "modalCard": {
       "title": "Sectores a los que atendemos",
       "desc": "Con la confianza de más de 9 sectores exigentes."
@@ -205,14 +206,11 @@
       "titleAccent": "desinfección por vapor",
       "titleTail": "",
       "body": "Nuestros modelos EVO están clasificados como <strong>S.D.D. (dispositivos de desinfección por vapor)</strong> conforme a la norma AFNOR NF T72-110: validados bajo rigurosos protocolos de laboratorio para desinfectar únicamente con vapor seco.",
-      "footerLabel": "Organismo autorizado",
-      "footerValue": "AFNOR Group France",
       "sealAlt": "Certificación AFNOR NF T72-110"
     },
     "app": {
-      "label": "Control remoto",
       "no": "N.º 01",
-      "body": "Control total por Bluetooth: supervise la presión de la caldera y la temperatura del vapor en tiempo real desde cualquier dispositivo.",
+      "body": "¡Su limpiador de vapor en la palma de su mano! Una App que le permite conectarse por Bluetooth a su limpiador de vapor y supervisar la presión de la caldera, la temperatura del vapor y más en tiempo real",
       "chipTitle": "Limpieza conectada",
       "chipMeta": "Se empareja en segundos"
     },

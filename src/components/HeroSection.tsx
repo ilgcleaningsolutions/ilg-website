@@ -24,9 +24,11 @@ const STICKER_LIGHT =
 const STICKER_DARK =
   "https://res.cloudinary.com/dxbwqifwn/image/upload/v1783185185/sticker-dark_lealtb.svg";
 
-// Product-range lineups, backgrounds removed; e_trim drops transparent padding so both bottom-align.
+// Product-range lineups; e_trim drops transparent padding so both bottom-align.
+// Tecnovap also gets its floor-reflection band cropped off (bottom ~24%) so the
+// machines reach the image bottom like Klinmak's do.
 const TECNOVAP_IMAGE =
-  "https://res.cloudinary.com/dxbwqifwn/image/upload/e_trim,f_auto,q_auto/v1783030275/Equipos_Tencovap_vvimra.png";
+  "https://res.cloudinary.com/dxbwqifwn/image/upload/e_trim/c_crop,g_north,w_1.0,h_0.76/f_auto,q_auto/v1783030275/Equipos_Tencovap_vvimra.png";
 const KLINMAK_IMAGE =
   "https://res.cloudinary.com/dxbwqifwn/image/upload/e_trim,f_auto,q_auto/v1783030272/Equipos_Klinmak_ndu1yj.png";
 
@@ -90,23 +92,18 @@ const styles = {
   headlineSubtitle:
     "max-w-md text-sm leading-relaxed text-muted-foreground md:text-base lg:max-w-xs lg:justify-self-end lg:text-right",
 
-  // Brand-identity row
-  brandRow: "container mx-auto px-6 pt-1 opacity-0 animate-fade-in-up lg:pt-1",
-  brandRowInner:
-    "flex flex-row items-center justify-between gap-4 lg:justify-between",
-  brandLeft: "flex flex-col gap-2.5 items-start",
-  logoRow: "flex items-center gap-4 sm:gap-5",
+  // Brand logos (above each product lineup)
   logoLight: "h-8 w-auto sm:h-10 dark:hidden",
   logoDark: "hidden h-8 w-auto sm:h-10 dark:block",
-  logoDivider: "h-9 w-px bg-border",
-  pill: "inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-center font-heading text-[11px] font-semibold text-primary-foreground shadow-md shadow-primary/20 sm:text-xs",
-  smallStickerLight: "shrink-0 dark:hidden",
-  smallStickerDark: "hidden shrink-0 dark:block",
+  /* lg:pt-14 lines the logo centers up with the center seal (150px sticker
+     anchored at top-0 → center ≈ 75px; logo h-10 → 56px + 20px ≈ 76px). */
+  columnLogo:
+    "flex justify-center pb-2 pt-4 opacity-0 animate-fade-in-up lg:pt-14",
 
   // Product stage + center badge
   stage: "relative lg:min-h-0 lg:flex-1",
   centerBadge:
-    "pointer-events-none absolute left-1/2 top-[12%] z-20 hidden -translate-x-1/2 -translate-y-1/2 items-center opacity-0 animate-fade-in lg:flex",
+    "pointer-events-none absolute left-1/2 top-0 z-20 hidden -translate-x-1/2 items-center opacity-0 animate-fade-in lg:flex",
   connectorLeft:
     "mr-4 h-[2px] w-32 bg-gradient-to-l from-ilg-blue-light to-transparent xl:w-56",
   connectorRight:
@@ -120,14 +117,19 @@ const styles = {
   columnKlinmak: "hero-grad-klinmak flex flex-col lg:h-full",
   productArea:
     "mt-2 flex flex-1 flex-col items-center px-6 lg:relative lg:mt-0 lg:min-h-0",
-  productImageBox:
-    "relative h-[250px] w-full max-w-xl opacity-0 animate-fade-in-up sm:h-[350px] lg:h-auto lg:min-h-0 lg:max-w-none lg:flex-1",
+  /* Both boxes hug their image via aspect-ratio. Klinmak's image has a wider
+     ratio (1390/710 vs 1853/823), so its box gets 87% width — both lineups
+     then render at the same height. lg:mt-auto bottom-anchors the products,
+     leaving the logo pinned at the top beside the center seal. */
+  productImageBoxTecnovap:
+    "relative aspect-[1853/823] w-full max-w-xl opacity-0 animate-fade-in-up lg:mt-auto lg:min-h-0 lg:max-h-full lg:max-w-none",
+  productImageBoxKlinmak:
+    "relative aspect-[1390/710] w-[87%] max-w-[31.3rem] opacity-0 animate-fade-in-up lg:mt-auto lg:min-h-0 lg:max-h-full lg:max-w-none",
   productImage: "object-contain object-bottom",
-  productImageKlinmak: "origin-bottom scale-90 object-contain object-bottom",
   ctaTecnovap:
-    "mt-4 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-primary bg-background/50 px-4 py-1.5 font-heading text-xs font-semibold text-primary shadow-sm backdrop-blur-sm transition-all hover:gap-2 hover:bg-primary hover:text-primary-foreground lg:absolute lg:bottom-3 lg:left-1/2 lg:z-10 lg:mt-0 lg:-translate-x-1/2",
+    "mt-4 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-primary bg-background/50 px-4 py-1.5 font-heading text-xs font-semibold text-primary shadow-sm backdrop-blur-sm transition-all hover:gap-2 hover:bg-primary hover:text-primary-foreground lg:mb-3 lg:mt-3",
   ctaKlinmak:
-    "mt-4 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-klinmak bg-background/50 px-4 py-1.5 font-heading text-xs font-semibold text-klinmak shadow-sm backdrop-blur-sm transition-all hover:gap-2 hover:bg-klinmak hover:text-klinmak-foreground lg:absolute lg:bottom-3 lg:left-1/2 lg:z-10 lg:mt-0 lg:-translate-x-1/2",
+    "mt-4 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-klinmak bg-background/50 px-4 py-1.5 font-heading text-xs font-semibold text-klinmak shadow-sm backdrop-blur-sm transition-all hover:gap-2 hover:bg-klinmak hover:text-klinmak-foreground lg:mb-3 lg:mt-3",
 
   // Feature bands
   footerTecnovap:
@@ -263,65 +265,6 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* ---------- Brand-identity row ---------- */}
-        <div style={{ animationDelay: "0.15s" }} className={styles.brandRow}>
-          <div className={styles.brandRowInner}>
-            {/* Left: two brand logos + shared-mission pill */}
-            <div className={styles.brandLeft}>
-              <div className={styles.logoRow}>
-                {/* Tecnovap logo */}
-                <Image
-                  src={TECNOVAP_LOGO_LIGHT}
-                  alt="Tecnovap"
-                  width={200}
-                  height={72}
-                  className={styles.logoLight}
-                />
-                <Image
-                  src={TECNOVAP_LOGO_DARK}
-                  alt="Tecnovap"
-                  width={200}
-                  height={72}
-                  className={styles.logoDark}
-                />
-                <div className={styles.logoDivider} />
-                {/* Klinmak logo */}
-                <Image
-                  src={KLINMAK_LOGO_LIGHT}
-                  alt="Klinmak"
-                  width={220}
-                  height={72}
-                  className={styles.logoLight}
-                />
-                <Image
-                  src={KLINMAK_LOGO_DARK}
-                  alt="Klinmak"
-                  width={220}
-                  height={72}
-                  className={styles.logoDark}
-                />
-              </div>
-              <span className={styles.pill}>{t("pill")}</span>
-            </div>
-
-            {/* Right: trusted-brands seal — ready-made stickers (light / dark) */}
-            <Image
-              src={STICKER_LIGHT}
-              alt={t("stickerAlt")}
-              width={80}
-              height={80}
-              className={styles.smallStickerLight}
-            />
-            <Image
-              src={STICKER_DARK}
-              alt={t("stickerAlt")}
-              width={80}
-              height={80}
-              className={styles.smallStickerDark}
-            />
-          </div>
-        </div>
-
         {/* ---------- Product stage ---------- */}
         {/* Each brand is a self-contained column (products → CTA → feature footer),
            so on mobile they stack and every side keeps its own footer. On desktop
@@ -352,9 +295,29 @@ const HeroSection = () => {
             {/* Tecnovap column */}
             <div className={styles.columnTecnovap}>
               <div className={styles.productArea}>
+                {/* Tecnovap logo — right above the product lineup */}
+                <div
+                  style={{ animationDelay: "0.15s" }}
+                  className={styles.columnLogo}
+                >
+                  <Image
+                    src={TECNOVAP_LOGO_LIGHT}
+                    alt="Tecnovap"
+                    width={200}
+                    height={72}
+                    className={styles.logoLight}
+                  />
+                  <Image
+                    src={TECNOVAP_LOGO_DARK}
+                    alt="Tecnovap"
+                    width={200}
+                    height={72}
+                    className={styles.logoDark}
+                  />
+                </div>
                 <div
                   style={{ animationDelay: "0.3s" }}
-                  className={styles.productImageBox}
+                  className={styles.productImageBoxTecnovap}
                 >
                   <Image
                     src={TECNOVAP_IMAGE}
@@ -365,7 +328,7 @@ const HeroSection = () => {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
-                {/* CTA — below the products on mobile, floating over them on desktop */}
+                {/* CTA — sits in the gap below the products */}
                 <Link href="/tecnovap" className={styles.ctaTecnovap}>
                   {t("exploreTecnovap")} <ArrowRight size={13} />
                 </Link>
@@ -386,20 +349,40 @@ const HeroSection = () => {
             {/* Klinmak column */}
             <div className={styles.columnKlinmak}>
               <div className={styles.productArea}>
+                {/* Klinmak logo — right above the product lineup */}
+                <div
+                  style={{ animationDelay: "0.15s" }}
+                  className={styles.columnLogo}
+                >
+                  <Image
+                    src={KLINMAK_LOGO_LIGHT}
+                    alt="Klinmak"
+                    width={220}
+                    height={72}
+                    className={styles.logoLight}
+                  />
+                  <Image
+                    src={KLINMAK_LOGO_DARK}
+                    alt="Klinmak"
+                    width={220}
+                    height={72}
+                    className={styles.logoDark}
+                  />
+                </div>
                 <div
                   style={{ animationDelay: "0.3s" }}
-                  className={styles.productImageBox}
+                  className={styles.productImageBoxKlinmak}
                 >
                   <Image
                     src={KLINMAK_IMAGE}
                     alt={t("klinmakProductAlt")}
                     fill
                     priority
-                    className={styles.productImageKlinmak}
+                    className={styles.productImage}
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
-                {/* CTA — below the products on mobile, floating over them on desktop */}
+                {/* CTA — sits in the gap below the products */}
                 <Link href="/klinmak" className={styles.ctaKlinmak}>
                   {t("exploreKlinmak")} <ArrowRight size={13} />
                 </Link>

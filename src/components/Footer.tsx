@@ -118,11 +118,18 @@ const Footer = () => {
                 <span className={styles.contactLabel}>sales@ilgcleaningsolutions.com</span>
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:+19397497799"
                 className={styles.contactLink}
               >
                 <Phone className={styles.contactIcon} />
-                <span className={styles.contactLabel}>+1 (234) 567-890</span>
+                <span className={styles.contactLabel}>+1 (939) 749-7799</span>
+              </a>
+              <a
+                href="tel:+18888915556"
+                className={styles.contactLink}
+              >
+                <Phone className={styles.contactIcon} />
+                <span className={styles.contactLabel}>1-888-891-5556</span>
               </a>
             </div>
           </div>
