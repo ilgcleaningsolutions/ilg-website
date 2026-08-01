@@ -118,7 +118,6 @@
     "titleLine2": "Cleaning Equipment",
     "titleEmphasis": "You Can Trust",
     "subtitle": "ILG brings you a focused portfolio of industry-leading cleaning machinery — silent floor care from Klinmak, chemical-free steam from Tecnovap.",
-    "pill": "Shared Mission. Complementary Solutions. Exceptional Results.",
     "stickerAlt": "ILG — Two Powerful Brands, One Trusted Partner",
     "tecnovapProductAlt": "Tecnovap product range",
     "klinmakProductAlt": "Klinmak product range",
@@ -138,8 +137,9 @@
   "ContactSection": {
     "emailUs": "Email Us",
     "callUs": "Call Us",
+    "tollFree": "Toll Free",
     "visitUs": "Visit Us",
-    "location": "Puerto Rico, USA"
+    "location": "Yabucoa, Puerto Rico, USA"
   },
   "ContactForm": {
     "interestPlaceholder": "Interested system *",
@@ -160,6 +160,7 @@
     "sendMessage": "Send Message"
   },
   "Industries": {
+    "title": "Shared Mission. Complementary Solutions. Exceptional Results.",
     "modalCard": {
       "title": "Industries We Serve",
       "desc": "Trusted across 9+ demanding sectors."
@@ -205,14 +206,11 @@
       "titleAccent": "Steam Disinfection",
       "titleTail": "Devices",
       "body": "Our EVO models are classified as <strong>S.D.D. (Steam Disinfection Devices)</strong> in accordance with the AFNOR NF T72-110 standard — validated under rigorous laboratory protocols to sanitise with dry steam alone.",
-      "footerLabel": "Authorised Body",
-      "footerValue": "AFNOR Group France",
       "sealAlt": "AFNOR NF T72-110 certification"
     },
     "app": {
-      "label": "Remote Control",
       "no": "No. 01",
-      "body": "Full Bluetooth control — monitor boiler pressure and steam temperature in real time from any device.",
+      "body": "Your Steam Cleaner in the palm of your hand! This is an App that allows you to connect via Bluetooth to your Steam Cleaner and monitor boiler pressure, steam temperature and more in real time",
       "chipTitle": "Connected cleaning",
       "chipMeta": "Pairs in seconds"
     },

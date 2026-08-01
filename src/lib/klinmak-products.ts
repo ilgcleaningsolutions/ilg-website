@@ -81,8 +81,8 @@ export const klinmakProducts: KlinmakProduct[] = [
     },
     name: "Joker 2040",
     tagline: {
-      en: "Compact 40 cm cleaning path — agile and precise in tight, medium-sized spaces.",
-      es: "Ancho de trabajo compacto de 40 cm: ágil y preciso en espacios reducidos de tamaño medio.",
+      en: "Compact 16 in cleaning path — agile and precise in tight, medium-sized spaces.",
+      es: "Ancho de trabajo compacto de 16 in: ágil y preciso en espacios reducidos de tamaño medio.",
     },
     image:
       "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781886691/joker-2040_h05oyu.png",
@@ -100,11 +100,11 @@ export const klinmakProducts: KlinmakProduct[] = [
         es: "La Joker 2040 es la solución ideal para quienes buscan alto rendimiento, tecnología de vanguardia y un diseño compacto y versátil para el sector de la limpieza profesional.",
       },
       highlights: [
-        { en: "40 cm working track", es: "Ancho de trabajo de 40 cm" },
-        { en: "20 L solution capacity", es: "Capacidad de solución de 20 L" },
+        { en: "16 in working track", es: "Ancho de trabajo de 16 in" },
+        { en: "5.28 gal solution capacity", es: "Capacidad de solución de 5.28 gal" },
         {
-          en: "Ideal for environments up to 500 m²",
-          es: "Ideal para entornos de hasta 500 m²",
+          en: "Ideal for environments up to 5,380 sq ft",
+          es: "Ideal para entornos de hasta 5,380 ft²",
         },
         { en: "36-month warranty", es: "Garantía de 36 meses" },
       ],
@@ -223,12 +223,12 @@ export const klinmakProducts: KlinmakProduct[] = [
         {
           icon: Ruler,
           title: {
-            en: "40 cm working track",
-            es: "Ancho de trabajo de 40 cm",
+            en: "16 in working track",
+            es: "Ancho de trabajo de 16 in",
           },
           description: {
-            en: "Ideal for environments up to 500 square metres with 20 litres solution capacity.",
-            es: "Ideal para entornos de hasta 500 metros cuadrados con una capacidad de solución de 20 litros.",
+            en: "Ideal for environments up to 5,380 square feet with 5.28 gallons solution capacity.",
+            es: "Ideal para entornos de hasta 5,380 pies cuadrados con una capacidad de solución de 5.28 galones.",
           },
         },
         {
@@ -240,120 +240,112 @@ export const klinmakProducts: KlinmakProduct[] = [
           },
         },
       ],
-      specVariants: ["2040-e", "2040", "2040 Plus"],
+      specVariants: ["2040 Plus"],
       specRows: [
         {
           label: { en: "Code", es: "Código" },
-          values: ["F.502.0", "F.500.0", "F.501.0"],
+          values: ["F.501.0"],
         },
         {
           label: {
             en: "Total installed power",
             es: "Potencia total instalada",
           },
-          values: ["850 W", "850 W", "850 W"],
+          values: ["850 W"],
         },
         {
           label: {
             en: "Tank capacity (sol. / rec.)",
             es: "Capacidad del depósito (sol. / rec.)",
           },
-          values: ["20 / 22 L", "20 / 22 L", "20 / 22 L"],
+          values: ["5.3 / 5.8 gal"],
         },
         {
           label: {
             en: "Sound pressure level",
             es: "Nivel de presión sonora",
           },
-          values: ["63.9 dB(A)", "63.9 dB(A)", "63.9 dB(A)"],
+          values: ["63.9 dB(A)"],
         },
         {
           label: {
             en: "Work width / squeegee",
             es: "Ancho de trabajo / boquilla",
           },
-          values: ["406 mm / 490 mm", "406 mm / 490 mm", "406 mm / 490 mm"],
+          values: ["16.0 in / 19.3 in"],
         },
         {
           label: { en: "Brush speed", es: "Velocidad del cepillo" },
-          values: ["220/290 rpm", "220/290 rpm", "220/290 rpm"],
+          values: ["220/290 rpm"],
         },
         {
           label: {
             en: "Washing motor power",
             es: "Potencia del motor de lavado",
           },
-          values: ["500 W", "500 W", "500 W"],
+          values: ["500 W"],
         },
         {
           label: { en: "Weight on head", es: "Peso sobre el cabezal" },
-          values: ["30 kg max", "30 kg max", "30 kg max"],
+          values: ["66 lb max"],
         },
         {
           label: { en: "Solution flow rate", es: "Caudal de solución" },
-          values: ["0–2 L/min", "0–2 L/min", "0–2 L/min"],
+          values: ["0–0.53 gal/min"],
         },
         {
           label: {
-            en: "Hourly yield at 2 km/h",
-            es: "Rendimiento por hora a 2 km/h",
+            en: "Hourly yield at 1.2 mph",
+            es: "Rendimiento por hora a 1.2 mph",
           },
-          values: ["800 m²/h", "800 m²/h", "800 m²/h"],
+          values: ["8,611 sq ft/h"],
         },
         {
           label: {
             en: "Suction turbine motor power",
             es: "Potencia del motor de la turbina de aspiración",
           },
-          values: ["350 W", "350 W", "350 W"],
+          values: ["350 W"],
         },
         {
           label: {
             en: "Power supply – voltage",
             es: "Alimentación – voltaje",
           },
-          values: ["AC – 230V 50Hz", "DC – 54.6V", "DC – 54.6V"],
+          values: ["DC – 54.6V"],
         },
         {
           label: { en: "Lithium battery", es: "Batería de litio" },
-          values: ["—", "13 Ah", "19.2 Ah"],
+          values: ["19.2 Ah"],
         },
         {
           label: { en: "Battery charger", es: "Cargador de batería" },
-          values: ["—", "5 A", "5 A"],
+          values: ["5 A"],
         },
         {
           label: {
             en: "Autonomy / charging time",
             es: "Autonomía / tiempo de carga",
           },
-          values: ["—", "1.5h / 2.5h", "3h / 4h"],
+          values: ["3h / 4h"],
         },
         {
           label: { en: "Dimensions (closed)", es: "Dimensiones (cerrada)" },
-          values: [
-            "800×490×1,100 mm",
-            "800×490×1,100 mm",
-            "800×490×1,100 mm",
-          ],
+          values: ["31.5×19.3×43.3 in"],
         },
         {
           label: {
             en: "Packaging dimensions",
             es: "Dimensiones del embalaje",
           },
-          values: [
-            "975×625×1,065 mm",
-            "975×625×1,065 mm",
-            "975×625×1,065 mm",
-          ],
+          values: ["38.4×24.6×41.9 in"],
         },
         {
           label: {
             en: "Net weight / with packaging",
             es: "Peso neto / con embalaje",
           },
-          values: ["57 / 69 kg", "57 / 69 kg", "60 / 72 kg"],
+          values: ["132 / 159 lb"],
         },
       ],
       sustainability: [
@@ -378,8 +370,8 @@ export const klinmakProducts: KlinmakProduct[] = [
     },
     name: "Joker 5070",
     tagline: {
-      en: "Wide 70 cm cleaning path — fast coverage across larger professional areas.",
-      es: "Ancho de trabajo amplio de 70 cm: cobertura rápida en áreas profesionales de mayor tamaño.",
+      en: "Wide 27.6 in cleaning path — fast coverage across larger professional areas.",
+      es: "Ancho de trabajo amplio de 27.6 in: cobertura rápida en áreas profesionales de mayor tamaño.",
     },
     image:
       "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781886691/joker-5070_ebe9a4.png",
@@ -397,14 +389,14 @@ export const klinmakProducts: KlinmakProduct[] = [
         es: "La solución ideal para quienes buscan alto rendimiento, tecnología de vanguardia y un diseño compacto y versátil para el sector de la limpieza profesional.",
       },
       highlights: [
-        { en: "70 cm cleaning track", es: "Ancho de trabajo de 70 cm" },
+        { en: "27.6 in cleaning track", es: "Ancho de trabajo de 27.6 in" },
         {
-          en: "~50 L solution capacity",
-          es: "Capacidad de solución de ~50 L",
+          en: "~13.2 gal solution capacity",
+          es: "Capacidad de solución de ~13.2 gal",
         },
         {
-          en: "Ideal for 1,000–1,500 m² environments",
-          es: "Ideal para entornos de 1.000 a 1.500 m²",
+          en: "Ideal for 10,764–16,146 sq ft environments",
+          es: "Ideal para entornos de 10,764 a 16,146 ft²",
         },
         { en: "36-month warranty", es: "Garantía de 36 meses" },
       ],
@@ -530,195 +522,123 @@ export const klinmakProducts: KlinmakProduct[] = [
           },
         },
       ],
-      specVariants: [
-        "5070-e",
-        "5070",
-        "5070 Plus",
-        "5070 FT",
-        "5070 FT Plus",
-      ],
+      specVariants: ["5070 FT Plus"],
       specRows: [
         {
           label: { en: "Code", es: "Código" },
-          values: ["F.532.0", "F.530.0", "F.531.0", "F.540.0", "F.541.0"],
+          values: ["F.541.0"],
         },
         {
           label: {
             en: "Total installed power",
             es: "Potencia total instalada",
           },
-          values: ["850 W", "850 W", "850 W", "950 W", "950 W"],
+          values: ["950 W"],
         },
         {
           label: {
             en: "Tank capacity (sol. / rec.)",
             es: "Capacidad del depósito (sol. / rec.)",
           },
-          values: [
-            "47 / 50 L",
-            "47 / 50 L",
-            "47 / 50 L",
-            "47 / 50 L",
-            "47 / 50 L",
-          ],
+          values: ["12.4 / 13.2 gal"],
         },
         {
           label: {
             en: "Sound pressure level",
             es: "Nivel de presión sonora",
           },
-          values: [
-            "63.9 dB(A)",
-            "63.9 dB(A)",
-            "63.9 dB(A)",
-            "63.9 dB(A)",
-            "63.9 dB(A)",
-          ],
+          values: ["63.9 dB(A)"],
         },
         {
           label: {
             en: "Work width / squeegee",
             es: "Ancho de trabajo / boquilla",
           },
-          values: [
-            "712 mm / 800 mm",
-            "712 mm / 800 mm",
-            "712 mm / 800 mm",
-            "712 mm / 800 mm",
-            "712 mm / 800 mm",
-          ],
+          values: ["28.0 in / 31.5 in"],
         },
         {
           label: { en: "Brush speed", es: "Velocidad del cepillo" },
-          values: [
-            "220/290 rpm",
-            "220/290 rpm",
-            "220/290 rpm",
-            "220/290 rpm",
-            "220/290 rpm",
-          ],
+          values: ["220/290 rpm"],
         },
         {
           label: {
             en: "Washing motor power",
             es: "Potencia del motor de lavado",
           },
-          values: ["500 W", "500 W", "500 W", "500 W", "500 W"],
+          values: ["500 W"],
         },
         {
           label: { en: "Weight on head", es: "Peso sobre el cabezal" },
-          values: [
-            "30 kg max",
-            "30 kg max",
-            "30 kg max",
-            "30 kg max",
-            "30 kg max",
-          ],
+          values: ["66 lb max"],
         },
         {
           label: { en: "Solution flow rate", es: "Caudal de solución" },
-          values: [
-            "0–2 L/min",
-            "0–2 L/min",
-            "0–2 L/min",
-            "0–2 L/min",
-            "0–2 L/min",
-          ],
+          values: ["0–0.53 gal/min"],
         },
         {
           label: {
-            en: "Hourly yield at 2 km/h",
-            es: "Rendimiento por hora a 2 km/h",
+            en: "Hourly yield at 1.2 mph",
+            es: "Rendimiento por hora a 1.2 mph",
           },
-          values: [
-            "1,400 m²/h",
-            "1,400 m²/h",
-            "1,400 m²/h",
-            "1,400 m²/h",
-            "1,400 m²/h",
-          ],
+          values: ["15,069 sq ft/h"],
         },
         {
           label: {
             en: "Suction turbine motor power",
             es: "Potencia del motor de la turbina de aspiración",
           },
-          values: ["350 W", "350 W", "350 W", "350 W", "350 W"],
+          values: ["350 W"],
         },
         {
           label: {
             en: "Traction motor power",
             es: "Potencia del motor de tracción",
           },
-          values: ["—", "—", "—", "100 W", "100 W"],
+          values: ["100 W"],
         },
         {
           label: { en: "Maximum slope", es: "Pendiente máxima" },
-          values: ["—", "—", "—", "2%", "2%"],
+          values: ["2%"],
         },
         {
           label: {
             en: "Power supply – voltage",
             es: "Alimentación – voltaje",
           },
-          values: [
-            "AC – 230V 50Hz",
-            "DC – 54.6V",
-            "DC – 54.6V",
-            "DC – 54.6V",
-            "DC – 54.6V",
-          ],
+          values: ["DC – 54.6V"],
         },
         {
           label: { en: "Lithium battery", es: "Batería de litio" },
-          values: ["—", "13 Ah", "19.2 Ah", "13 Ah", "19.2 Ah"],
+          values: ["19.2 Ah"],
         },
         {
           label: { en: "Battery charger", es: "Cargador de batería" },
-          values: ["—", "5 A", "5 A", "5 A", "5 A"],
+          values: ["5 A"],
         },
         {
           label: {
             en: "Autonomy / charging time",
             es: "Autonomía / tiempo de carga",
           },
-          values: ["—", "1.5h / 2.5h", "3h / 4h", "1.5h / 2.5h", "3h / 4h"],
+          values: ["3h / 4h"],
         },
         {
           label: { en: "Dimensions (closed)", es: "Dimensiones (cerrada)" },
-          values: [
-            "900×750×1,100 mm",
-            "900×750×1,100 mm",
-            "900×750×1,100 mm",
-            "900×750×1,100 mm",
-            "900×750×1,100 mm",
-          ],
+          values: ["35.4×29.5×43.3 in"],
         },
         {
           label: {
             en: "Packaging dimensions",
             es: "Dimensiones del embalaje",
           },
-          values: [
-            "975×804×1,065 mm",
-            "975×804×1,065 mm",
-            "975×804×1,065 mm",
-            "975×804×1,065 mm",
-            "975×804×1,065 mm",
-          ],
+          values: ["38.4×31.7×41.9 in"],
         },
         {
           label: {
             en: "Net weight / with packaging",
             es: "Peso neto / con embalaje",
           },
-          values: [
-            "70 / 85 kg",
-            "70 / 85 kg",
-            "73 / 88 kg",
-            "75 / 90 kg",
-            "78 / 93 kg",
-          ],
+          values: ["172 / 205 lb"],
         },
       ],
       sustainability: [
@@ -743,33 +663,33 @@ export const klinmakProducts: KlinmakProduct[] = [
       en: "Compact walk-behind floor scrubber",
       es: "Fregadora-secadora de suelos compacta de conductor a pie",
     },
-    name: "Mini 1240",
+    name: "Mini HD 1240",
     tagline: {
-      en: "Ultra-compact 12 L tank, 40 cm path — built for the narrowest, hardest-to-reach spaces.",
-      es: "Depósito ultracompacto de 12 L y ancho de trabajo de 40 cm: diseñada para los espacios más estrechos y de difícil acceso.",
+      en: "Ultra-compact 3.17 gal tank, 15.7 in path — built for the narrowest, hardest-to-reach spaces.",
+      es: "Depósito ultracompacto de 3.17 gal y ancho de trabajo de 15.7 in: diseñada para los espacios más estrechos y de difícil acceso.",
     },
     image:
-      "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781887841/mini-1240_mn96sw.png",
+      "https://res.cloudinary.com/dxbwqifwn/image/upload/e_background_removal/f_png/v1785601182/mini-hd-1240-klinmak_xq81uq.jpg",
     imageAlt: {
-      en: "Klinmak Mini 1240 compact walk-behind floor scrubber",
-      es: "Fregadora-secadora de suelos compacta de conductor a pie Klinmak Mini 1240",
+      en: "Klinmak Mini HD 1240 compact walk-behind floor scrubber",
+      es: "Fregadora-secadora de suelos compacta de conductor a pie Klinmak Mini HD 1240",
     },
     detail: {
       lede: {
-        en: "The revolution of cleaning small spaces.",
-        es: "La revolución de la limpieza de espacios pequeños.",
+        en: "An innovative walk-behind floor scrubber-dryer — the ideal solution for professional cleaning without compromise.",
+        es: "Una innovadora fregadora-secadora de suelos de conductor a pie: la solución ideal para la limpieza profesional sin compromisos.",
       },
       intro: {
-        en: "Discover the future of professional cleaning with the Mini 1240: efficiency, innovation and sustainability in one solution. Weighing just 34 kg, with a 40 cm working track and 12 litres of solution, it's the ideal floor scrubber-dryer for environments of up to 500 square metres.",
-        es: "Descubra el futuro de la limpieza profesional con la Mini 1240: eficiencia, innovación y sostenibilidad en una única solución. Con un peso de solo 34 kg, un ancho de trabajo de 40 cm y 12 litros de solución, es la fregadora-secadora de suelos ideal para entornos de hasta 500 metros cuadrados.",
+        en: "Based on Micro-impulse technology, ideal for thorough cleaning on elastic and hard porous surfaces, and maintenance with the appropriate working pads. Micropulse technology (up to 3,000 oscillations/minute) improves cleaning and avoids waste of solution or water — ideal for dewaxing and non-slip surfaces. Despite a contained 3.17 gal tank, the MINI HD 1240 can operate with up to an hour of solution autonomy. Available with 2 lithium batteries of your choice, with a minimum autonomy of 1 hour, up to 2.5 hours in harsh conditions in the Plus version — and very short charging times allow almost continuous use, eliminating the long charging cycles typical of Gel/AGM batteries.",
+        es: "Basada en la tecnología Micro-impulse, ideal para una limpieza profunda en superficies elásticas y duras porosas, y para el mantenimiento con los pads de trabajo adecuados. La tecnología Micropulse (hasta 3,000 oscilaciones por minuto) mejora la limpieza y evita el desperdicio de solución o agua, ideal para el decapado y las superficies antideslizantes. A pesar de su compacto depósito de 3.17 gal, la MINI HD 1240 puede operar con hasta una hora de autonomía de solución. Disponible con 2 baterías de litio a elegir, con una autonomía mínima de 1 hora, hasta 2.5 horas en condiciones exigentes en la versión Plus, y sus tiempos de carga muy reducidos permiten un uso casi continuo, eliminando los largos ciclos de carga típicos de las baterías de Gel/AGM.",
       },
       highlights: [
-        { en: "40 cm working track", es: "Ancho de trabajo de 40 cm" },
-        { en: "12 L solution capacity", es: "Capacidad de solución de 12 L" },
-        { en: "Lightweight — only 34 kg", es: "Ligera: solo 34 kg" },
+        { en: "15.7 in working track", es: "Ancho de trabajo de 15.7 in" },
+        { en: "3.17 gal solution capacity", es: "Capacidad de solución de 3.17 gal" },
+        { en: "Lightweight — only 75 lb", es: "Ligera: solo 75 lb" },
         {
-          en: "Ideal for environments up to 500 m²",
-          es: "Ideal para entornos de hasta 500 m²",
+          en: "Ideal for environments up to 5,380 sq ft",
+          es: "Ideal para entornos de hasta 5,380 ft²",
         },
       ],
       idealFor: [
@@ -783,66 +703,66 @@ export const klinmakProducts: KlinmakProduct[] = [
       featureSections: [
         {
           title: {
-            en: "Compact design & high performance",
-            es: "Diseño compacto y alto rendimiento",
+            en: "Oscillating micro-pulses",
+            es: "Micropulsos oscilantes",
           },
           body: {
-            en: "A 12-litre tank and 40 cm (2×8\") cleaning track make the Mini 1240 ideal for restricted spaces. Handy and lightweight, it's designed for optimal cleaning in shops, restaurants, offices, laboratories and commercial environments.",
-            es: "Un depósito de 12 litros y un ancho de trabajo de 40 cm (2×8\") hacen que la Mini 1240 sea ideal para espacios reducidos. Práctica y ligera, está diseñada para una limpieza óptima en tiendas, restaurantes, oficinas, laboratorios y entornos comerciales.",
+            en: "The eccentric AISI 304 stainless-steel vibrating rectangular head, based on Micro-pulse technology (up to 3,000 oscillations per minute), improves cleaning and avoids waste of solution or water — ideal for thorough cleaning on elastic and hard porous surfaces.",
+            es: "El cabezal rectangular vibratorio excéntrico de acero inoxidable AISI 304, basado en la tecnología Micro-pulse (hasta 3,000 oscilaciones por minuto), mejora la limpieza y evita el desperdicio de solución o agua, ideal para una limpieza profunda en superficies elásticas y duras porosas.",
           },
           image:
-            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781893030/mini1240-compact-design_jniviy.png",
+            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1785601182/mini-hd-1240-2_ahox9m.png",
           imageAlt: {
-            en: "Klinmak Mini 1240 compact design detail",
-            es: "Detalle del diseño compacto de la Klinmak Mini 1240",
+            en: "Klinmak Mini HD 1240 micro-pulse head detail",
+            es: "Detalle del cabezal Micro-pulse de la Klinmak Mini HD 1240",
           },
         },
         {
           title: {
-            en: "Efficiency & innovation",
-            es: "Eficiencia e innovación",
+            en: "Ideal for all types of flooring",
+            es: "Ideal para todo tipo de suelos",
           },
           body: {
-            en: "The patented KlinMak dual brush uses a single motor to drive two counter-rotating toothed brushes, ensuring uniform cleaning while reducing energy consumption. Flush-with-the-wall technology lets the Mini 1240 clean in both directions without leaving residue along the edges.",
-            es: "El cepillo doble patentado KlinMak utiliza un único motor para accionar dos cepillos dentados contrarrotantes, garantizando una limpieza uniforme al tiempo que reduce el consumo energético. La tecnología de limpieza al ras de la pared permite a la Mini 1240 limpiar en ambos sentidos sin dejar residuos en los bordes.",
+            en: "With the appropriate working pads it handles thorough cleaning and maintenance on any floor — including dewaxing and non-slip surfaces — while the rectangular head makes corners and edges easy to reach.",
+            es: "Con los pads de trabajo adecuados realiza una limpieza profunda y el mantenimiento de cualquier suelo, incluido el decapado y las superficies antideslizantes, mientras que el cabezal rectangular facilita el acceso a esquinas y bordes.",
           },
           image:
-            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781893031/mini1240-efficiency_ynpta8.png",
+            "https://res.cloudinary.com/dxbwqifwn/image/upload/e_background_removal/f_png/v1785601181/mini-1240-3_f9sk4z.jpg",
           imageAlt: {
-            en: "Klinmak Mini 1240 efficiency and innovation detail",
-            es: "Detalle de eficiencia e innovación de la Klinmak Mini 1240",
+            en: "Klinmak Mini HD 1240 working pad detail",
+            es: "Detalle del pad de trabajo de la Klinmak Mini HD 1240",
           },
         },
         {
           title: {
-            en: "Advanced technology",
-            es: "Tecnología avanzada",
+            en: "Ultra-lightweight & compact",
+            es: "Ultraligera y compacta",
           },
           body: {
-            en: "A lithium battery delivers extended runtime and fast recharge times, while the standard HEPA H13 filter retains fine particles and improves air quality — ideal for sensitive environments. An advanced electronic board offers 2 levels of washing power to adapt to different types of dirt and 3 levels of suction power to optimise drying efficiency.",
-            es: "Una batería de litio ofrece una autonomía prolongada y tiempos de recarga rápidos, mientras que el filtro HEPA H13 de serie retiene las partículas finas y mejora la calidad del aire, ideal para entornos sensibles. Una placa electrónica avanzada ofrece 2 niveles de potencia de lavado para adaptarse a distintos tipos de suciedad y 3 niveles de potencia de aspiración para optimizar la eficiencia del secado.",
+            en: "An ultra-lightweight structure (75 lb) and compact design make it perfect for tight spaces, and the folding handle makes it easy to transport in cars, vans and commercial vehicles — ideal for cleaning and facility-management companies.",
+            es: "Una estructura ultraligera (75 lb) y un diseño compacto la hacen perfecta para espacios reducidos, y el mango plegable facilita su transporte en coches, furgonetas y vehículos comerciales, ideal para empresas de limpieza y de gestión de instalaciones.",
           },
           image:
-            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781893030/mini1240-advance-tech_hbukce.png",
+            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1785601182/mini-hd-1240-4_h3biov.png",
           imageAlt: {
-            en: "Klinmak Mini 1240 advanced technology detail",
-            es: "Detalle de la tecnología avanzada de la Klinmak Mini 1240",
+            en: "Klinmak Mini HD 1240 compact side profile",
+            es: "Perfil lateral compacto de la Klinmak Mini HD 1240",
           },
         },
         {
           title: {
-            en: "Ergonomics & reduced environmental impact",
-            es: "Ergonomía y menor impacto ambiental",
+            en: "Smart control, sustainable by design",
+            es: "Control inteligente, sostenible por diseño",
           },
           body: {
-            en: "A folding handle makes the machine easy to transport in cars, vans and commercial vehicles — ideal for cleaning and facility-management companies. The patented quick-release brush system allows tool-free replacement in seconds. Built with 80% recycled materials and compliant with ESG standards, it reduces water and detergent consumption through optimised solution distribution, and its dual-brush technology delivers superior washing quality compared to traditional single-brush machines.",
-            es: "Un mango plegable facilita el transporte de la máquina en coches, furgonetas y vehículos comerciales, ideal para empresas de limpieza y de gestión de instalaciones. El sistema patentado de liberación rápida de cepillos permite su sustitución sin herramientas en segundos. Fabricada con un 80 % de materiales reciclados y conforme con las normas ESG, reduce el consumo de agua y detergente mediante una distribución optimizada de la solución, y su tecnología de doble cepillo ofrece una calidad de lavado superior en comparación con las máquinas tradicionales de un solo cepillo.",
+            en: "Cleaning-solution consumption is reduced (from 0.03 to 0.13 gal/min) and adjustable directly from the control panel. Built with 80% recycled materials and compliant with ESG standards for a reduced environmental impact.",
+            es: "El consumo de solución de limpieza es reducido (de 0.03 a 0.13 gal/min) y regulable directamente desde el panel de control. Fabricada con un 80 % de materiales reciclados y conforme con las normas ESG para un menor impacto ambiental.",
           },
           image:
-            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781893032/mini1240-ergonomics_nnter4.png",
+            "https://res.cloudinary.com/dxbwqifwn/image/upload/e_background_removal/f_png/v1785601182/mini-hd-1240-5_xjmjhb.jpg",
           imageAlt: {
-            en: "Klinmak Mini 1240 ergonomics detail",
-            es: "Detalle de la ergonomía de la Klinmak Mini 1240",
+            en: "Klinmak Mini HD 1240 control panel detail",
+            es: "Detalle del panel de control de la Klinmak Mini HD 1240",
           },
         },
       ],
@@ -850,12 +770,12 @@ export const klinmakProducts: KlinmakProduct[] = [
         {
           icon: Brush,
           title: {
-            en: "Patented dual-brush system",
-            es: "Sistema patentado de doble cepillo",
+            en: "Micro-pulse cleaning head",
+            es: "Cabezal de limpieza Micro-pulse",
           },
           description: {
-            en: "A single motor drives two counter-rotating brushes for uniform cleaning and lower energy use.",
-            es: "Un único motor acciona dos cepillos contrarrotantes para una limpieza uniforme y un menor consumo de energía.",
+            en: "Eccentric AISI 304 stainless-steel vibrating rectangular head with up to 3,000 oscillations per minute.",
+            es: "Cabezal rectangular vibratorio excéntrico de acero inoxidable AISI 304 con hasta 3,000 oscilaciones por minuto.",
           },
         },
         {
@@ -865,8 +785,8 @@ export const klinmakProducts: KlinmakProduct[] = [
             es: "Ligera y compacta",
           },
           description: {
-            en: "Just 34 kg with a folding handle — easy to carry in cars, vans and commercial vehicles.",
-            es: "Solo 34 kg con un mango plegable: fácil de transportar en coches, furgonetas y vehículos comerciales.",
+            en: "Just 75 lb with a folding handle — easy to carry in cars, vans and commercial vehicles.",
+            es: "Solo 75 lb con un mango plegable: fácil de transportar en coches, furgonetas y vehículos comerciales.",
           },
         },
         {
@@ -914,112 +834,115 @@ export const klinmakProducts: KlinmakProduct[] = [
           },
         },
       ],
-      specVariants: ["1240", "1240 Plus"],
+      specVariants: ["HD 1240 Plus"],
       specRows: [
         {
           label: { en: "Code", es: "Código" },
-          values: ["F.400.0", "F.402.0"],
+          values: ["F.415.0"],
         },
         {
           label: {
             en: "Total installed power",
             es: "Potencia total instalada",
           },
-          values: ["450 W", "450 W"],
+          values: ["450 W"],
         },
         {
           label: {
             en: "Tank capacity (sol. / rec.)",
             es: "Capacidad del depósito (sol. / rec.)",
           },
-          values: ["12 / 14 L", "12 / 14 L"],
+          values: ["3.2 / 3.7 gal"],
         },
         {
           label: {
             en: "Sound pressure level",
             es: "Nivel de presión sonora",
           },
-          values: ["66.7 dB(A)", "66.7 dB(A)"],
+          values: ["66.7 dB(A)"],
         },
         {
           label: {
             en: "Work width / squeegee",
             es: "Ancho de trabajo / boquilla",
           },
-          values: ["406 mm / 490 mm", "406 mm / 490 mm"],
+          values: ["15.4×9.1 in / 19.3 in"],
         },
         {
-          label: { en: "Brush speed", es: "Velocidad del cepillo" },
-          values: ["220/290 rpm", "220/290 rpm"],
+          label: {
+            en: "Vibrating head speed",
+            es: "Velocidad del cabezal vibratorio",
+          },
+          values: ["3000/2300 rpm"],
         },
         {
           label: {
             en: "Washing motor power",
             es: "Potencia del motor de lavado",
           },
-          values: ["250 W", "250 W"],
+          values: ["250 W"],
         },
         {
           label: { en: "Weight on head", es: "Peso sobre el cabezal" },
-          values: ["23 kg max", "23 kg max"],
+          values: ["51 lb max"],
         },
         {
           label: { en: "Solution flow rate", es: "Caudal de solución" },
-          values: ["0–1 L/min", "0–1 L/min"],
+          values: ["0–0.13 gal/min"],
         },
         {
           label: {
-            en: "Hourly yield at 2 km/h",
-            es: "Rendimiento por hora a 2 km/h",
+            en: "Hourly yield at 1.2 mph",
+            es: "Rendimiento por hora a 1.2 mph",
           },
-          values: ["800 m²/h", "800 m²/h"],
+          values: ["8,396 sq ft/h"],
         },
         {
           label: {
             en: "Suction turbine motor power",
             es: "Potencia del motor de la turbina de aspiración",
           },
-          values: ["200 W", "200 W"],
+          values: ["200 W"],
         },
         {
           label: {
             en: "Power supply – voltage",
             es: "Alimentación – voltaje",
           },
-          values: ["DC – 54.6V", "DC – 54.6V"],
+          values: ["DC – 54.6V"],
         },
         {
           label: { en: "Lithium battery", es: "Batería de litio" },
-          values: ["7.8 Ah", "19.2 Ah"],
+          values: ["19.2 Ah"],
         },
         {
           label: { en: "Battery charger", es: "Cargador de batería" },
-          values: ["3 A", "5 A"],
+          values: ["5 A"],
         },
         {
           label: {
             en: "Autonomy / charging time",
             es: "Autonomía / tiempo de carga",
           },
-          values: ["1h / 2.5h", "2.5h / 4h"],
+          values: ["2.5h / 4h"],
         },
         {
           label: { en: "Dimensions (closed)", es: "Dimensiones (cerrada)" },
-          values: ["750×490×1,070 (720) mm", "750×490×1,070 (720) mm"],
+          values: ["29.5×19.3×42.1 (28.3) in"],
         },
         {
           label: {
             en: "Packaging dimensions",
             es: "Dimensiones del embalaje",
           },
-          values: ["755×530×820 mm", "755×530×820 mm"],
+          values: ["29.7×20.9×32.3 in"],
         },
         {
           label: {
             en: "Net weight / with packaging",
             es: "Peso neto / con embalaje",
           },
-          values: ["34–45 kg", "36–47 kg"],
+          values: ["79–104 lb"],
         },
       ],
       sustainability: [
@@ -1042,32 +965,32 @@ export const klinmakProducts: KlinmakProduct[] = [
       en: "Compact walk-behind floor scrubber",
       es: "Fregadora-secadora de suelos compacta de conductor a pie",
     },
-    name: "Mini 3050",
+    name: "Mini HD 3050",
     tagline: {
-      en: "30 L tank with a 50 cm path — versatile cleaning for confined areas.",
-      es: "Depósito de 30 L con un ancho de trabajo de 50 cm: limpieza versátil para áreas reducidas.",
+      en: "7.9 gal tank with a 20 in path — versatile cleaning for confined areas.",
+      es: "Depósito de 7.9 gal con un ancho de trabajo de 20 in: limpieza versátil para áreas reducidas.",
     },
     image:
       "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781887842/mini-3050_qn4tsw.png",
     imageAlt: {
-      en: "Klinmak Mini 3050 compact walk-behind floor scrubber",
-      es: "Fregadora-secadora de suelos compacta de conductor a pie Klinmak Mini 3050",
+      en: "Klinmak Mini HD 3050 compact walk-behind floor scrubber",
+      es: "Fregadora-secadora de suelos compacta de conductor a pie Klinmak Mini HD 3050",
     },
     detail: {
       lede: {
-        en: "The new compact, handy scrubber-dryer — highly innovative for everyday work.",
-        es: "La nueva fregadora-secadora de suelos compacta y práctica: altamente innovadora para el trabajo diario.",
+        en: "Professional Heavy Duty Floor Scrubber-Dryer — Micropulse Technology for Maximum Efficiency.",
+        es: "Fregadora-secadora de suelos profesional de alto rendimiento: tecnología Micropulse para la máxima eficiencia.",
       },
       intro: {
-        en: "The Mini 3050 brings productivity, innovation and sustainability into a single solution. Lightweight, compact and easy to handle, with a 50 cm work track and 30 litres of solution, it's the ideal floor scrubber-dryer for environments of up to 750 square metres.",
-        es: "La Mini 3050 reúne productividad, innovación y sostenibilidad en una única solución. Ligera, compacta y fácil de manejar, con un ancho de trabajo de 50 cm y 30 litros de solución, es la fregadora-secadora de suelos ideal para entornos de hasta 750 metros cuadrados.",
+        en: "MINI HD 3050 by KlinMak is an innovative walk-behind floor scrubber-dryer with an eccentric AISI 304 stainless-steel vibrating rectangular head (18.1×11.8 in working track) based on Micro-pulse technology, ideal for thorough cleaning on porous, elastic and hard surfaces, and maintenance with the appropriate working pads. The large 7.9 gal tank guarantees a non-stop solution autonomy of about 2.5h (equal to 39.6 gallons in disc version) and therefore long operations with very high productivity. Available with 2 lithium batteries with a minimum battery life of 1 hour (7.8Ah) up to 2.5h in harsh conditions with 19.2Ah.",
+        es: "La MINI HD 3050 de KlinMak es una innovadora fregadora-secadora de suelos de conductor a pie con un cabezal rectangular vibratorio excéntrico de acero inoxidable AISI 304 (ancho de trabajo de 18.1×11.8 in) basado en la tecnología Micro-pulse, ideal para una limpieza profunda en superficies porosas, elásticas y duras, y para el mantenimiento con los pads de trabajo adecuados. El gran depósito de 7.9 gal garantiza una autonomía de solución ininterrumpida de aproximadamente 2.5 h (equivalente a 39.6 galones en la versión de disco) y, por tanto, largas operaciones con una productividad muy alta. Disponible con 2 baterías de litio con una autonomía mínima de 1 hora (7.8 Ah) hasta 2.5 h en condiciones exigentes con 19.2 Ah.",
       },
       highlights: [
-        { en: "50 cm working track", es: "Ancho de trabajo de 50 cm" },
-        { en: "30 L solution capacity", es: "Capacidad de solución de 30 L" },
+        { en: "20.0 in working track", es: "Ancho de trabajo de 20.0 in" },
+        { en: "7.9 gal solution capacity", es: "Capacidad de solución de 7.9 gal" },
         {
-          en: "Ideal for environments up to 750 m²",
-          es: "Ideal para entornos de hasta 750 m²",
+          en: "Ideal for environments up to 8,073 sq ft",
+          es: "Ideal para entornos de hasta 8,073 ft²",
         },
         {
           en: "Available with traction (FT)",
@@ -1088,66 +1011,66 @@ export const klinmakProducts: KlinmakProduct[] = [
       featureSections: [
         {
           title: {
-            en: "Compact design & high performance",
-            es: "Diseño compacto y alto rendimiento",
+            en: "Oscillating micro-pulses",
+            es: "Micropulsos oscilantes",
           },
           body: {
-            en: "A 30-litre tank and 50 cm (2×10\") wash track make the Mini 3050 ideal for spaces between 500 and 1,000 square metres. Handy and lightweight, it's designed for optimal cleaning in small supermarkets, hotels, restaurants, laboratories and commercial environments. For prolonged work, the traction (forward-gear) version is recommended.",
-            es: "Un depósito de 30 litros y un ancho de trabajo de 50 cm (2×10\") hacen que la Mini 3050 sea ideal para espacios de entre 500 y 1.000 metros cuadrados. Práctica y ligera, está diseñada para una limpieza óptima en supermercados de proximidad, hoteles, restaurantes, laboratorios y entornos comerciales. Para trabajos prolongados, se recomienda la versión con tracción (marcha hacia delante).",
+            en: "Advanced Micro-pulse technology generates strong turbulence at the head, removing the most stubborn dirt without fatiguing the operator — ideal for thorough cleaning on porous, elastic and hard surfaces, and maintenance with the appropriate working pads.",
+            es: "La avanzada tecnología Micro-pulse genera fuertes turbulencias en el cabezal, eliminando la suciedad más persistente sin fatigar al operario, ideal para una limpieza profunda en superficies porosas, elásticas y duras, y para el mantenimiento con los pads de trabajo adecuados.",
           },
           image:
-            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781893147/mini-3050-compact_akai9k.png",
+            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1785600846/klinmak-3050_hxqwaz.png",
           imageAlt: {
-            en: "Klinmak Mini 3050 compact design detail",
-            es: "Detalle del diseño compacto de la Klinmak Mini 3050",
+            en: "Klinmak Mini HD 3050 micro-pulse technology detail",
+            es: "Detalle de la tecnología Micro-pulse de la Klinmak Mini HD 3050",
           },
         },
         {
           title: {
-            en: "Efficiency & innovation",
-            es: "Eficiencia e innovación",
+            en: "Rectangular head shape",
+            es: "Cabezal rectangular",
           },
           body: {
-            en: "The patented KlinMak dual brush uses a single motor to drive two counter-rotating toothed brushes, ensuring uniform cleaning while reducing energy consumption. Flush-to-wall cleaning lets the Mini 3050 clean in both directions without leaving residue along the edges.",
-            es: "El cepillo doble patentado KlinMak utiliza un único motor para accionar dos cepillos dentados contrarrotantes, garantizando una limpieza uniforme al tiempo que reduce el consumo energético. La limpieza al ras de la pared permite a la Mini 3050 limpiar en ambos sentidos sin dejar residuos en los bordes.",
+            en: "The rectangular head facilitates cleaning of corners and reduces the need for manual scrubbing, increasing operational efficiency.",
+            es: "El cabezal rectangular facilita la limpieza de las esquinas y reduce la necesidad de fregado manual, aumentando la eficiencia operativa.",
           },
           image:
-            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781893148/mini-3050-efficiency_czgszp.png",
+            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1785600846/mini-3050-2_foubzl.png",
           imageAlt: {
-            en: "Klinmak Mini 3050 efficiency and innovation detail",
-            es: "Detalle de eficiencia e innovación de la Klinmak Mini 3050",
+            en: "Klinmak Mini HD 3050 rectangular head detail",
+            es: "Detalle del cabezal rectangular de la Klinmak Mini HD 3050",
           },
         },
         {
           title: {
-            en: "Easy to use & multifunctional",
-            es: "Fácil de usar y multifuncional",
+            en: "Balanced weight & telescopic handle",
+            es: "Peso equilibrado y mango telescópico",
           },
           body: {
-            en: "A standard lithium battery delivers extended runtime and fast recharge times, while the standard HEPA H13 filter retains fine particles and improves air quality — ideal for sensitive environments. An advanced electronic board offers 2 levels of washing power to adapt to different types of dirt and 3 levels of suction power to optimise drying efficiency.",
-            es: "Una batería de litio de serie ofrece una autonomía prolongada y tiempos de recarga rápidos, mientras que el filtro HEPA H13 de serie retiene las partículas finas y mejora la calidad del aire, ideal para entornos sensibles. Una placa electrónica avanzada ofrece 2 niveles de potencia de lavado para adaptarse a distintos tipos de suciedad y 3 niveles de potencia de aspiración para optimizar la eficiencia del secado.",
+            en: "A balanced 165 lb weight and a telescopic, foldable handle — height-adjustable for operators of all heights — make the machine comfortable to use and easy to transport in cars, vans and commercial vehicles.",
+            es: "Un peso equilibrado de 165 lb y un mango telescópico y plegable, regulable en altura para operarios de cualquier estatura, hacen que la máquina sea cómoda de usar y fácil de transportar en coches, furgonetas y vehículos comerciales.",
           },
           image:
-            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781893148/mini-3050-easy-to-use_qrzdcp.png",
+            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1785600847/mini-3050-3_g6ryzb.png",
           imageAlt: {
-            en: "Klinmak Mini 3050 ease of use detail",
-            es: "Detalle de facilidad de uso de la Klinmak Mini 3050",
+            en: "Klinmak Mini HD 3050 telescopic handle detail",
+            es: "Detalle del mango telescópico de la Klinmak Mini HD 3050",
           },
         },
         {
           title: {
-            en: "Ergonomics & sustainability",
-            es: "Ergonomía y sostenibilidad",
+            en: "Sustainable by design",
+            es: "Sostenible por diseño",
           },
           body: {
-            en: "A height-adjustable, foldable handle makes the machine easy to transport in cars, vans and commercial vehicles — ideal for cleaning and facility-management companies. The patented quick-release brush system allows tool-free replacement in seconds. Built with 80% recycled materials and compliant with ESG standards, it reduces water and detergent consumption through optimised solution distribution, and its dual-brush technology delivers superior washing quality compared to traditional single-brush machines.",
-            es: "Un mango plegable y regulable en altura facilita el transporte de la máquina en coches, furgonetas y vehículos comerciales, ideal para empresas de limpieza y de gestión de instalaciones. El sistema patentado de liberación rápida de cepillos permite su sustitución sin herramientas en segundos. Fabricada con un 80 % de materiales reciclados y conforme con las normas ESG, reduce el consumo de agua y detergente mediante una distribución optimizada de la solución, y su tecnología de doble cepillo ofrece una calidad de lavado superior en comparación con las máquinas tradicionales de un solo cepillo.",
+            en: "Built with 80% recycled plastics, in line with ESG objectives for a reduced environmental impact — while optimised solution distribution reduces water and detergent consumption.",
+            es: "Fabricada con un 80 % de plásticos reciclados, en línea con los objetivos ESG para un menor impacto ambiental, mientras que la distribución optimizada de la solución reduce el consumo de agua y detergente.",
           },
           image:
-            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1781893148/mini-3050-efficiency_czgszp.png",
+            "https://res.cloudinary.com/dxbwqifwn/image/upload/v1785600846/klinmak-3050_hxqwaz.png",
           imageAlt: {
-            en: "Klinmak Mini 3050 ergonomics and sustainability detail",
-            es: "Detalle de ergonomía y sostenibilidad de la Klinmak Mini 3050",
+            en: "Klinmak Mini HD 3050 sustainability detail",
+            es: "Detalle de sostenibilidad de la Klinmak Mini HD 3050",
           },
         },
       ],
@@ -1155,12 +1078,12 @@ export const klinmakProducts: KlinmakProduct[] = [
         {
           icon: Brush,
           title: {
-            en: "Patented dual-brush system",
-            es: "Sistema patentado de doble cepillo",
+            en: "Micro-pulse cleaning head",
+            es: "Cabezal de limpieza Micro-pulse",
           },
           description: {
-            en: "A single motor drives two counter-rotating brushes for uniform cleaning and lower energy use.",
-            es: "Un único motor acciona dos cepillos contrarrotantes para una limpieza uniforme y un menor consumo de energía.",
+            en: "Eccentric AISI 304 stainless-steel vibrating rectangular head removes the most stubborn dirt without fatiguing the operator.",
+            es: "El cabezal rectangular vibratorio excéntrico de acero inoxidable AISI 304 elimina la suciedad más persistente sin fatigar al operario.",
           },
         },
         {
@@ -1219,143 +1142,123 @@ export const klinmakProducts: KlinmakProduct[] = [
           },
         },
       ],
-      specVariants: ["3050", "3050 Plus", "3050 FT", "3050 FT Plus"],
+      specVariants: ["3050 FT Plus"],
       specRows: [
         {
           label: { en: "Code", es: "Código" },
-          values: ["F.450.0", "F.451.0", "F.460.0", "F.461.0"],
+          values: ["F.461.0"],
         },
         {
           label: {
             en: "Total installed power",
             es: "Potencia total instalada",
           },
-          values: ["850 W", "850 W", "950 W", "950 W"],
+          values: ["950 W"],
         },
         {
           label: {
             en: "Tank capacity (sol. / rec.)",
             es: "Capacidad del depósito (sol. / rec.)",
           },
-          values: ["30 / 30 L", "30 / 30 L", "30 / 30 L", "30 / 30 L"],
+          values: ["7.9 / 7.9 gal"],
         },
         {
           label: {
             en: "Sound pressure level",
             es: "Nivel de presión sonora",
           },
-          values: ["63.9 dB(A)", "63.9 dB(A)", "63.9 dB(A)", "63.9 dB(A)"],
+          values: ["63.9 dB(A)"],
         },
         {
           label: {
             en: "Work width / squeegee",
             es: "Ancho de trabajo / boquilla",
           },
-          values: [
-            "508 mm / 580 mm",
-            "508 mm / 580 mm",
-            "508 mm / 580 mm",
-            "508 mm / 580 mm",
-          ],
+          values: ["20.0 in / 22.8 in"],
         },
         {
           label: { en: "Brush speed", es: "Velocidad del cepillo" },
-          values: [
-            "220/290 rpm",
-            "220/290 rpm",
-            "220/290 rpm",
-            "220/290 rpm",
-          ],
+          values: ["220/290 rpm"],
         },
         {
           label: {
             en: "Washing motor power",
             es: "Potencia del motor de lavado",
           },
-          values: ["500 W", "500 W", "500 W", "500 W"],
+          values: ["500 W"],
         },
         {
           label: { en: "Weight on head", es: "Peso sobre el cabezal" },
-          values: ["30 kg max", "30 kg max", "30 kg max", "30 kg max"],
+          values: ["66 lb max"],
         },
         {
           label: { en: "Solution flow rate", es: "Caudal de solución" },
-          values: ["0–2 L/min", "0–2 L/min", "0–2 L/min", "0–2 L/min"],
+          values: ["0–0.53 gal/min"],
         },
         {
           label: {
-            en: "Hourly yield at 2 km/h",
-            es: "Rendimiento por hora a 2 km/h",
+            en: "Hourly yield at 1.2 mph",
+            es: "Rendimiento por hora a 1.2 mph",
           },
-          values: ["1,000 m²/h", "1,000 m²/h", "1,000 m²/h", "1,000 m²/h"],
+          values: ["10,764 sq ft/h"],
         },
         {
           label: {
             en: "Suction turbine motor power",
             es: "Potencia del motor de la turbina de aspiración",
           },
-          values: ["350 W", "350 W", "350 W", "350 W"],
+          values: ["350 W"],
         },
         {
           label: {
             en: "Traction motor power",
             es: "Potencia del motor de tracción",
           },
-          values: ["—", "—", "100 W", "100 W"],
+          values: ["100 W"],
         },
         {
           label: { en: "Maximum slope", es: "Pendiente máxima" },
-          values: ["2%", "2%", "2%", "2%"],
+          values: ["2%"],
         },
         {
           label: {
             en: "Power supply – voltage",
             es: "Alimentación – voltaje",
           },
-          values: ["DC – 54.6V", "DC – 54.6V", "DC – 54.6V", "DC – 54.6V"],
+          values: ["DC – 54.6V"],
         },
         {
           label: { en: "Lithium battery", es: "Batería de litio" },
-          values: ["7.8 Ah", "19.2 Ah", "7.8 Ah", "19.2 Ah"],
+          values: ["19.2 Ah"],
         },
         {
           label: { en: "Battery charger", es: "Cargador de batería" },
-          values: ["3 A", "5 A", "3 A", "5 A"],
+          values: ["5 A"],
         },
         {
           label: {
             en: "Autonomy / charging time",
             es: "Autonomía / tiempo de carga",
           },
-          values: ["1h / 2.5h", "2.5h / 4h", "1h / 2.5h", "2.5h / 4h"],
+          values: ["2.5h / 4h"],
         },
         {
           label: { en: "Dimensions (closed)", es: "Dimensiones (cerrada)" },
-          values: [
-            "950×550×1,100 (720) mm",
-            "950×550×1,100 (720) mm",
-            "950×550×1,100 (720) mm",
-            "950×550×1,100 (720) mm",
-          ],
+          values: ["37.4×21.7×43.3 (28.3) in"],
         },
         {
           label: {
             en: "Packaging dimensions",
             es: "Dimensiones del embalaje",
           },
-          values: [
-            "975×625×1,065 mm",
-            "975×625×1,065 mm",
-            "975×625×1,065 mm",
-            "975×625×1,065 mm",
-          ],
+          values: ["38.4×24.6×41.9 in"],
         },
         {
           label: {
             en: "Net weight / with packaging",
             es: "Peso neto / con embalaje",
           },
-          values: ["72 / 86 kg", "74 / 88 kg", "77 / 91 kg", "79 / 93 kg"],
+          values: ["174 / 205 lb"],
         },
       ],
       sustainability: [

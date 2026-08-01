@@ -53,6 +53,8 @@ const styles = {
   // Section shell
   section: "py-20 bg-primary/[0.07]",
   container: "container mx-auto px-6",
+  title:
+    "mb-12 text-center font-display text-3xl leading-tight text-primary md:text-4xl",
   grid: "grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4",
 
   // Shared card + icon badge (formerly cardClass / iconBadge)
@@ -81,6 +83,16 @@ const IndustriesHighlights = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
+        {/* Section title — moved from the hero's shared-mission pill */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className={styles.title}
+        >
+          {t("title")}
+        </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

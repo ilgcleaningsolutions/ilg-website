@@ -89,7 +89,7 @@ const ContactSection = ({
               </a>
 
               <a
-                href="tel:+1234567890"
+                href="tel:+19397497799"
                 className={styles.contactLink}
               >
                 <div className={styles.iconCircleHover}>
@@ -100,7 +100,24 @@ const ContactSection = ({
                     {t("callUs")}
                   </p>
                   <p className={styles.contactValue}>
-                    +1 (234) 567-890
+                    +1 (939) 749-7799
+                  </p>
+                </div>
+              </a>
+
+              <a
+                href="tel:+18888915556"
+                className={styles.contactLink}
+              >
+                <div className={styles.iconCircleHover}>
+                  <Phone size={18} className={styles.icon} />
+                </div>
+                <div>
+                  <p className={styles.contactLabel}>
+                    {t("tollFree")}
+                  </p>
+                  <p className={styles.contactValue}>
+                    1-888-891-5556
                   </p>
                 </div>
               </a>
