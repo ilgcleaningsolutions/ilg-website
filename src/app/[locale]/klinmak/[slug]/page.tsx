@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { localeAlternates, metaDescription } from "@/lib/site";
 import { Link } from "@/i18n/navigation";
 import { ArrowLeft, ArrowRight, CheckCircle2, Leaf, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -16,6 +18,33 @@ export function generateStaticParams() {
   return klinmakProducts
     .filter((p) => p.detail)
     .map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const product = getKlinmakProduct(slug, locale);
+  if (!product || !product.detail) return {};
+
+  const title = `${product.name} — ${product.category} | Klinmak`;
+  const description = metaDescription(
+    `${product.detail.lede} ${product.detail.intro}`,
+  );
+
+  return {
+    title,
+    description,
+    alternates: localeAlternates(`/klinmak/${slug}`, locale),
+    openGraph: {
+      title,
+      description,
+      images: [{ url: product.image, alt: product.imageAlt ?? product.name }],
+    },
+    twitter: { title, description, images: [product.image] },
+  };
 }
 
 export default async function KlinmakProductPage({

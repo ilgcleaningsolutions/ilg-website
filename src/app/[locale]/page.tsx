@@ -1,28 +1,26 @@
-"use client";
+import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
+import HomePage from "@/components/HomePage";
+import { localeAlternates } from "@/lib/site";
 
-import { useTranslations } from "next-intl";
-import Layout from "@/components/Layout";
-import HeroSection from "@/components/HeroSection";
-import ContactSection from "@/components/ContactSection";
-import IndustriesHighlights from "@/components/IndustriesHighlights";
-import TecnovapSteamCleaners from "@/components/TecnovapSteamCleaners";
+// Title/description/OG come from the root layout; the page only owns its canonical.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    alternates: localeAlternates("/", locale),
+  };
+}
 
-export default function HomePage() {
-  const t = useTranslations("Home");
-
-  return (
-    <Layout>
-      <HeroSection />
-
-      <IndustriesHighlights />
-
-      <TecnovapSteamCleaners />
-
-      <ContactSection
-        heading={t("contactHeading")}
-        subtitle={t("contactSubtitle")}
-        brandContext={t("contactBrandContext")}
-      />
-    </Layout>
-  );
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  return <HomePage />;
 }

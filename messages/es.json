@@ -1,7 +1,11 @@
 {
   "Metadata": {
-    "title": "ILG Cleaning Services — Soluciones de Limpieza Industrial",
-    "description": "Soluciones de limpieza profesionales impulsadas por marcas líderes del sector. Distribuidor autorizado de Klinmak y Tecnovap."
+    "title": "ILG — Fregadoras Industriales y Equipos de Limpieza a Vapor",
+    "description": "ILG le ofrece un portafolio enfocado de maquinaria de limpieza líder del sector: cuidado de pisos silencioso de Klinmak y vapor seco sin químicos de Tecnovap. Equipos de limpieza a vapor para manufactura, producción de alimentos y plantas de energía.",
+    "klinmakTitle": "Fregadoras-Secadoras Klinmak — Gamas Joker y Mini | ILG",
+    "klinmakDescription": "Fregadoras industriales de conductor a pie fabricadas en Italia: las gamas Joker y Mini de Klinmak con baterías de litio, filtración HEPA H13, funcionamiento silencioso y 3 años de garantía.",
+    "tecnovapTitle": "Limpiadores de Vapor Industriales Tecnovap | ILG",
+    "tecnovapDescription": "Equipos de limpieza a vapor seco sin químicos de Tecnovap: limpiadores de vapor industriales, sistemas de vapor y aspiración, y limpieza de cintas transportadoras para alimentos, manufactura y plantas de energía."
   },
   "Header": {
     "nav": {
@@ -107,7 +111,7 @@
     "home": "Inicio",
     "contactUs": "Contáctenos",
     "getInTouch": "Póngase en contacto",
-    "copyright": "© {year} ILG Cleaning Services. Todos los derechos reservados.",
+    "copyright": "© {year} ILG Cleaning Solutions. Todos los derechos reservados.",
     "builtWith": "Hecho con",
     "by": "por"
   },
