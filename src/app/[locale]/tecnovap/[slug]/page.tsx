@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { localeAlternates, metaDescription } from "@/lib/site";
 import { Link } from "@/i18n/navigation";
 import { ArrowLeft, ArrowRight, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -15,6 +17,31 @@ import {
 
 export function generateStaticParams() {
   return getTecnovapSlugs().map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const product = getTecnovapProduct(slug, locale);
+  if (!product) return {};
+
+  const title = `${product.name} — ${product.category} | Tecnovap`;
+  const description = metaDescription(product.description);
+
+  return {
+    title,
+    description,
+    alternates: localeAlternates(`/tecnovap/${slug}`, locale),
+    openGraph: {
+      title,
+      description,
+      images: [{ url: product.image, alt: product.imageAlt ?? product.name }],
+    },
+    twitter: { title, description, images: [product.image] },
+  };
 }
 
 export default async function TecnovapProductPage({
