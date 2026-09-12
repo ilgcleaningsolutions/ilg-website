@@ -200,7 +200,7 @@ const Header = () => {
           {/* Light-mode logo */}
           <Image
             src="https://res.cloudinary.com/dxbwqifwn/image/upload/v1781883598/igl-light-mode-logo_zoi10d.png"
-            alt="ILG Cleaning Services"
+            alt="ILG Cleaning Solutions"
             width={160}
             height={64}
             className={styles.logoLight}
@@ -208,7 +208,7 @@ const Header = () => {
           {/* Dark-mode logo */}
           <Image
             src="https://res.cloudinary.com/dxbwqifwn/image/upload/v1781883598/igl-dark-mode-logo_ulpp0u.png"
-            alt="ILG Cleaning Services"
+            alt="ILG Cleaning Solutions"
             width={160}
             height={64}
             className={styles.logoDark}

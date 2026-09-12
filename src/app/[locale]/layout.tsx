@@ -6,7 +6,7 @@ import "../globals.css";
 import { Providers } from "@/components/Providers";
 import { routing } from "@/i18n/routing";
 
-const SITE_NAME = "ILG Cleaning Services";
+const SITE_NAME = "ILG Cleaning Solutions";
 
 // New ILG logo composited onto the brand navy as a 1200×630 social-share card (Cloudinary transform).
 const OG_IMAGE =

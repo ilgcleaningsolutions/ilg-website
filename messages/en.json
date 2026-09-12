@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "ILG Cleaning Services — Industrial Cleaning Solutions",
-    "description": "Professional cleaning solutions powered by industry-leading brands. Authorized reseller for Klinmak and Tecnovap."
+    "title": "ILG — Industrial Floor Scrubbers & Steam Cleaning Equipment",
+    "description": "ILG brings you a focused portfolio of industry-leading cleaning machinery — silent floor care from Klinmak, chemical-free dry steam from Tecnovap. Steam cleaning equipment for manufacturing, food production, and power plants."
   },
   "Header": {
     "nav": {
@@ -107,7 +107,7 @@
     "home": "Home",
     "contactUs": "Contact Us",
     "getInTouch": "Get in Touch",
-    "copyright": "© {year} ILG Cleaning Services. All rights reserved.",
+    "copyright": "© {year} ILG Cleaning Solutions. All rights reserved.",
     "builtWith": "Built with",
     "by": "by"
   },
